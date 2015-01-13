@@ -1,0 +1,43 @@
+protocol VLCServer: tcp-ip
+
+target-ip: "192.168.1.170:54345"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command videoa
+{
+    send VLCServer ("v1" cr)
+}
+
+command videob
+{
+    send VLCServer ("v2" cr)
+}
+
+command audioa
+{
+    send VLCServer ("a1" cr)
+}
+
+command audiob
+{
+    send VLCServer ("a2" cr)
+}
+
+query
+{
+    send VLCServer ("online" cr)	
+
+    receive
+    {
+    ("online" cr)
+	{
+        set state enabled
+	}
+	timeout
+	{
+	    set state error
+	}
+    }
+}

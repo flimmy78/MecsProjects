@@ -1,0 +1,325 @@
+protocol Gv7100: com
+port: 0
+speed: 9600
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command alllightoff
+{
+   send Gv7100 (90:8 0:8 196:8 253:8)
+}
+
+command armlighton
+{
+   send Gv7100 (90:8 0:8 192:8 253:8)
+}
+
+command backlighton
+{
+   send Gv7100 (90:8 0:8 194:8 253:8)
+}
+
+command bwmode
+{
+   send Gv7100 (90:8 0:8 140:8 253:8)
+}
+
+command cameraoutput
+{
+   send Gv7100 (90:8 0:8 127:8 253:8)
+}
+
+command colormode
+{
+   send Gv7100 (90:8 0:8 139:8 253:8)
+}
+
+command cursordown
+{
+   send Gv7100 (90:8 0:8 109:8 253:8)
+}
+
+command cursorleft
+{
+   send Gv7100 (90:8 0:8 110:8 253:8)
+}
+
+command cursorright
+{
+   send Gv7100 (90:8 0:8 111:8 253:8)
+}
+
+command cursorup
+{
+   send Gv7100 (90:8 0:8 108:8 253:8)
+}
+
+command decblue
+{
+   send Gv7100 (90:8 0:8 56:8 253:8)
+}
+
+command decbright
+{
+   send Gv7100 (90:8 0:8 64:8 253:8)
+}
+
+command decred
+{
+   send Gv7100 (90:8 0:8 53:8 253:8)
+}
+
+command decvolume
+{
+   send Gv7100 (90:8 0:8 220:8 253:8)
+}
+
+command defreeze
+{
+   send Gv7100 (90:8 0:8 79:8 253:8)
+}
+
+command exitimage
+{
+   send Gv7100 (90:8 0:8 107:8 253:8)
+}
+
+command exitimagerotation
+{
+   send Gv7100 (90:8 0:8 106:8 253:8)
+}
+
+command exitmirror
+{
+   send Gv7100 (90:8 0:8 81:8 253:8)
+}
+
+command exitsplit
+{
+   send Gv7100 (90:8 0:8 136:8 253:8)
+}
+
+command focusauto
+{
+   send Gv7100 (90:8 0:8 66:8 253:8)
+}
+
+command focusfar
+{
+   send Gv7100 (90:8 0:8 69:8 253:8)
+}
+
+command focusnear
+{
+   send Gv7100 (90:8 0:8 68:8 253:8)
+}
+
+command freeze
+{
+   send Gv7100 (90:8 0:8 77:8 253:8)
+}
+
+command fullhd
+{
+   send Gv7100 (90:8 0:8 233:8 253:8)
+}
+
+command hdresolution
+{
+   send Gv7100 (90:8 0:8 232:8 253:8)
+}
+
+command imageconfirm
+{
+   send Gv7100 (90:8 0:8 112:8 253:8)
+}
+
+command imagedelete
+{
+   send Gv7100 (90:8 0:8 113:8 253:8)
+}
+
+command imagemode
+{
+   send Gv7100 (90:8 0:8 137:8 253:8)
+}
+
+command imagercall
+{
+   send Gv7100 (90:8 0:8 97:8 253:8)
+}
+
+command imagerotate
+{
+   send Gv7100 (90:8 0:8 102:8 253:8)
+}
+
+command imagerotateninty
+{
+   send Gv7100 (90:8 0:8 103:8 253:8)
+}
+
+command imagerotateoneeightzero
+{
+   send Gv7100 (90:8 0:8 104:8 253:8)
+}
+
+command imagerotatetwoseven
+{
+   send Gv7100 (90:8 0:8 105:8 253:8)
+}
+
+command imagesave
+{
+   send Gv7100 (90:8 0:8 96:8 253:8)
+}
+
+command incblue
+{
+   send Gv7100 (90:8 0:8 55:8 253:8)
+}
+
+command incbright
+{
+   send Gv7100 (90:8 0:8 63:8 253:8)
+}
+
+command incred
+{
+   send Gv7100 (90:8 0:8 52:8 253:8)
+}
+
+command incvolume
+{
+   send Gv7100 (90:8 0:8 219:8 253:8)
+}
+
+command mirror
+{
+   send Gv7100 (90:8 0:8 80:8 253:8)
+}
+
+command negative
+{
+   send Gv7100 (90:8 0:8 76:8 253:8)
+}
+
+command positive
+{
+   send Gv7100 (90:8 0:8 75:8 253:8)
+}
+
+command projectorinputswitch
+{
+   send Gv7100 (90:8 0:8 134:8 253:8)
+}
+
+command projectorpoweroff
+{
+   send Gv7100 (90:8 0:8 210:8 253:8)
+}
+
+command projectorpoweron
+{
+   send Gv7100 (90:8 0:8 209:8 253:8)
+}
+
+command rgbone
+{
+   send Gv7100 (90:8 0:8 128:8 253:8)
+}
+
+command rgbtwo
+{
+   send Gv7100 (90:8 0:8 129:8 253:8)
+}
+
+command screenmovedown
+{
+   send Gv7100 (90:8 0:8 217:8 253:8)
+}
+
+command screenmoveup
+{
+   send Gv7100 (90:8 0:8 216:8 253:8)
+}
+
+command split
+{
+   send Gv7100 (90:8 0:8 98:8 253:8)
+}
+
+command svideooutput
+{
+   send Gv7100 (90:8 0:8 148:8 253:8)
+}
+
+command sxga
+{
+   send Gv7100 (90:8 0:8 230:8 253:8)
+}
+
+command textmode
+{
+   send Gv7100 (90:8 0:8 138:8 253:8)
+}
+
+command title
+{
+   send Gv7100 (90:8 0:8 135:8 253:8)
+}
+
+command videooutput
+{
+   send Gv7100 (90:8 0:8 147:8 253:8)
+}
+
+command vispowoff
+{
+   send Gv7100 (90:8 0:8 223:8 253:8)
+}
+
+command vispowon
+{
+   send Gv7100 (90:8 0:8 222:8 253:8)
+}
+
+command whitebalanceauto
+{
+   send Gv7100 (90:8 0:8 50:8 253:8)
+}
+
+command wxga
+{
+   send Gv7100 (90:8 0:8 231:8 253:8)
+}
+
+command xga
+{
+   send Gv7100 (90:8 0:8 226:8 253:8)
+}
+
+command zoomin
+{
+   send Gv7100 (90:8 0:8 48:8 253:8)
+}
+
+command zoomout
+{
+   send Gv7100 (90:8 0:8 49:8 253:8)
+}
+
+query
+{
+receive
+{
+timeout
+{
+set state unknown
+}
+}
+}

@@ -1,0 +1,35 @@
+protocol AItem: tcp-ip
+target-ip: "127.0.0.1:3002"
+query-period: 100000
+timeout: 900
+case-sensitive: false
+
+
+command poweron
+{
+   send AItem ("poweron" cr nl)
+}
+
+command poweroff
+{
+   send AItem ("poweroff" cr nl)
+}
+
+command halt
+{
+   send AItem ("halt" cr nl)
+}
+
+
+query
+{
+
+    receive
+    {
+        timeout
+		{
+			set state unknown
+		}
+    }
+}
+

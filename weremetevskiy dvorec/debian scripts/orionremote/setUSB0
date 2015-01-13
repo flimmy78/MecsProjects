@@ -1,0 +1,23 @@
+#!/bin/bash
+echo set speed
+if [ -e /dev/ttyUSB0 ]
+then
+    echo usb0
+    stty -F /dev/ttyUSB0 speed 115200 cs8 -cstopb -parenb
+else
+    echo NOT USB 0
+fi
+
+if [ -e /dev/ttyUSB1 ]
+then
+    echo usb1
+    stty -F /dev/ttyUSB1 speed 115200 cs8 -cstopb -parenb
+else
+    echo NOT USB 1
+
+fi
+
+if [ -e /dev/ttyUSB2 ]
+then
+    stty -F /dev/ttyUSB2 speed 115200 cs8 -cstopb -parenb
+fi

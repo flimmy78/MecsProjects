@@ -1,0 +1,65 @@
+protocol Ligramecs: socket
+file: "/var/run/lirc/lircd"
+query-period: 10000
+timeout: 300
+
+command down
+{
+   send Ligramecs ("SEND_START ligramecs down" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligramecs ("SEND_STOP ligramecs down" nl)
+       }
+   }
+}
+
+command downdown
+{
+   send Ligramecs ("SEND_START ligramecs downdown" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligramecs ("SEND_STOP ligramecs downdown" nl)
+       }
+   }
+}
+
+command stop
+{
+   send Ligramecs ("SEND_START ligramecs stop" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligramecs ("SEND_STOP ligramecs stop" nl)
+       }
+   }
+}
+
+command up
+{
+   send Ligramecs ("SEND_START ligramecs up" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligramecs ("SEND_STOP ligramecs up" nl)
+       }
+   }
+}
+
+command upup
+{
+   send Ligramecs ("SEND_START ligramecs upup" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligramecs ("SEND_STOP ligramecs upup" nl)
+       }
+   }
+}
+

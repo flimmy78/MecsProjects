@@ -1,0 +1,596 @@
+GUI = function()
+{    
+    var currentPage = undefined;
+    var pages = [];
+    
+    Event.observe(window, "load", function()
+    {
+        GUI.Init(function(loadedPages)
+        {
+            pages = loadedPages;            
+            currentPage = pages.first();
+            if (currentPage)
+            {                
+                currentPage.removeClassName("hidden");
+            }
+        });
+    });        
+            
+    function switchPage(name)
+    {
+        var page = pages.find(function(page) {return page.id === name;});
+        if (page)
+        {        
+            currentPage.addClassName("hidden");
+            page.removeClassName("hidden");
+            currentPage = page;
+            GUI.FetchList();
+        }
+    }
+            
+    var bindings = []
+    function register(name, handler)
+    {
+        bindings.push({Name: name, Handler: handler});            
+    }
+    
+    function update(name, value)
+    {
+        bindings.
+            select(function(item) {return item.Name === name;}).
+            each(function(item) {item.Handler(value);});
+        
+    }
+    
+    return {SwitchPage: switchPage,
+            Register: register,
+            Update: update};    
+} ()
+
+GUI.ScriptUrl = "/controller.fcgi";
+
+GUI.Init = function(onLoaded)
+{
+    function load(settings)
+    {
+        var lines = settings.responseText.split('\n').        
+            select(function(line) {return !line.blank();}).
+            map(function(line) {return line.strip();});
+        
+        var objects = [];
+       
+        lines.each(function(line)
+        {
+            if (line.startsWith("[") && line.endsWith("]") && line.length > 2)
+            {
+                var type = line.substring(1, line.length - 1).strip();                
+                objects.push({Type: type});
+            }
+            else if (objects.length > 0)
+            {
+                var split = line.indexOf("=");            
+                if (split >= 0)
+                {                    
+                    objects.last()[line.substring(0, split).strip()] =
+                        line.substring(split + 1, line.length).strip();
+                }
+            }
+        });                
+        
+        objects = objects.partition(function(o) {return o.Type === "Page";});        
+        var pages = [];
+        
+        objects[0].each(function (item)
+        {
+            var page = new Element("div", {id: item.Name, "class": "page hidden"});            
+            page.setStyle(
+                {backgroundImage: "url(\"#{Background}\")".interpolate(item)});
+            
+            pages.push(page);
+            document.body.appendChild(page);
+        });       
+
+        objects[1].each(function (item)
+        {            
+            var itemPages = $w(item.Pages).
+                map(function(name) {return pages.find(function(page) {return page.id === name;});}).
+                select(Prototype.K);
+            itemPages.each(function (page)
+            {
+                var element = new Element("div");                
+                var constructor = GUI["Make#{Type}".interpolate(item)];
+                if (constructor)
+                {
+                    constructor(element, item);
+                    page.appendChild(element);
+                }                
+            });
+        });
+        onLoaded(pages);
+    }
+                
+    var settingsFile = "interface.ini";
+    var request = new Ajax.Request(
+        settingsFile,
+        {
+            method: "GET",
+            onSuccess: load,
+            onFailure: function() {document.writeln("Could not fetch " + settingsFile);}
+        }
+    );
+    
+    new PeriodicalExecuter(GUI.FetchList, 2);
+    GUI.FetchList();        
+}
+
+GUI.Default =
+{
+    FontSize: 32
+}
+
+GUI.Color = function(string)
+{
+    var color = {r: 0, g: 0, b: 0};
+    switch(string)
+    {
+        case "white":
+            color.r = 255;
+            color.g = 255;
+            color.b = 255;
+            break;
+        case "red":
+            color.r = 255;
+            break;
+        case "green":
+            color.g = 255;
+            break;
+        case "blue":
+            color.b = 255;
+            break;
+        case "yellow":
+            color.r = 255;
+            color.g = 255;
+            break;
+        case "magenta":
+            color.r = 255;
+            color.b = 255;
+    }		
+    return "rgb(#{r}, #{g}, #{b})".interpolate(color);
+}
+
+GUI.Action = function(string)
+{
+    var words = $w(string);
+    if (words.length === 2 && words[0] === "Page")
+    {
+        return function ()
+        {
+            GUI.SwitchPage(words[1]);
+        }
+    }
+    else if (words.length >= 3 && words[0] === "Command")
+    {
+        return function (arg)
+        {
+            var target = words[1];
+            var name = words[2];
+            var arguments = words.slice(3).map(function(item)
+            {
+               return item === "_" && (arg !== undefined) ? arg : item;
+            });
+            GUI.SendCommand(target, name, arguments);
+        }
+    }
+    else
+    {
+        return undefined;
+    }
+}
+
+GUI.Move = function(element, x, y)
+{
+    $(element).setStyle({left: x + "px", top: y + "px"});    
+}
+
+GUI.BaseMakeWidget = function(element, settings)
+{    
+    $(element).addClassName("widget");
+    GUI.Move(element, settings.Left || 0, settings.Top || 0);    
+}
+
+GUI.Measure = function(text, fontSize)
+{        
+    var item = $("_measurement");
+    item.textContent = text;        
+    item.setStyle({fontSize: fontSize});
+    return item.getDimensions();
+}
+
+GUI.BaseMakeText = function(element, settings)
+{
+    GUI.BaseMakeWidget(element, settings);
+    var fontSize = (settings.FontSize ? settings.FontSize : GUI.Default.FontSize) + "px";   
+    var size  = GUI.Measure(settings.DefaultText, fontSize);
+        
+    var width = settings.Width || 0;
+    var height = settings.Height || 0;
+        
+    $(element).textContent = settings.DefaultText;                
+        
+    $(element).setStyle(
+    {
+        fontSize: fontSize,
+        color: GUI.Color(settings.Color)      
+    });
+    
+    GUI.Move(element, (width - size.width) / 2, (height - size.height) / 2);
+}
+
+GUI.BaseMakeButton = function(element, settings, width, height)
+{
+    GUI.BaseMakeWidget(element, settings);
+    
+    if (settings.Caption)
+    {
+        var caption = new Element("div");
+        settings.Width = width;
+        settings.Height = height;
+        settings.DefaultText = settings.Caption;
+        GUI.BaseMakeText(caption, settings);        
+        element.appendChild(caption);
+    }
+}
+
+GUI.MakeButton = function(element, settings)
+{
+    var image = new Element("img", {src: settings.UpImage});
+    GUI.BaseMakeButton(element, settings, image.width, image.height);
+    
+    $(element).addClassName("button");        
+    element.appendChild(image);
+    
+    var onClick = GUI.Action(settings.OnClick);
+    var onHold = GUI.Action(settings.OnHold);
+    
+    var pendingHold = -1;
+    
+    Event.observe($(element), "mousedown", function()
+    {        
+        $(element).addClassName("down");
+        image.src = settings.DownImage;
+        if (onHold)
+        {
+            pendingHold = function ()
+            {
+                $(element).addClassName("pressed");
+                image.src = settings.HeldImage
+            }.delay(0.333);
+        }
+    });
+    
+    Event.observe(document, "mouseup", function()
+    {        
+        if ($(element).hasClassName("pressed") && onHold)
+        {
+            onHold(element);
+        }
+        else if ($(element).hasClassName("down") && onClick)
+        {
+            onClick(element);
+        }
+        
+        ["pressed", "down"].each($(element).removeClassName.bind(element));
+        image.src = settings.UpImage;
+                
+        if (pendingHold >= 0)
+        {
+            window.clearTimeout(pendingHold);
+            pendingHold = -1;
+        }
+    });    
+}
+
+GUI.MakeToggleButton = function(element, settings)
+{
+    var image = new Element("img", {src: settings.UpImage});
+    console.log("loading");
+	image.onload = image.onreadystatechange = function(){
+	    image.onreadystatechange = image.onload = null;
+	    console.log();    
+	}
+
+    GUI.BaseMakeButton(element, settings, image.width, image.height);    
+    $(element).addClassName("toggleButton");
+        
+    element.appendChild(image);
+        
+    var onUp = GUI.Action(settings.OnUp);
+    var onDown = GUI.Action(settings.OnDown);
+    
+    Event.observe($(element), "mousedown", function()
+    {        
+        $(element).addClassName("pressed");
+        image.src = settings.HeldImage;        
+    });
+    
+    Event.observe($(element), "mouseup", function()
+    {
+        if ($(element).hasClassName("pressed"))
+        {
+            if ($(element).hasClassName("down"))
+            {
+                image.src = settings.UpImage;
+                $(element).removeClassName("down");
+                if (onUp)
+                {
+                    onUp();
+                }
+            }
+            else
+            {
+                image.src = settings.DownImage;
+                $(element).addClassName("down");
+                if (onDown)
+                {
+                    onDown();
+                }
+            }
+            $(element).removeClassName("pressed");
+        }        
+    });
+}
+
+GUI.MakeSlider = function(element, settings)
+{
+    GUI.BaseMakeWidget(element, settings);
+    $(element).addClassName("slider");
+    
+    var baseImage = new Element("img", {src: settings.BaseImage});
+    var sliderImage = new Element("img", {src: settings.SliderUpImage});
+    [sliderImage, baseImage].each(element.appendChild.bind(element));
+    
+    var left = parseInt(settings.Left);
+    var top = parseInt(settings.Top);    
+    var min = parseInt(settings.MinValue);
+    var max = parseInt(settings.MaxValue);    
+    var value = parseInt(settings.Value || 0);
+    value = Math.round(value < min ? min : value > max ? max : value);
+    
+    function position()
+    {
+        if (settings.Direction === "vertical")
+        {
+           return  (max - value) * (baseImage.height - sliderImage.height) / (max - min); 
+        }
+        else        
+        {
+            return (value - min) * (baseImage.width - sliderImage.width) / (max - min);
+        }        
+    }
+    
+    sliderImage.setStyle({position: "absolute"});
+    if (settings.Direction === "vertical")
+    {        
+        sliderImage.setStyle({top: position() + "px"});    
+    }
+    else
+    {
+        sliderImage.setStyle({left: position() + "px"});    
+    }
+    
+    var onValueChange = GUI.Action(settings.OnValueChange);
+            
+    function drag(event)
+    {
+        if (sliderImage.hasClassName("down"))
+        {
+	    if (event.preventDefault)
+	    {
+		event.preventDefault();
+	    }
+            if (settings.Direction === "vertical")
+            {
+                value = max - (Event.pointerY(event) - (top + sliderImage.height / 2)) *
+                           (max - min) / (baseImage.height - sliderImage.height);
+                value = Math.round(value < min ? min : value > max ? max : value);
+                sliderImage.setStyle({top: position() + "px"});
+            }
+            else
+            {
+                value = min + (Event.pointerX(event) - (left + sliderImage.width / 2)) *
+                           (max - min) / (baseImage.width - sliderImage.width);
+                value = Math.round(value < min ? min : value > max ? max : value);
+                sliderImage.setStyle({left: position() + "px"});
+            }
+        }
+    }
+    
+    function down(event)
+    {
+        sliderImage.addClassName("down");
+        sliderImage.src = settings.SliderDownImage;
+        drag(event);
+    }
+    
+    Event.observe(sliderImage, "mousedown", down);    
+    Event.observe(baseImage, "mousedown", down);        
+    Event.observe(document, "mousemove", drag);
+    
+    Event.observe(document, "mouseup", function()
+    {
+        if (sliderImage.hasClassName("down"))
+        {
+            sliderImage.removeClassName("down");
+            sliderImage.src = settings.SliderUpImage;
+            if (onValueChange)
+            {
+                onValueChange(value);
+            }
+        }
+    });                
+}
+
+GUI.MakeProgressBar = function(element, settings)
+{
+    GUI.BaseMakeWidget(element, settings);
+    $(element).addClassName("progressBar");
+    
+    var emptyImage = new Element("img", {src: settings.EmptyImage});
+    var fullImage = new Element("img", {src: settings.FullImage});
+    [fullImage, emptyImage].each(element.appendChild.bind(element));
+    
+    var left = parseInt(settings.Left);
+    var top = parseInt(settings.Top);           
+    var min = parseInt(settings.MinValue);
+    var max = parseInt(settings.MaxValue);    
+    var value = min;
+    
+    function clipEmpty()
+    {
+        if (settings.Direction === "vertical")
+        {
+            return "rect(#{top}px, #{right}px, #{bottom}px, #{left}px)".interpolate(
+                {left: 0,
+                 top: 0,
+                 right: fullImage.width,
+                 bottom: fullImage.height * (max - value) / (max - min)});
+        }
+        else
+        {
+            return "rect(#{top}px, #{right}px, #{bottom}px, #{left}px)".interpolate(
+                {left: fullImage.width * (value - min) / (max - min),
+                 top: 0,
+                 right: fullImage.width,
+                 bottom: fullImage.height});
+        }
+    }    
+    
+    function clipFull()
+    {
+        if (settings.Direction === "vertical")
+        {
+            return "rect(#{top}px, #{right}px, #{bottom}px, #{left}px)".interpolate(
+                {left: 0,
+                 top: fullImage.height * (max - value) / (max - min),
+                 right: fullImage.width,
+                 bottom: fullImage.height});
+        }
+        else
+        {
+            return "rect(#{top}px, #{right}px, #{bottom}px, #{left}px)".interpolate(
+                {left: 0,
+                 top: 0,
+                 right: fullImage.width * (value - min) / (max - min),
+                 bottom: fullImage.height});
+        }
+    }
+    
+    function update(newValue)
+    {
+        value = newValue < min ? min : newValue > max ? max : newValue;
+        emptyImage.setStyle({position: "absolute", overflow: "hidden", clip: clipEmpty()});   
+        fullImage.setStyle({position: "absolute", overflow: "hidden", clip: clipFull()});   
+    }
+    update(value);
+    
+    if (settings.Value)
+    {
+        GUI.Register(settings.Value, update);
+    }
+}
+
+GUI.MakeIndicator = function(element, settings)
+{
+    GUI.BaseMakeWidget(element, settings);
+    $(element).addClassName("indicator");
+    
+    var images = [];
+    Object.keys(settings).select(function(key) {return key.startsWith("Image ")}).
+                          each(function (key)
+    {        
+        images[$w(key)[1]] = settings[key];
+    });
+    
+    var image = new Element("img");
+    element.appendChild(image);
+        
+    function update(state)
+    {
+        if (images[state])
+        {
+            image.src = images[state];
+        }
+    }
+    update(settings.DefaultState);
+   
+    if (settings.State)
+    {
+        GUI.Register(settings.State, update);
+    }
+}
+
+GUI.MakeText = function(element, settings)
+{
+    GUI.BaseMakeText(element, settings);
+    $(element).addClassName("text");
+    var fontSize = (settings.FontSize ? settings.FontSize : GUI.Default.FontSize) + "px";
+    var left = parseInt(settings.Left || 0);
+    var top = parseInt(settings.Top || 0);
+    var width = parseInt(settings.Width || 0);
+    var height = parseInt(settings.Height || 0);
+    
+    function update(text)
+    {
+        var size = GUI.Measure(text, fontSize);
+        $(element).textContent = text;
+        var newLeft =
+            settings.Align === "left" ? left :
+            settings.Align === "right" ? left + width - size.width :
+                left + (width - size.width) / 2
+        GUI.Move(element, newLeft, top + (height - size.height) / 2);
+    }
+    update(settings.DefaultText || "");
+   
+    if (settings.Text)
+    {
+        GUI.Register(settings.Text, update);
+    }
+}
+
+GUI.SendCommand = function(target, command, arguments)
+{
+    var parameters = {action: "command", target: target, name: command}    
+    arguments.each(function(argument, index)
+    {    
+        parameters["arg" + (index + 1)] = argument;
+    })
+    
+    var request = new Ajax.Request(
+        GUI.ScriptUrl,
+        {
+            method: "GET",
+            parameters: parameters
+        });
+    GUI.FetchList.delay(1);
+}
+
+GUI.FetchList = function ()
+{
+    function process(result)
+    {
+        var states = result.responseText.evalJSON();
+        states.each(function (state)
+        {
+            GUI.Update("#{name} #{state}".interpolate(state),
+                       state.value);            
+        });        
+    }
+    
+    var request = new Ajax.Request(
+        GUI.ScriptUrl,
+        {   
+            method: "GET",
+            parameters: {action: "list"},
+            onSuccess: process
+        });
+}

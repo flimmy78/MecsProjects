@@ -1,0 +1,41 @@
+protocol Epsoncom: com
+port: 1
+speed: 9600
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command muteoff
+{
+   send Epsoncom ("MUTE OFF" cr)
+}
+
+command muteon
+{
+   send Epsoncom ("MUTE ON" cr)
+}
+
+command poweroff
+{
+   send Epsoncom ("PWR OFF" cr)
+}
+
+command poweron
+{
+   send Epsoncom ("PWR ON" cr)
+}
+
+
+query
+{	
+    receive
+    {    
+       timeout
+		{
+			set state unknown
+		}
+    }
+}

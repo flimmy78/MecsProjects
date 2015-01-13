@@ -1,0 +1,101 @@
+protocol Christiel: tcp-ip
+
+target-ip: "192.168.1.121:3002"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command poweron
+{
+    send Christiel ("(PWR 1)" cr)
+}
+
+command poweroff
+{
+    send Christiel ("(PWR 0)" cr)
+}
+
+command muteon
+{
+    send Christiel ("(SHU 1)" cr)
+}
+
+command muteoff
+{
+    send Christiel ("(SHU 0)" cr)
+}
+
+command freezeon
+{
+    send Christiel ("(FRZ 1)" cr)
+}
+
+command freezeoff
+{
+    send Christiel ("(FRZ 0)" cr)
+}
+
+command autoposition
+{
+    send Christiel ("(ASU)" cr)
+}
+
+command hours
+{
+    send Christiel ("(PJH ?)" cr)
+}
+
+command setaspectdefault
+{
+    send Christiel ("(SZP 0)" cr)
+}
+
+command setaspectnone
+{
+    send Christiel ("(SZP 1)" cr)
+}
+
+command setaspectfullscreen
+{
+    send Christiel ("(SZP 2)" cr)
+}
+
+command setaspectfullwidth
+{
+    send Christiel ("(SZP 3)" cr)
+}
+
+command setaspectfullheight
+{
+    send Christiel ("(SZP 4)" cr)
+}
+
+command setaspectanamorphic
+{
+    send Christiel ("(SZP 5)" cr)
+}
+
+command setaspectcustom
+{
+    send Christiel ("(SZP 6)" cr)
+}
+
+query
+{
+    send Christiel ("(PWR?)" cr)	
+	receive
+	{
+	("(PWR!1)")
+	{
+            set state enabled
+	}
+	("(PWR!0)")
+	{
+            set state disabled
+	}
+        timeout
+	{
+	    set state unknown
+	}
+    }
+}

@@ -1,0 +1,282 @@
+protocol Polycom8000720: tcp-ip
+target-ip: "172.20.5.45:24"
+query-period: 5000
+timeout: 1000
+case-sensitive: false
+
+
+command auto
+{
+   send Polycom8000720 ("button auto" cr nl)
+}
+
+command back
+{
+   send Polycom8000720 ("button back" cr nl)
+}
+
+command call
+{
+   send Polycom8000720 ("button call" cr nl)
+}
+
+command camera
+{
+   send Polycom8000720 ("button camera" cr nl)
+}
+
+command delete
+{
+   send Polycom8000720 ("button delete" cr nl)
+}
+
+command directory
+{
+   send Polycom8000720 ("button directory" cr nl)
+}
+
+command dot
+{
+   send Polycom8000720 ("button ." cr nl)
+}
+
+command down
+{
+   send Polycom8000720 ("button down" cr nl)
+}
+
+command eight
+{
+   send Polycom8000720 ("button 8" cr nl)
+}
+
+command far
+{
+   send Polycom8000720 ("button far" cr nl)
+}
+
+command five
+{
+   send Polycom8000720 ("button 5" cr nl)
+}
+
+command four
+{
+   send Polycom8000720 ("button 4" cr nl)
+}
+
+command graphics
+{
+   send Polycom8000720 ("button graphics" cr nl)
+}
+
+command hangup
+{
+   send Polycom8000720 ("button hangup" cr nl)
+}
+
+command help
+{
+   send Polycom8000720 ("button help" cr nl)
+}
+
+command home
+{
+   send Polycom8000720 ("button home" cr nl)
+}
+
+command info
+{
+   send Polycom8000720 ("button info" cr nl)
+}
+
+command keyboard
+{
+   send Polycom8000720 ("button keyboard" cr nl)
+}
+
+command left
+{
+   send Polycom8000720 ("button left" cr nl)
+}
+
+command lowbattery
+{
+   send Polycom8000720 ("button lowbattery" cr nl)
+}
+
+command menu
+{
+   send Polycom8000720 ("button menu" cr nl)
+}
+
+command mmforward
+{
+   send Polycom8000720 ("button mmforward" cr nl)
+}
+
+command mmpause
+{
+   send Polycom8000720 ("button mmpause" cr nl)
+}
+
+command mmplay
+{
+   send Polycom8000720 ("button mmplay" cr nl)
+}
+
+command mmrecord
+{
+   send Polycom8000720 ("button mmrecord" cr nl)
+}
+
+command mmrewind
+{
+   send Polycom8000720 ("button mmrewind" cr nl)
+}
+
+command mmstop
+{
+   send Polycom8000720 ("button mmstop" cr nl)
+}
+
+command mute
+{
+   send Polycom8000720 ("button mute" cr nl)
+}
+
+command near
+{
+   send Polycom8000720 ("button near" cr nl)
+}
+
+command nine
+{
+   send Polycom8000720 ("button 9" cr nl)
+}
+
+command one
+{
+   send Polycom8000720 ("button 1" cr nl)
+}
+
+command option
+{
+   send Polycom8000720 ("button option" cr nl)
+}
+
+command period
+{
+   send Polycom8000720 ("button period" cr nl)
+}
+
+command pickedup
+{
+   send Polycom8000720 ("button pickedup" cr nl)
+}
+
+command pip
+{
+   send Polycom8000720 ("button pip" cr nl)
+}
+
+command preset
+{
+   send Polycom8000720 ("button preset" cr nl)
+}
+
+command putdown
+{
+   send Polycom8000720 ("button putdown" cr nl)
+}
+
+command right
+{
+   send Polycom8000720 ("button right" cr nl)
+}
+
+command select
+{
+   send Polycom8000720 ("button select" cr nl)
+}
+
+command seven
+{
+   send Polycom8000720 ("button 7" cr nl)
+}
+
+command sharp
+{
+   send Polycom8000720 ("button #" cr nl)
+}
+
+command six
+{
+   send Polycom8000720 ("button 6" cr nl)
+}
+
+command slides
+{
+   send Polycom8000720 ("button slides" cr nl)
+}
+
+command star
+{
+   send Polycom8000720 ("button *" cr nl)
+}
+
+command three
+{
+   send Polycom8000720 ("button 3" cr nl)
+}
+
+command two
+{
+   send Polycom8000720 ("button 2" cr nl)
+}
+
+command up
+{
+   send Polycom8000720 ("button up" cr nl)
+}
+
+command validbutton
+{
+   send Polycom8000720 ("button valid_button" cr nl)
+}
+
+command volumeminus
+{
+   send Polycom8000720 ("button volume-" cr nl)
+}
+
+command volumeplus
+{
+   send Polycom8000720 ("button volume+" cr nl)
+}
+
+command zero
+{
+   send Polycom8000720 ("button 0" cr nl)
+}
+
+command zoomminus
+{
+   send Polycom8000720 ("button zoom-" cr nl)
+}
+
+command zoomplus
+{
+   send Polycom8000720 ("button zoom+" cr nl)
+}
+
+query
+{
+    receive
+    {
+        timeout
+		{
+			set state unknown
+		}
+    }
+}

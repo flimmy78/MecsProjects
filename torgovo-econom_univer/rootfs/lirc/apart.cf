@@ -1,0 +1,63 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.9.0(SerialDevice) on Tue Jul 17 13:09:23 2012
+#
+# contributed by 
+#
+# brand:                       D:\lirc\winlirc-0.9.0c\WinLIRC\apart.cf
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  D:\lirc\winlirc-0.9.0c\WinLIRC\apart.cf
+  bits           16
+  flags SPACE_ENC|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  header       8987  4382
+  one           651  1577
+  zero          651   464
+  ptrail        667
+  repeat       8995  2150
+  pre_data_bits   16
+  pre_data       0xFF
+  gap          107060
+  toggle_bit_mask 0x0
+
+      begin codes
+          power                    0xD22D
+          one                      0xC23D
+          two                      0xF00F
+          three                    0x7887
+          four                     0x38C7
+          five                     0x18E7
+          six                      0xA857
+          seven                    0xE817
+          eight                    0x48B7
+          nine                     0xAA55
+          zero                     0x58A7
+          volplus                  0x6897
+          volminus                 0xD02F
+          repeat                   0x42BD
+          random                   0xB847
+          usbsdcd                  0x20DF
+          eject                    0x926D
+          pause                    0x40BF
+          mute                     0x12ED
+          prev                     0x30CF
+          play                     0xB24D
+          next                     0xA05F
+          fastminus                0xF20D
+          stop                     0x807F
+          fastplus                 0xFA05
+      end codes
+
+end remote
+
+

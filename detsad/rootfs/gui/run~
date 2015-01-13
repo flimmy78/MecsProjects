@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ ${CONSOLE+1} ]
+then
+    /usr/bin/mc
+else
+    cd /
+    if [ ${LOCK+1} ]
+    then
+        /gui/sdlgui --lock
+    else
+	/gui/sdlgui
+    fi    
+fi

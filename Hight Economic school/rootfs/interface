@@ -1,0 +1,994 @@
+[Page]
+Name = Projectors
+Background = Images/aqua_back.png
+
+[Page]
+Name = VKS
+Background = Images/aqua_back.png
+
+
+[Button]
+Caption = Включить
+Pages = Projectors
+Left = 25
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishi poweron
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 525
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Громкость
+
+[Button]
+Caption = Выключить
+Pages = Projectors
+Left = 25
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishi poweroff
+
+[Button]
+Caption = +
+Pages = Projectors
+Left = 700
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Mvc incvolume
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Projectors
+Left = 25
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Mitsubishi muteon
+OnUp = Command Mitsubishi muteoff
+
+[Button]
+Caption = -
+Pages = Projectors
+Left = 700
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Mvc decvolume
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 10
+Top = 525
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Выбор источника
+
+[Button]
+Caption = Компьютер
+Pages = Projectors
+Left = 200
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Extron pc
+
+[Button]
+Caption = ВКС
+Pages = Projectors
+Left = 800
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Extron vks
+
+[Button]
+Caption = Люк
+Pages = Projectors
+Left = 500
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Extron luk
+
+[Button]
+Caption = Страница ВКС
+Pages = Projectors
+Left = 1000
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page VKS
+
+[Button]
+Caption = 10
+Pages = Projectors
+Left = 475
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumek
+
+[Button]
+Caption = 9
+Pages = Projectors
+Left = 425
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumei
+
+[Button]
+Caption = 8
+Pages = Projectors
+Left = 425
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumej
+
+[Button]
+Caption = 7
+Pages = Projectors
+Left = 475
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumeh
+
+[Button]
+Caption = 6
+Pages = Projectors
+Left = 425
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumeg
+
+[Button]
+Caption = 5
+Pages = Projectors
+Left = 475
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumef
+
+[Button]
+Caption = 4
+Pages = Projectors
+Left = 425
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumee
+
+[Button]
+Caption = 3
+Pages = Projectors
+Left = 475
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumed
+
+[Button]
+Caption = 2
+Pages = Projectors
+Left = 425
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumec
+
+[Button]
+Caption = 1
+Pages = Projectors
+Left = 475
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumeb
+
+[Button]
+Caption = 0
+Pages = Projectors
+Left = 475
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_Vsml.png
+DownImage = Images/menu_light_btn_Vsml.png
+HeldImage = Images/menu_light_btn_Vsml.png
+OnClick  = Command Mvc volumea
+
+[Button]
+Caption = Включить
+Pages = Projectors
+Left = 1000
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Panasonik poweron
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор
+
+[Button]
+Caption = Выключить
+Pages = Projectors
+Left = 1000
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Panasonik poweroff
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Projectors
+Left = 1000
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Panasonik muteon
+OnUp = Command Panasonik muteoff
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 1000
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор
+
+
+
+[Button]
+Caption = #
+Pages = VKS
+Left = 875
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 sharp
+
+[Button]
+Caption = <-
+Pages = VKS
+Left = 775
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 delete
+
+
+[Button]
+Caption = Обратно
+Pages = VKS
+Left = 1000
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page Projectors
+
+[Button]
+Caption = .
+Pages = VKS
+Left = 1075
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 dot
+
+[Button]
+Caption = 1
+Pages = VKS
+Left = 875
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 one
+
+[Button]
+Caption = 2
+Pages = VKS
+Left = 975
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 two
+
+[Button]
+Caption = 0
+Pages = VKS
+Left = 975
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 zero
+
+[Button]
+Caption = 3
+Pages = VKS
+Left = 1075
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 three
+
+[Button]
+Caption = 4
+Pages = VKS
+Left = 875
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 four
+
+[Button]
+Caption = 5
+Pages = VKS
+Left = 975
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 five
+
+[Button]
+Caption = 6
+Pages = VKS
+Left = 1075
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 six
+
+[Button]
+Caption = 7
+Pages = VKS
+Left = 875
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 seven
+
+[Button]
+Caption = 8
+Pages = VKS
+Left = 975
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 eight
+
+[Button]
+Caption = 9
+Pages = VKS
+Left = 1075
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 nine
+
+[Button]
+Caption = *
+Pages = VKS
+Left = 775
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 star
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 225
+Top = 480
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_forward.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 preset
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 325
+Top = 480
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_camera.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 camera
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 325
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_content.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 graphics
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 125
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_pause.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 far
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 25
+Top = 480
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_rewind.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 volumeminus
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 225
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_record.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 pip
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 125
+Top = 480
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_play.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 near
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 25
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_stop.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 volumeplus
+
+[Button]
+Caption = i
+Pages = VKS
+Left = 0
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 info
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 275
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_up.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 up
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 275
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_down.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 down
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 175
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_mute.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 mute
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 175
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_left.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 left
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 375
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_right.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 right
+
+[Button]
+Caption = Ok
+Pages = VKS
+Left = 275
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 select
+
+[Button]
+Caption = Back
+Pages = VKS
+Left = 375
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 back
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 375
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_hangup.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 hangup
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 175
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_call.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 call
+
+[Button]
+Caption = Меню
+Pages = VKS
+Left = 0
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 menu
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 0
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_directory.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 directory
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 575
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_zoomin.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 zoomplus
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 575
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_zoomout.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 zoomminus
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 575
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_keyboard.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 keyboard
+
+[Button]
+Caption = 
+Pages = VKS
+Left = 575
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml_option.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Polycom8000720 option
+
+
+[Indicator]
+Name = MvcStatus
+Pages = Projectors
+
+Left = 425
+Top = 100
+
+State = Mvc state
+DefaultState = unknown
+
+Image unknown = Images/vol/av.png
+Image av = Images/vol/av.png
+Image bv = Images/vol/bv.png
+Image cv = Images/vol/cv.png
+Image dv = Images/vol/dv.png
+Image ev = Images/vol/ev.png
+Image fv = Images/vol/fv.png
+Image gv = Images/vol/gv.png
+Image hv = Images/vol/hv.png
+Image iv = Images/vol/iv.png
+Image jv = Images/vol/jv.png
+Image kv = Images/vol/kv.png
+Image lv = Images/vol/lv.png
+
+[Indicator]
+Name = MitStatus
+Pages = Projectors
+
+Left = 75
+Top = 400
+
+State = Mitsubishi state
+DefaultState = unknown
+
+Image unknown = Images/round_light_btn.png
+Image enabled = Images/roundGreen_btn.png
+Image disabled = Images/roundRed_btn.png
+
+[Button]
+Caption = Включить
+Pages = Projectors
+Left = 650
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Panasonik poweron
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор
+
+
+[Button]
+Caption = Выключить
+Pages = Projectors
+Left = 650
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Panasonik poweroff
+
+
+
+[Indicator]
+Name = PanStatus
+Pages = Projectors
+
+Left = 700
+Top = 400
+
+State = Panasonik state
+DefaultState = unknown
+
+Image unknown = Images/round_light_btn.png
+Image enabled = Images/roundGreen_btn.png
+Image disabled = Images/roundRed_btn.png
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Projectors
+Left = 650
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Panasonik muteon
+OnUp = Command Panasonik muteoff
+

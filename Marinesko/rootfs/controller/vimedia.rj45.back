@@ -1,0 +1,61 @@
+protocol Vimedia: udp-ip
+target-ip: "192.168.1.12:4223"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command play
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "PlayProjectCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "</Command>" nl cr)
+}
+
+command pause
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command xsi:type=" 34:8 "PauseProjectCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<ShowLayers>true</ShowLayers>"  nl cr "</Command>")
+}
+
+command stop
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "StopProjectCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "</Command>" nl cr)
+}
+
+command prevbookmark
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoPreviousBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "</Command>" nl cr)
+}
+
+command nextbookmark
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoNextBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "</Command>" nl cr)
+}
+
+command gotobookmarkone
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<Index>0</Index>" nl cr "</Command>" nl cr)
+}
+
+command gotobookmarktwo
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<Index>1</Index>" nl cr "</Command>" nl cr)
+}
+
+command gotobookmarkthree
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<Index>2</Index>" nl cr "</Command>" nl cr)
+}
+
+command gotobookmarkfour
+{
+	send Vimedia ("<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<Index>3</Index>" nl cr "</Command>" nl cr)
+}
+
+query
+{	
+	receive
+	{		
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

@@ -1,0 +1,8 @@
+
+Log started at Wed Jun 27 16:14:40 2012
+
+Error: Syntax error in file controller/mitsubishixd360uest.pjlink
+Error: Syntax error in file controller/lg37lk430.rs232
+Error: Syntax error in file controller/lifesize200express.lirc
+Info: Control server has been started
+Info: Controller is running

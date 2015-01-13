@@ -1,0 +1,18 @@
+#!/bin/bash
+
+result=""
+do_start()
+{
+	/etc/init.d/mecs log
+	sleep 2
+	result=`tail /log.txt | grep "Controller is running"`
+
+}
+
+echo $result 
+
+while [ "$result" = "" ]
+do
+	do_start
+done
+

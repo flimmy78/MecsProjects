@@ -1,0 +1,140 @@
+[Page]
+Name = Projectors
+Background = Images/aqua_back.png
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор 1
+
+[Button]
+Caption = Включить
+Pages = Projectors
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Christiezero poweron
+
+[Button]
+Caption = Выключить
+Pages = Projectors
+Left = 25
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Christiezero poweroff
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Projectors
+Left = 25
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Christiezero muteon
+OnUp = Command Christiezero muteoff
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 575
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор 2
+
+[Button]
+Caption = Включить
+Pages = Projectors
+Left = 575
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Christieone poweron
+
+[Button]
+Caption = Выключить
+Pages = Projectors
+Left = 575
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Christieone poweroff
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Projectors
+Left = 575
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Christieone muteon
+OnUp = Command Christieone muteoff
+
+
+[Indicator]
+Name = CzeroStatus
+Pages = Projectors
+
+Left = 250
+Top = 25
+
+State = Christiezero state
+DefaultState = unknown
+
+Image unknown = Images/round_light_btn.png
+Image enabled = Images/roundGreen_btn.png
+Image disabled = Images/roundRed_btn.png
+
+[Indicator]
+Name = ConeStatus
+Pages = Projectors
+
+Left = 750
+Top = 25
+
+State = Christieone state
+DefaultState = unknown
+
+Image unknown = Images/round_light_btn.png
+Image enabled = Images/roundGreen_btn.png
+Image disabled = Images/roundRed_btn.png

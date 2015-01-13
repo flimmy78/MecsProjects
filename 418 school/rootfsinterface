@@ -1,0 +1,138 @@
+[Page]
+Name = Main
+Background = Images/aqua_back.png
+
+[Page]
+Name = vks
+Background = Images/aqua_back.png
+
+[Button]
+Caption = hang up
+Pages = vks
+Left = 200
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize hungup
+
+[Button]
+Caption = yell
+Pages = vks
+Left = 0
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize yellow
+
+[Button]
+Caption = left
+Pages = vks
+Left = 0
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize left
+
+[Button]
+Caption = down
+Pages = vks
+Left = 100
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize down
+
+[Button]
+Caption = vol up
+Pages = vks
+Left = 0
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize volup
+
+[Button]
+Caption = 3
+Pages = vks
+Left = 700
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize three
+
+[Button]
+Caption = 4
+Pages = vks
+Left = 500
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize four
+
+[Button]
+Caption = 7
+Pages = vks
+Left = 500
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize seven
+
+[Button]
+Caption = 0
+Pages = vks
+Left = 500
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize star
+
+[Button]
+Caption = func 1
+Pages = vks
+Left = 700
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Lifesize sharp
+

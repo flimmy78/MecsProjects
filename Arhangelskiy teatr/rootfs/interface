@@ -1,0 +1,388 @@
+[Page]
+Name = Main
+Background = Images/background.jpg
+
+[Text]
+Align = center
+Pages = Main
+Left = 225
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор 1
+
+[Button]
+Caption = Вкл
+Pages = Main
+Left = 25
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 poweron
+
+[Button]
+Caption = Выкл
+Pages = Main
+Left = 225
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 poweoff
+
+[Button]
+Caption = Вход 1
+Pages = Main
+Left = 675
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 inputone
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Main
+Left = 425
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+
+
+OnDown = Command Christie0 muteon
+OnUp = Command Christie0 muteoff
+
+[Button]
+Caption = Вход 2
+Pages = Main
+Left = 675
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 inputtwo
+
+[Button]
+Caption = Вход 3
+Pages = Main
+Left = 675
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 inputthree
+
+[Button]
+Caption = Вход 4
+Pages = Main
+Left = 675
+Top = 475
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 inputfour
+
+[Button]
+Caption = Зум +
+Pages = Main
+Left = 350
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 zoomplus
+OnHold  = Command Christie0 zoomplus
+
+[Button]
+Caption = Зум -
+Pages = Main
+Left = 100
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 zoomminus
+OnHold  = Command Christie0 zoomminus
+
+[Button]
+Caption = Фокус +
+Pages = Main
+Left = 350
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 focusplus
+OnHold  = Command Christie0 focusplus
+
+[Button]
+Caption = Фокус -
+Pages = Main
+Left = 100
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 focusminus
+OnHold  = Command Christie0 focusminus
+
+[Button]
+Caption = Зум +
+Pages = Main
+Left = 1250
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 zoomplus
+OnHold  = Command Christie1 zoomplus
+
+[Button]
+Caption = Зум -
+Pages = Main
+Left = 1000
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 zoomminus
+OnHold  = Command Christie1 zoomminus
+
+[Button]
+Caption = Фокус +
+Pages = Main
+Left = 1250
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 focusplus
+OnHold  = Command Christie1 focusplus
+
+[Button]
+Caption = Фокус -
+Pages = Main
+Left = 1000
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 focusminus
+OnHold  = Command Christie1 focusminus
+
+[Text]
+Align = center
+Pages = Main
+Left = 1125
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор 2
+
+[Button]
+Caption = Вкл
+Pages = Main
+Left = 925
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 poweron
+
+[Button]
+Caption = Выкл
+Pages = Main
+Left = 1125
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 poweoff
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Main
+Left = 1325
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+
+
+OnDown = Command Christie1 muteon
+OnUp = Command Christie1 muteoff
+
+[Button]
+Caption = 
+Pages = Main
+Left = 100
+Top = 575
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpLeft.png
+DownImage = Images/buttonDownLeft.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 shiftleft
+OnHold  = Command Christie0 shiftleft
+
+[Button]
+Caption = 
+Pages = Main
+Left = 350
+Top = 575
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpRight.png
+DownImage = Images/buttonDownRight.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 shiftright
+OnHold = Command Christie0 shiftright
+
+[Button]
+Caption = 
+Pages = Main
+Left = 225
+Top = 475
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpUp.png
+DownImage = Images/buttonDownUp.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 shiftup
+OnHold  = Command Christie0 shiftup
+
+[Button]
+Caption = 
+Pages = Main
+Left = 225
+Top = 675
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpDown.png
+DownImage = Images/buttonDownDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie0 shiftdown
+OnHold  = Command Christie0 shiftdown
+
+[Button]
+Caption = 
+Pages = Main
+Left = 1000
+Top = 575
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpLeft.png
+DownImage = Images/buttonDownLeft.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 shiftleft
+OnHold  = Command Christie1 shiftleft
+
+[Button]
+Caption = 
+Pages = Main
+Left = 1250
+Top = 575
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpRight.png
+DownImage = Images/buttonDownRight.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 shiftright
+OnHold  = Command Christie1 shiftright
+
+[Button]
+Caption = 
+Pages = Main
+Left = 1125
+Top = 475
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpUp.png
+DownImage = Images/buttonDownUp.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 shiftup
+OnHold  = Command Christie1 shiftup
+
+[Button]
+Caption = 
+Pages = Main
+Left = 1125
+Top = 675
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpDown.png
+DownImage = Images/buttonDownDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christie1 shiftdown
+OnHold  = Command Christie1 shiftdown
+

@@ -1,0 +1,26 @@
+protocol Christieinput: tcp-ip
+target-ip: "192.168.1.120:10000"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+query
+{
+    send Mitsubishi ("%1INPT ?" cr)	
+
+    receive
+    {
+        ("%1INPT=11" cr)
+	{
+            set state rgb
+	}
+        ("%1INPT=33" cr)
+	{
+            set state hdmi
+	}
+        timeout
+	{
+	    set state unknown
+	}
+    }
+}

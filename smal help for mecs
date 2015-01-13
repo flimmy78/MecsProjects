@@ -1,0 +1,4 @@
+1. install syslinux. file fs should be FAT32
+syslinux -i /dev/sdb1 
+2. copy bzimage, sysconfig.cfg
+3.run pack and copy initramfs.cpio.gz

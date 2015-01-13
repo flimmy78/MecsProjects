@@ -1,0 +1,7 @@
+::sysinit:/etc/init.d/rcS
+::restart:/sbin/init
+::once:/usr/sbin/lircd --device /dev/lirc0 --repeat-max 3
+::once:/controller/protocolvm
+::once:/usr/sbin/lighttpd -D -f /etc/lighttpd.conf
+::once:/gui/run
+::shutdown:/bin/umount -a -r

@@ -1,0 +1,305 @@
+protocol Apart: socket
+file: "/var/run/lirc/lircd"
+query-period: 10000
+timeout: 300
+
+command eight
+{
+   send Apart ("SEND_START apart eight" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart eight" nl)
+       }
+   }
+}
+
+command eject
+{
+   send Apart ("SEND_START apart eject" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart eject" nl)
+       }
+   }
+}
+
+command fastminus
+{
+   send Apart ("SEND_START apart fastminus" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart fastminus" nl)
+       }
+   }
+}
+
+command fastplus
+{
+   send Apart ("SEND_START apart fastplus" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart fastplus" nl)
+       }
+   }
+}
+
+command five
+{
+   send Apart ("SEND_START apart five" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart five" nl)
+       }
+   }
+}
+
+command four
+{
+   send Apart ("SEND_START apart four" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart four" nl)
+       }
+   }
+}
+
+command mute
+{
+   send Apart ("SEND_START apart mute" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart mute" nl)
+       }
+   }
+}
+
+command next
+{
+   send Apart ("SEND_START apart next" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart next" nl)
+       }
+   }
+}
+
+command nine
+{
+   send Apart ("SEND_START apart nine" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart nine" nl)
+       }
+   }
+}
+
+command one
+{
+   send Apart ("SEND_START apart one" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart one" nl)
+       }
+   }
+}
+
+command pause
+{
+   send Apart ("SEND_START apart pause" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart pause" nl)
+       }
+   }
+}
+
+command play
+{
+   send Apart ("SEND_START apart play" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart play" nl)
+       }
+   }
+}
+
+command power
+{
+   send Apart ("SEND_START apart power" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart power" nl)
+       }
+   }
+}
+
+command prev
+{
+   send Apart ("SEND_START apart prev" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart prev" nl)
+       }
+   }
+}
+
+command random
+{
+   send Apart ("SEND_START apart random" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart random" nl)
+       }
+   }
+}
+
+command repeat
+{
+   send Apart ("SEND_START apart repeat" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart repeat" nl)
+       }
+   }
+}
+
+command seven
+{
+   send Apart ("SEND_START apart seven" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart seven" nl)
+       }
+   }
+}
+
+command six
+{
+   send Apart ("SEND_START apart six" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart six" nl)
+       }
+   }
+}
+
+command stop
+{
+   send Apart ("SEND_START apart stop" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart stop" nl)
+       }
+   }
+}
+
+command three
+{
+   send Apart ("SEND_START apart three" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart three" nl)
+       }
+   }
+}
+
+command two
+{
+   send Apart ("SEND_START apart two" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart two" nl)
+       }
+   }
+}
+
+command usbsdcd
+{
+   send Apart ("SEND_START apart usbsdcd" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart usbsdcd" nl)
+       }
+   }
+}
+
+command volminus
+{
+   send Apart ("SEND_START apart volminus" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart volminus" nl)
+       }
+   }
+}
+
+command volplus
+{
+   send Apart ("SEND_START apart volplus" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart volplus" nl)
+       }
+   }
+}
+
+command zero
+{
+   send Apart ("SEND_START apart zero" nl)
+   receive
+   {
+       timeout
+       {
+           send Apart ("SEND_STOP apart zero" nl)
+       }
+   }
+}
+

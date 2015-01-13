@@ -1,0 +1,21 @@
+The correct kernel option is CONFIG_PATA_IT821X and the patch looks something like this:
+drivers/ata/pata_it821x.c
+static const struct pci_device_id it821x[] = {
+{ PCI_VDEVICE(ITE, PCI_DEVICE_ID_ITE_8211), },
+{ PCI_VDEVICE(ITE, PCI_DEVICE_ID_ITE_8212), },
+{ PCI_VDEVICE(RDC, PCI_DEVICE_ID_RDC_D1010), },
+{ PCI_VDEVICE(RDC, PCI_DEVICE_ID_RDC_D1011), },
+{ },
+};
+include/linux/pci_ids.h
+#define PCI_DEVICE_ID_RDC_D1010         0×1010
+#define PCI_DEVICE_ID_RDC_D1011         0×1011
+
+
+make-kpkg clean --cross-compile - --arch=i386
+linux32 make menuconfig
+export CONCURRENCY_LEVEL=$((`cat /proc/cpuinfo |grep "^processor"|wc -l`*2))
+time linux32 make-kpkg --revision="6.custom" --append-to-version "-486-sd" kernel-image --rootcmd fakeroot --initrd --cross-compile - --arch i386
+deb-reversion -k bash ../linux-image-2.6.32.59-486-sd_6.custom_amd64.deb
+
+Open the file DEBIAN/control with vim/emacs and change "Architecture: amd64" to "Architecture: i386" exit the bash process with ctrl+d 

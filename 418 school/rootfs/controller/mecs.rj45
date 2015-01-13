@@ -1,0 +1,55 @@
+protocol Mecs: tcp-ip
+target-ip: "192.168.1.120:4939"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command down
+{
+   send Mecs ("command Ligramecs down" cr nl)
+}
+
+command downdown
+{
+   send Mecs ("command Ligramecs downdown" cr nl)
+}
+
+command stop
+{
+   send Mecs ("command Ligramecs stop" cr  nl)
+}
+
+command up
+{
+   send Mecs ("command Ligramecs up" cr nl)
+}
+
+command upup
+{
+   send Mecs ("command Ligramecs upup" cr nl)
+}
+
+query
+{
+	send Mecs ("%1POWR ?" cr)	
+	receive
+	{
+		("%1POWR=1" cr)
+		{
+			set state enabled
+		}
+		("%1POWR=0" cr)
+		{
+			set state disabled
+		}
+		("%1POWR=ERR" N:8 cr)
+		{
+			set state error
+		}
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

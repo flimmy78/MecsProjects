@@ -1,0 +1,401 @@
+protocol Lifesize: socket
+file: "/var/run/lirc/lircd"
+query-period: 100000000
+timeout: 300
+
+command blue
+{
+   send Lifesize ("SEND_START lifesize blue" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize blue" nl)
+       }
+   }
+}
+
+command call
+{
+   send Lifesize ("SEND_START lifesize call" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize call" nl)
+       }
+   }
+}
+
+command cam
+{
+   send Lifesize ("SEND_START lifesize cam" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize cam" nl)
+       }
+   }
+}
+
+command cmd
+{
+   send Lifesize ("SEND_START lifesize cmd" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize cmd" nl)
+       }
+   }
+}
+
+command down
+{
+   send Lifesize ("SEND_START lifesize down" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize down" nl)
+       }
+   }
+}
+
+command eigth
+{
+   send Lifesize ("SEND_START lifesize eigth" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize eigth" nl)
+       }
+   }
+}
+
+command five
+{
+   send Lifesize ("SEND_START lifesize five" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize five" nl)
+       }
+   }
+}
+
+command four
+{
+   send Lifesize ("SEND_START lifesize four" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize four" nl)
+       }
+   }
+}
+
+command funcone
+{
+   send Lifesize ("SEND_START lifesize funcone" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize funcone" nl)
+       }
+   }
+}
+
+command functwo
+{
+   send Lifesize ("SEND_START lifesize functwo" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize functwo" nl)
+       }
+   }
+}
+
+command green
+{
+   send Lifesize ("SEND_START lifesize green" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize green" nl)
+       }
+   }
+}
+
+command home
+{
+   send Lifesize ("SEND_START lifesize home" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize home" nl)
+       }
+   }
+}
+
+command hungup
+{
+   send Lifesize ("SEND_START lifesize hungup" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize hungup" nl)
+       }
+   }
+}
+
+command left
+{
+   send Lifesize ("SEND_START lifesize left" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize left" nl)
+       }
+   }
+}
+
+command micmute
+{
+   send Lifesize ("SEND_START lifesize micmute" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize micmute" nl)
+       }
+   }
+}
+
+command nine
+{
+   send Lifesize ("SEND_START lifesize nine" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize nine" nl)
+       }
+   }
+}
+
+command ok
+{
+   send Lifesize ("SEND_START lifesizewithok ok" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesizewithok ok" nl)
+       }
+   }
+}
+
+command one
+{
+   send Lifesize ("SEND_START lifesize one" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize one" nl)
+       }
+   }
+}
+
+command red
+{
+   send Lifesize ("SEND_START lifesize red" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize red" nl)
+       }
+   }
+}
+
+command right
+{
+   send Lifesize ("SEND_START lifesize right" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize right" nl)
+       }
+   }
+}
+
+command seven
+{
+   send Lifesize ("SEND_START lifesize seven" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize seven" nl)
+       }
+   }
+}
+
+command sharp
+{
+   send Lifesize ("SEND_START lifesize sharp" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize sharp" nl)
+       }
+   }
+}
+
+command six
+{
+   send Lifesize ("SEND_START lifesize six" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize six" nl)
+       }
+   }
+}
+
+command star
+{
+   send Lifesize ("SEND_START lifesize star" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize star" nl)
+       }
+   }
+}
+
+command three
+{
+   send Lifesize ("SEND_START lifesize three" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize three" nl)
+       }
+   }
+}
+
+command two
+{
+   send Lifesize ("SEND_START lifesize two" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize two" nl)
+       }
+   }
+}
+
+command up
+{
+   send Lifesize ("SEND_START lifesize up" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize up" nl)
+       }
+   }
+}
+
+command voldown
+{
+   send Lifesize ("SEND_START lifesize voldown" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize voldown" nl)
+       }
+   }
+}
+
+command volup
+{
+   send Lifesize ("SEND_START lifesize volup" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize volup" nl)
+       }
+   }
+}
+
+command yellow
+{
+   send Lifesize ("SEND_START lifesize yellow" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize yellow" nl)
+       }
+   }
+}
+
+command zero
+{
+   send Lifesize ("SEND_START lifesize zero" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize zero" nl)
+       }
+   }
+}
+
+command zoomin
+{
+   send Lifesize ("SEND_START lifesize zoomin" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize zoomin" nl)
+       }
+   }
+}
+
+command zoomout
+{
+   send Lifesize ("SEND_START lifesize zoomout" nl)
+   receive
+   {
+       timeout
+       {
+           send Lifesize ("SEND_STOP lifesize zoomout" nl)
+       }
+   }
+}
+

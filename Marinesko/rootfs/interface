@@ -1,0 +1,236 @@
+[Page]
+Name = Main
+Background = Images/background.jpg
+
+[Button]
+Caption = Включить всё
+Pages = Main
+Left = 25
+Top = 75
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Meta allon
+
+[Button]
+Caption = Выключить всё
+Pages = Main
+Left = 25
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Meta alloff
+
+[Button]
+Caption = 3D
+Pages = Main
+Left = 625
+Top = 75
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Meta threedon
+
+[Button]
+Caption = 2D
+Pages = Main
+Left = 625
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Meta threedoff
+
+[Button]
+Caption = Play
+Pages = Main
+Left = 325
+Top = 75
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia play
+
+[Button]
+Caption = Pause
+Pages = Main
+Left = 325
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia pause
+
+[Button]
+Caption = Prev
+Pages = Main
+Left = 25
+Top = 375
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia prevbookmark
+
+[Button]
+Caption = Next
+Pages = Main
+Left = 625
+Top = 375
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia nextbookmark
+
+[Button]
+Caption = 1
+Pages = Main
+Left = 225
+Top = 375
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia gotobookmarkone
+
+[Button]
+Caption = 2
+Pages = Main
+Left = 425
+Top = 375
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia gotobookmarktwo
+
+[Button]
+Caption = A
+Pages = Main
+Left = 900
+Top = 75
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Apart setinputa
+
+[Button]
+Caption = B
+Pages = Main
+Left = 900
+Top = 175
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Apart setinputb
+
+[Button]
+Caption = C
+Pages = Main
+Left = 900
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Apart setinputc
+
+[Button]
+Caption = D
+Pages = Main
+Left = 900
+Top = 375
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Apart setinputd
+
+[Text]
+Align = center
+Pages = Main
+Left = 25
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 800
+Height = 50
+DefaultText = Переключение
+
+[Text]
+Align = center
+Pages = Main
+Left = 900
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Источник
+
+[Button]
+Caption = Play
+Pages = Main
+Left = 25
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia play
+
+[Button]
+Caption = Pause
+Pages = Main
+Left = 325
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Vimedia pause
+

@@ -1,0 +1,52 @@
+protocol Christiecentral: com
+
+port: 0
+speed: 19200
+character-size: 8
+parity: none
+
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command poweron
+{
+    send Christiecentral ("C00" cr)
+}
+
+command poweroff
+{
+    send Christiecentral ("C01" cr)
+}
+
+command muteon
+{
+    send Christiecentral ("C0D" cr)
+}
+
+command muteoff
+{
+    send Christiecentral ("C0E" cr)
+}
+
+
+
+query
+{
+	send Christiecentral ("CR0" cr)
+	receive
+	{
+	("00" cr)
+	{
+		set state enabled
+	}
+	("80" cr)
+	{
+		set state disabled
+	}	
+	timeout
+	{
+		set state unknown
+	}
+	}
+}

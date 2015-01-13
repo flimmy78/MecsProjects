@@ -1,0 +1,55 @@
+protocol Lg: com
+
+port: 1
+speed: 9600
+character-size: 8
+parity: none
+
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command poweron
+{
+	send Lg ("ka 0 01" cr)
+}
+
+command poweroff
+{
+	send Lg ("ka 0 00" cr)
+}
+
+command muteon
+{
+	send Lg ("kd 0 01" cr)
+	send Lg ("kd 0 10" cr)
+}
+
+command muteoff
+{
+	send Lg ("kd 0 00" cr)
+}
+
+query
+{
+	send Lg ("ka 0 FF" cr)
+	receive
+	{
+	("a 0 OK01x" cr)
+	{
+		set state enabled
+	}
+	("a 0 OK00x" cr)
+	{
+		set state disabled
+	}
+	("a 0 NG00x")
+	{
+		set state incorrect
+	}
+	timeout
+	{
+		set state timeout
+	}
+	}
+}

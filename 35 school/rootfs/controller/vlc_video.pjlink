@@ -1,0 +1,52 @@
+protocol VLCVideo: tcp-ip
+
+target-ip: "192.168.1.170:12889"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command pause
+{
+	send VLCVideo ("pause" cr)
+}
+
+command stop
+{
+	send VLCVideo ("stop" cr)
+}
+
+command play
+{
+	send VLCVideo ("play" cr)
+}
+
+command prev
+{
+	send VLCVideo ("prev" cr)
+}
+
+command next
+{
+	send VLCVideo ("next" cr)
+}
+
+query
+{
+	send VLCVideo ("is_playing" cr)
+
+	receive
+	{
+	("1" cr)
+	{
+		set state enabled
+	}
+	("0" cr)
+	{
+		set state disabled
+	}
+	timeout
+	{
+		set state unknown
+	}
+	}
+}

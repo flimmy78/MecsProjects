@@ -1,0 +1,93 @@
+protocol Christie: tcp-ip
+
+target-ip: "192.168.1.203:3002"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command poweron
+{
+    send Christie ("(PWR 1)" cr)
+}
+
+command poweroff
+{
+    send Christie ("(PWR 0)" cr)
+}
+
+command muteon
+{
+    send Christie ("(PMT 1)" cr)
+}
+
+command muteoff
+{
+    send Christie ("(PMT 0)" cr)
+}
+
+command freezeon
+{
+    send Christie ("(FRZ 1)" cr)
+}
+
+command freezeoff
+{
+    send Christie ("(FRZ 0)" cr)
+}
+
+command autoposition
+{
+    send Christie ("(ASU)" cr)
+}
+
+command hours
+{
+    send Christie ("(PJH ?)" cr)
+}
+
+command setaspectdefault
+{
+    send Christie ("(SZP 0)" cr)
+}
+
+command setaspectnone
+{
+    send Christie ("(SZP 1)" cr)
+}
+
+command setaspectfullscreen
+{
+    send Christie ("(SZP 2)" cr)
+}
+
+command setaspectfullwidth
+{
+    send Christie ("(SZP 3)" cr)
+}
+
+command setaspectfullheight
+{
+    send Christie ("(SZP 4)" cr)
+}
+
+command setaspectanamorphic
+{
+    send Christie ("(SZP 5)" cr)
+}
+
+command setaspectcustom
+{
+    send Christie ("(SZP 6)" cr)
+}
+
+query
+{
+    send Christie ("(PWR ?)" cr)	
+	receive
+	{
+        timeout
+	{
+	    set state unknown
+	}
+    }
+}

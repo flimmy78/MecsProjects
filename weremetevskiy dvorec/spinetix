@@ -1,0 +1,12 @@
+<protocol target='monitor' startup='start'
+	xmlns='http://www.spinetix.com/namespace/1.0/spx'>
+	<state xml:id='start'>
+		<onStart command='PowerOff'>
+			<write data='' />
+		</onStart>
+		<onStart command='PowerOn'>
+			<write data='' />
+		</onStart>
+	</state>
+</protocol>
+			

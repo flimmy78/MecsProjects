@@ -1,0 +1,47 @@
+protocol VLCAudio: tcp-ip
+
+target-ip: "192.168.1.170:4290"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command pause
+{
+    send VLCAudio ("pause" cr)
+}
+
+command play
+{
+    send VLCAudio ("play" cr)
+}
+
+command prev
+{
+    send VLCAudio ("prev" cr)
+}
+
+command next
+{
+    send VLCAudio ("next" cr)
+}
+
+query
+{
+    send VLCAudio ("is_playing" cr)	
+
+    receive
+    {
+    ("1" cr)
+	{
+        set state enabled
+	}
+    ("0" cr)
+	{
+       set state disabled
+	}
+	timeout
+	{
+	    set state unknown
+	}
+    }
+}

@@ -1,0 +1,146 @@
+[Page]
+
+Name = Main
+Background = Images/aqua_back.png
+
+[Text]
+
+Pages = Main
+
+Align = left
+Left = 45
+Top = 25
+Width = 200
+Height = 50
+
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+DefaultText = Controls
+
+[Button]
+
+Pages = Main
+
+Caption = On
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 25
+Top = 80
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick  = Command Mitsubishi poweron
+
+
+[Button]
+
+Pages = Main
+
+Caption = Off
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 225
+Top = 80
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command Mitsubishi poweroff
+
+
+[ToggleButton]
+
+Pages = Main
+
+Caption = Mute
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 425
+Top = 80
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnDown = Command Mitsubishi muteon
+OnUp = Command Mitsubishi muteoff
+
+[Text]
+
+Pages = Main
+
+Align = left
+Left = 45
+Top = 185
+Width = 200
+Height = 50
+
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+DefaultText = Inputs
+
+[Button]
+
+Pages = Main
+
+Caption = Computer 1
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 25
+Top = 235
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command Mitsubishi inputcompone
+
+[Button]
+
+Pages = Main
+
+Caption = Computer 2
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 225
+Top = 235
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command Mitsubishi inputcomptwo
+
+[Button]
+
+Pages = Main
+
+Caption = HDMI
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 425
+Top = 235
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command Mitsubishi inputhdmi
+

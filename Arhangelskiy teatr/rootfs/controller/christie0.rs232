@@ -1,0 +1,121 @@
+protocol Christie0: com
+port: 1
+speed: 9600
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command focusminus
+{
+   send Christie0 ("C4A" cr)
+}
+
+command focusplus
+{
+   send Christie0 ("C4B" cr)
+}
+
+command inputfour
+{
+	send Christie0 ("C08" cr)
+
+}
+
+command inputone
+{
+   send Christie0 ("C05" cr)
+
+}
+
+command inputthree
+{
+   send Christie0 ("C07" cr)
+}
+
+command inputtwo
+{
+   send Christie0 ("C06" cr)
+}
+
+command muteoff
+{
+   send Christie0 ("C0E" cr)
+}
+
+command muteon
+{
+   send Christie0 ("C0D" cr)
+}
+
+command poweoff
+{
+   send Christie0 ("C01" cr)
+}
+
+command poweron
+{
+   send Christie0 ("C00" cr)
+}
+
+command screenfull
+{
+   send Christie0 ("C10" cr)
+}
+
+command screennormal
+{
+   send Christie0 ("C0F" cr)
+}
+
+command shiftdown
+{
+   send Christie0 ("C5E" cr)
+}
+
+command shiftleft
+{
+   send Christie0 ("C5F" cr)
+}
+
+command shiftright
+{
+   send Christie0 ("C60" cr)
+}
+
+command shiftup
+{
+   send Christie0 ("C5D" cr)
+}
+
+command zoomminus
+{
+   send Christie0 ("C46" cr)
+}
+
+command zoomplus
+{
+   send Christie0 ("C47" cr)
+}
+
+query
+{	
+	send Christie0 ("CR0" cr)
+    receive
+    {
+    	("00" cr)
+    	{
+    		set state enabled
+    	}
+    	("80" cr)
+    	{
+    		set state disabled
+    	}
+       timeout
+		{
+			set state unknown
+		}
+    }
+}

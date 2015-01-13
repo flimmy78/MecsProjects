@@ -1,0 +1,134 @@
+protocol ApartPC1000R: com
+port: 0
+speed: 38400
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command cdmuteoff
+{
+   send ApartPC1000R ("CD MUTE OFF")
+}
+
+command cdmuteon
+{
+   send ApartPC1000R ("CD MUTE ON")
+}
+
+command eject
+{
+   send ApartPC1000R ("EJECT")
+}
+
+command fastminus
+{
+   send ApartPC1000R ("FAST-")
+}
+
+command fastminusminus
+{
+   send ApartPC1000R ("Fast-")
+}
+
+command fastplus
+{
+   send ApartPC1000R ("FAST+")
+}
+
+command input
+{
+   send ApartPC1000R ("INPUT")
+}
+
+command off
+{
+   send ApartPC1000R ("OFF")
+}
+
+command on
+{
+   send ApartPC1000R ("ON")
+}
+
+command pause
+{
+   send ApartPC1000R ("PAUSE")
+}
+
+command play
+{
+   send ApartPC1000R ("PLAY")
+}
+
+command randomoff
+{
+   send ApartPC1000R ("RANDOM OFF")
+}
+
+command randomon
+{
+   send ApartPC1000R ("RANDOM ON")
+}
+
+command repeatall
+{
+   send ApartPC1000R ("REPEAT ALL")
+}
+
+command repeatoff
+{
+   send ApartPC1000R ("REPEAT OFF")
+}
+
+command repeatone
+{
+   send ApartPC1000R ("REPEAT 1")
+}
+
+command skip
+{
+   send ApartPC1000R ("SKIP+")
+}
+
+command skipbackward
+{
+   send ApartPC1000R ("SKIP-")
+}
+
+command skipforward
+{
+   send ApartPC1000R ("SKIP+")
+}
+
+command stop
+{
+   send ApartPC1000R ("STOP")
+}
+
+command volmunus
+{
+   send ApartPC1000R ("VOL-")
+}
+
+command volplus
+{
+   send ApartPC1000R ("VOL+")
+}
+
+
+
+query
+{
+    send ApartPC1000R (cr)	
+
+    receive
+    {    
+        timeout
+		{
+			set state unknown
+		}
+    }
+}

@@ -1,0 +1,101 @@
+protocol Christier: tcp-ip
+
+target-ip: "192.168.1.120:3002"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command poweron
+{
+    send Christier ("(PWR 1)" cr)
+}
+
+command poweroff
+{
+    send Christier ("(PWR 0)" cr)
+}
+
+command muteon
+{
+    send Christier ("(SHU 1)" cr)
+}
+
+command muteoff
+{
+    send Christier ("(SHU 0)" cr)
+}
+
+command freezeon
+{
+    send Christier ("(FRZ 1)" cr)
+}
+
+command freezeoff
+{
+    send Christier ("(FRZ 0)" cr)
+}
+
+command autoposition
+{
+    send Christier ("(ASU)" cr)
+}
+
+command hours
+{
+    send Christier ("(PJH ?)" cr)
+}
+
+command setaspectdefault
+{
+    send Christier ("(SZP 0)" cr)
+}
+
+command setaspectnone
+{
+    send Christier ("(SZP 1)" cr)
+}
+
+command setaspectfullscreen
+{
+    send Christier ("(SZP 2)" cr)
+}
+
+command setaspectfullwidth
+{
+    send Christier ("(SZP 3)" cr)
+}
+
+command setaspectfullheight
+{
+    send Christier ("(SZP 4)" cr)
+}
+
+command setaspectanamorphic
+{
+    send Christier ("(SZP 5)" cr)
+}
+
+command setaspectcustom
+{
+    send Christier ("(SZP 6)" cr)
+}
+
+query
+{
+    send Christier ("(PWR?)" cr)	
+	receive
+	{
+	("(PWR!1)")
+	{
+    	set state enabled
+	}
+	("(PWR!0)")
+	{
+    	set state disabled
+	}	
+        timeout
+	{
+	    set state unknown
+	}
+    }
+}

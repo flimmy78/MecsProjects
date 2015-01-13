@@ -1,0 +1,56 @@
+protocol Cypress: com
+port: 1
+speed: 19200
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command hdmione
+{
+   send Cypress ("S SOURCE 1" cr nl)
+}
+
+command hdmitwo
+{
+   send Cypress ("S SOURCE 2" cr nl)
+}
+
+command hdmithree
+{
+   send Cypress ("S SOURCE 3" cr nl)
+}
+
+
+command compone
+{
+   send Cypress ("S SOURCE 6" cr nl)
+}
+
+command comptwo
+{
+   send Cypress ("S SOURCE 7" cr nl)
+}
+
+command poweroff
+{
+   send Cypress ("S POWER 0" cr nl)
+}
+
+command poweron
+{
+   send Cypress ("S POWER 1" cr nl)
+}
+
+query
+{
+receive
+{
+timeout
+{
+set state unknown
+}
+}
+}

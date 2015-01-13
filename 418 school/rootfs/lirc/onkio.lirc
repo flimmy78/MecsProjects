@@ -1,0 +1,56 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.8.6(default) on Tue Mar 16 08:26:44 2010
+#
+# contributed by 
+#
+# brand:                       onkio.lirc
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  onkio.lirc
+  flags RAW_CODES|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  gap          108667
+
+      begin raw_codes
+
+          name Volup
+             9090    4430     642     492     642    1602
+              640     498     638     498     636    1609
+              640     492     637    1610     636    1606
+              639    1608     632    1608     637     504
+              634     502     637     492     640     496
+              639     503     631     501     638     498
+              637    1603     639     490     645     496
+              644     493     640     494     640     499
+              636     495     642    1606     639     496
+              640    1603     646    1600     638    1604
+              642    1605     639    1600     642    1606
+              637
+
+          name Voldown
+             9092    4434     636     501     633    1608
+              640     499     632     504     633    1612
+              632     497     643    1602     642    1603
+              636    1611     636    1607     641     493
+              638     489     645     498     643     493
+              644     493     637     495     640    1604
+              642    1604     639     495     640     496
+              643     494     639     495     637     500
+              641     494     638     498     639     500
+              635    1600     644    1605     639    1604
+              638    1608     635    1609     635    1614
+              633
+
+      end raw_codes
+
+end remote

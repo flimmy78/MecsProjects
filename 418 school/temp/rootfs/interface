@@ -1,0 +1,68 @@
+[Page]
+Name = Main
+Background = Images/background.jpg
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpDown.png
+DownImage = Images/buttonDownDown.png
+HeldImage = Images/buttonDownDown.png
+OnClick  = Command Ligra down
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpStop.png
+DownImage = Images/buttonDownStop.png
+HeldImage = Images/buttonDownStop.png
+OnClick  = Command Ligra stop
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpUp.png
+DownImage = Images/buttonDownUp.png
+HeldImage = Images/buttonDownUp.png
+OnClick  = Command Ligra up
+
+[Button]
+Caption = 
+Pages = Main
+Left = 150
+Top = 425
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUpDD.png
+DownImage = Images/buttonSmallDownDD.png
+HeldImage = Images/buttonSmallDownDD.png
+OnClick  = Command Ligra downdown
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 425
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUpUU.png
+DownImage = Images/buttonSmallDownUU.png
+HeldImage = Images/buttonSmallDownUU.png
+OnClick  = Command Ligra upup

@@ -1,0 +1,17 @@
+
+Log started at Fri Sep 14 02:12:32 2012
+
+Error: Line 785: Line length exceeds 1024 characters
+Info: Connection established
+Error: Connection lost
+Info: Connection established
+Error: Connection lost
+Info: Connection established
+Error: Connection lost
+Info: Connection established
+Error: Connection lost
+
+Log started at Thu Sep 13 22:16:51 2012
+
+Error: Couldn't set console screen info
+Error: Failed to initialize SDL

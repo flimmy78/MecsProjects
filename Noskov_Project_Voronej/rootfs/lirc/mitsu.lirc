@@ -1,0 +1,46 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.8.6(default) on Wed Mar 10 07:05:30 2010
+#
+# contributed by 
+#
+# brand:                       m.l
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  m.l
+  flags RAW_CODES|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  gap          69268
+
+      begin raw_codes
+
+          name poweron
+             8511    4054     662     387     662     388
+              630     421     639     410     638    1456
+              661    1432     661    1431     660    1455
+              642    4073     659    1432     663     390
+              633     415     637     457     591     417
+              659     390     660    1434     660     390
+              636
+
+          name poweroff
+             8485    4079     662     387     638     413
+              637     415     635     412     638    1450
+              668    1431     664    1428     665    1429
+              663    4065     670     385     637    1459
+              662     388     636     413     639     413
+              637     415     635    1448     669     391
+              636
+
+      end raw_codes
+
+end remote

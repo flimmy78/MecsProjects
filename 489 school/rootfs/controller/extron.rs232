@@ -1,0 +1,54 @@
+protocol Extron: com
+port: 1
+speed: 9600
+character-size: 8
+parity: none
+query-period: 1000
+timeout: 900
+case-sensitive: false
+
+
+command infour
+{
+   send Extron ("4!")
+}
+
+command inone
+{
+   send Extron ("1!")
+}
+
+command inthree
+{
+   send Extron ("3!")
+}
+
+command intwo
+{
+   send Extron ("2!")
+}
+
+
+query
+{
+	send Extron ("i")
+    receive
+    {    
+	    ("V1 A1")
+		{
+            set state onee
+		}
+	    ("V2 A2")
+		{
+            set state twoe
+		}
+	    ("V3 A3")
+		{
+            set state threee
+		}				
+        timeout
+		{
+			set state unknown
+		}
+    }
+}

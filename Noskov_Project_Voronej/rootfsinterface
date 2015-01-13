@@ -1,0 +1,498 @@
+[Page]
+Name = Main
+Background = Images/background.jpg
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpDown.png
+DownImage = Images/buttonDownDown.png
+HeldImage = Images/buttonDownDown.png
+OnClick  = Command Ligra down
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpStop.png
+DownImage = Images/buttonDownStop.png
+HeldImage = Images/buttonDownStop.png
+OnClick  = Command Ligra stop
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpUp.png
+DownImage = Images/buttonDownUp.png
+HeldImage = Images/buttonDownUp.png
+OnClick  = Command Ligra up
+
+[Button]
+Caption = 
+Pages = Main
+Left = 150
+Top = 425
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUpDD.png
+DownImage = Images/buttonSmallDownDD.png
+HeldImage = Images/buttonSmallDownDD.png
+OnClick  = Command Ligra downdown
+
+[Button]
+Caption = 
+Pages = Main
+Left = 50
+Top = 425
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUpUU.png
+DownImage = Images/buttonSmallDownUU.png
+HeldImage = Images/buttonSmallDownUU.png
+OnClick  = Command Ligra upup
+
+[Button]
+Caption = 
+Pages = Main
+Left = 800
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpUp.png
+DownImage = Images/buttonDownUp.png
+HeldImage = Images/buttonDownUp.png
+OnClick  = Command Mecs up
+
+[Button]
+Caption = 
+Pages = Main
+Left = 800
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpStop.png
+DownImage = Images/buttonDownStop.png
+HeldImage = Images/buttonDownStop.png
+OnClick  = Command Mecs stop
+
+[Button]
+Caption = 
+Pages = Main
+Left = 800
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUpDown.png
+DownImage = Images/buttonDownDown.png
+HeldImage = Images/buttonDownDown.png
+OnClick  = Command Mecs down
+
+[Button]
+Caption = 
+Pages = Main
+Left = 800
+Top = 425
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUpUU.png
+DownImage = Images/buttonSmallDownUU.png
+HeldImage = Images/buttonSmallDownUU.png
+OnClick  = Command Mecs upup
+
+[Button]
+Caption = 
+Pages = Main
+Left = 900
+Top = 425
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUpDD.png
+DownImage = Images/buttonSmallDownDD.png
+HeldImage = Images/buttonSmallDownDD.png
+OnClick  = Command Mecs downdown
+
+[Button]
+Caption = Вкл
+Pages = Main
+Left = 300
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Epson poweron
+
+[Button]
+Caption = Выкл
+Pages = Main
+Left = 300
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Epson poweroff
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Main
+Left = 300
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+
+
+OnDown = Command Epson muteon
+OnUp = Command Epson muteoff
+
+[Button]
+Caption = Вкл
+Pages = Main
+Left = 550
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Mitsubishi poweron
+
+[Button]
+Caption = Выкл
+Pages = Main
+Left = 550
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Mitsubishi poweroff
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Main
+Left = 550
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+
+
+OnDown = Command Mitsubishi muteon
+OnUp = Command Mitsubishi muteoff
+
+[Button]
+Caption = 1 на все
+Pages = Main
+Left = 1050
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Extron onetoall
+
+[Button]
+Caption = 2 на все
+Pages = Main
+Left = 1050
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Extron twotoall
+
+[Button]
+Caption = 3 на все
+Pages = Main
+Left = 1050
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Extron threetoall
+
+[Button]
+Caption = 1 на 1
+Pages = Main
+Left = 1275
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Extron onetoone
+
+[Button]
+Caption = 1 на 2
+Pages = Main
+Left = 1275
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Extron onetotwo
+
+[Button]
+Caption = 2 на 1
+Pages = Main
+Left = 1275
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Extron twotoone
+
+[Button]
+Caption = 2 на 2
+Pages = Main
+Left = 1275
+Top = 425
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Extron twototwo
+
+[Button]
+Caption = 1
+Pages = Main
+Left = 50
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presetone
+
+[Button]
+Caption = 2
+Pages = Main
+Left = 175
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presettwo
+
+[Button]
+Caption = 3
+Pages = Main
+Left = 300
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presetthree
+
+[Button]
+Caption = 4
+Pages = Main
+Left = 425
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presetfour
+
+[Button]
+Caption = 5
+Pages = Main
+Left = 550
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presetfive
+
+[Button]
+Caption = 6
+Pages = Main
+Left = 675
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presetsix
+
+[Button]
+Caption = 7
+Pages = Main
+Left = 800
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presetseven
+
+[Button]
+Caption = 8
+Pages = Main
+Left = 925
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter preseteight
+
+[Button]
+Caption = 9
+Pages = Main
+Left = 1050
+Top = 700
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Jupiter presetnine
+
+[Text]
+Align = center
+Pages = Main
+Left = 50
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Экран
+
+[Text]
+Align = center
+Pages = Main
+Left = 300
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор
+
+[Text]
+Align = center
+Pages = Main
+Left = 550
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор
+
+[Text]
+Align = center
+Pages = Main
+Left = 800
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Экран
+
+[Text]
+Align = center
+Pages = Main
+Left = 1100
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 300
+Height = 50
+DefaultText = Переключение
+
+[Text]
+Align = center
+Pages = Main
+Left = 425
+Top = 625
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 400
+Height = 50
+DefaultText = Шаблоны
+

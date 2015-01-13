@@ -1,0 +1,80 @@
+protocol Jupiter: tcp-ip
+target-ip: "192.168.1.124:48630"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command preseteight
+{
+   send Jupiter ("LP 8" cr)
+}
+
+command presetfive
+{
+   send Jupiter ("LP 5" cr)
+}
+
+command presetfour
+{
+   send Jupiter ("LP 4" cr)
+}
+
+command presetnine
+{
+   send Jupiter ("LP 9" cr)
+}
+
+command presetone
+{
+   send Jupiter ("LP 1" cr)
+}
+
+command presetonezero
+{
+   send Jupiter ("LP 10" cr)
+}
+
+command presetseven
+{
+   send Jupiter ("LP 7" cr)
+}
+
+command presetsix
+{
+   send Jupiter ("LP 6" cr)
+}
+
+command presetthree
+{
+   send Jupiter ("LP 3" cr)
+}
+
+command presettwo
+{
+   send Jupiter ("LP 2" cr)
+}
+
+query
+{
+	send Jupiter ("%1POWR ?" cr)	
+	receive
+	{
+		("%1POWR=1" cr)
+		{
+			set state enabled
+		}
+		("%1POWR=0" cr)
+		{
+			set state disabled
+		}
+		("%1POWR=ERR" N:8 cr)
+		{
+			set state error
+		}
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

@@ -1,0 +1,27 @@
+protocol Epson: tcp-ip
+target-ip: ":4352"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command muteoff
+{
+   send Epson ("%1AVMT 30" cr)
+}
+
+command muteon
+{
+   send Epson ("%1AVMT 31" cr)
+}
+
+command poweroff
+{
+   send Epson ("%1POWR 0" cr)
+}
+
+command poweron
+{
+   send Epson ("%1POWR 1" cr)
+}
+

@@ -1,0 +1,3 @@
+#!/bin/sh
+rm /log.txt
+/controller/protocolvm0_1004 --log &

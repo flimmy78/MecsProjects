@@ -1,0 +1,158 @@
+[Page]
+Name = Main
+Background = Images/background.jpg
+
+[Button]
+Caption = Включить
+Pages = Main
+Left = 25
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharp poweron
+
+[Button]
+Caption = Выключить
+Pages = Main
+Left = 25
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharp poweroff
+
+[Button]
+Caption = DVI
+Pages = Main
+Left = 275
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharp inputdvipc
+
+[Button]
+Caption = RGB
+Pages = Main
+Left = 275
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharp inputrgbpc
+
+[Button]
+Caption = HDMI
+Pages = Main
+Left = 275
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharp inputhdmipc
+
+[Button]
+Caption = DVI
+Pages = Main
+Left = 575
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharptwo inputdvipc
+
+[Button]
+Caption = RGB
+Pages = Main
+Left = 577
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharptwo inputrgbpc
+
+[Button]
+Caption = HDMI
+Pages = Main
+Left = 577
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharptwo inputhdmipc
+
+[Button]
+Caption = Включить
+Pages = Main
+Left = 825
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharptwo poweron
+
+[Button]
+Caption = Выключить
+Pages = Main
+Left = 825
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonDown.png
+OnClick  = Command Sharptwo poweroff
+
+[Text]
+Align = center
+Pages = Main
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Первый телевизор
+
+[Text]
+Align = center
+Pages = Main
+Left = 575
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Второй телевизор
+

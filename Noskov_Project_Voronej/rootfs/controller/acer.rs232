@@ -1,0 +1,55 @@
+protocol Acer: com
+port: 0
+speed: 9600
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command freeze
+{
+   send Acer ("* 0 IR 007" cr)
+}
+
+command mute
+{
+   send Acer ("* 0 IR 030" cr)
+}
+
+command poweroff
+{
+   send Acer ("* 0 IR 002" cr)
+}
+
+command poweron
+{
+   send Acer ("* 0 IR 001" cr)
+}
+
+command poweroffall
+{
+   send Acer ("* 0 IR 002" cr)
+   send Kramer ("Y 6 0 0 " cr nl)
+   send Apart ("SET STANDBY ON" cr)
+}
+
+command poweronall
+{
+   send Acer ("* 0 IR 001" cr)
+   send Kramer ("Y 6 0 1 " cr nl)
+   send Apart ("SET STANDBY OFF" cr)
+
+}
+
+query
+{
+receive
+{
+timeout
+{
+set state unknown
+}
+}
+}

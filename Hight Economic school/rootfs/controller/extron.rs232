@@ -1,0 +1,72 @@
+protocol Extron: com
+port: 0
+speed: 9600
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command fourforall
+{
+   send Extron ("4*!")
+}
+
+command onetoall
+{
+   send Extron ("1*!")
+}
+
+command threetoall
+{
+   send Extron ("3*!")
+}
+
+command twotoall
+{
+   send Extron ("2*!")
+}
+
+command pc
+{
+   send Extron ("2*!")
+}
+
+command luk
+{
+   send Extron ("3*1!")
+   send Extron ("3*2!")   
+   send Extron ("3*4!")      
+}
+
+command vks
+{
+   send Extron ("1*1!")
+   send Extron ("1*2!")   
+}
+
+query
+{
+    send Extron ("1&")
+
+    receive
+    {
+    	("1" cr)
+		{
+			set state one
+		}
+		("2" cr)
+		{
+			set state two
+		}
+		("3" cr)
+		{
+			set state three
+		}
+    	timeout
+		{
+	    	set state unknown
+		}
+    }
+}

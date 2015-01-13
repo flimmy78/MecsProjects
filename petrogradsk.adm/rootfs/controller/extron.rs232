@@ -1,0 +1,125 @@
+protocol Extron: com
+
+port: 0
+speed: 9600
+character-size: 8
+parity: none
+
+query-period: 100000
+timeout: 1000
+case-sensitive: false
+
+
+command ineight
+{
+   send Extron ("8")
+}
+
+command infive
+{
+   send Extron ("5")
+}
+
+command infour
+{
+   send Extron ("4")
+}
+
+command inone
+{
+   send Extron ("1")
+}
+
+command inseven
+{
+   send Extron ("7")
+}
+
+command insix
+{
+   send Extron ("6")
+}
+
+command inthree
+{
+   send Extron ("3")
+}
+
+command intwo
+{
+   send Extron ("2")
+}
+
+command outeight
+{
+   send Extron ("*8")
+}
+
+command outfive
+{
+   send Extron ("*5")
+}
+
+command outfour
+{
+   send Extron ("*4")
+}
+
+command outone
+{
+   send Extron ("*1")
+}
+
+command outseven
+{
+   send Extron ("*7")
+}
+
+command outsix
+{
+   send Extron ("*6")
+}
+
+command outthree
+{
+   send Extron ("*3")
+}
+
+command outtwo
+{
+   send Extron ("*2")
+}
+
+command tieall
+{
+   send Extron ("!")
+}
+
+command tieaudio
+{
+   send Extron ("$")
+}
+
+command tiergb
+{
+   send Extron ("&")
+}
+
+command tievideo
+{
+   send Extron ("%")
+}
+
+
+
+query
+{
+	send Extron ("X")
+	receive
+	{
+	timeout
+	{
+		set state timeout
+	}
+	}
+}

@@ -1,0 +1,109 @@
+lutc-viking moxa # ./mxinst 
+
+===============================================================================
+Copyright (C) 2002-2012  Moxa Inc.
+All Rights Reserved.
+
+MOXA NPort Server Real TTY Driver V1.18 Installation.
+System Imformation: Kernel 3.0.0-17-generic; Machine x86_64.
+===============================================================================
+
+
+Tar files, please wait ... OK!
+Building driver...
+
+If you want to use secure communication with target,
+you might choose [y] to enable the SSL function.
+Note: This function support RealCOM with secure mode only.
+Do you want to enable secure function? [y/N].
+n
+make -C /lib/modules/3.0.0-17-generic/build SUBDIRS=/home/lutc/MECS/projects/MRSK/doc/viAudio/tmp/moxa modules
+make[1]: Entering directory `/usr/src/linux-headers-3.0.0-17-generic'
+  CC [M]  /home/lutc/MECS/projects/MRSK/doc/viAudio/tmp/moxa/npreal2.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/lutc/MECS/projects/MRSK/doc/viAudio/tmp/moxa/npreal2.mod.o
+  LD [M]  /home/lutc/MECS/projects/MRSK/doc/viAudio/tmp/moxa/npreal2.ko
+make[1]: Leaving directory `/usr/src/linux-headers-3.0.0-17-generic'
+cp -p npreal2.ko /lib/modules/3.0.0-17-generic/kernel/drivers/char/
+depmod -a
+cc -c npreal2d.c
+npreal2d.c: In function ‘moxattyd_change_config’:
+npreal2d.c:1719:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[40]’ [-Wformat]
+npreal2d.c:1720:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[160]’ [-Wformat]
+npreal2d.c:1721:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char (*)[160]’ [-Wformat]
+npreal2d.c:1727:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘char (*)[160]’ [-Wformat]
+npreal2d.c:1730:7: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘char (*)[160]’ [-Wformat]
+npreal2d.c:1730:7: warning: format ‘%s’ expects argument of type ‘char *’, but argument 4 has type ‘char (*)[160]’ [-Wformat]
+npreal2d.c:1734:3: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘char (*)[160]’ [-Wformat]
+npreal2d.c:1737:7: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘char (*)[160]’ [-Wformat]
+npreal2d.c:1737:7: warning: format ‘%s’ expects argument of type ‘char *’, but argument 4 has type ‘char (*)[160]’ [-Wformat]
+cc npreal2d.o -o npreal2d
+strip	npreal2d
+cc -c redund_main.c
+cc -c redund.c
+cc	redund_main.o redund.o -lpthread -o npreal2d_redund
+strip	npreal2d_redund
+cc -o mxaddsvr mxaddsvr.c
+mxaddsvr.c: In function ‘main’:
+mxaddsvr.c:559:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+mxaddsvr.c:733:10: warning: reading through null pointer (argument 13) [-Wformat]
+mxaddsvr.c:733:10: warning: format ‘%s’ expects argument of type ‘char *’, but argument 13 has type ‘void *’ [-Wformat]
+strip mxaddsvr
+cc -o mxdelsvr mxdelsvr.c
+mxdelsvr.c: In function ‘main’:
+mxdelsvr.c:74:13: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+mxdelsvr.c:129:13: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+mxdelsvr.c:225:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+strip mxdelsvr
+cc -o mxcfmat mxcfmat.c
+mxcfmat.c: In function ‘main’:
+mxcfmat.c:44:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+strip mxcfmat
+cc -o mxloadsvr mxloadsvr.c
+mxloadsvr.c: In function ‘modify_script’:
+mxloadsvr.c:146:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+mxloadsvr.c:159:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+mxloadsvr.c: In function ‘main’:
+mxloadsvr.c:262:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+strip mxloadsvr
+cc -o mxsetsec mxsetsec.c
+mxsetsec.c: In function ‘main’:
+mxsetsec.c:202:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+mxsetsec.c:290:9: warning: passing argument 2 of ‘getline’ from incompatible pointer type [enabled by default]
+/usr/include/stdio.h:671:20: note: expected ‘size_t * __restrict__’ but argument is of type ‘int *’
+strip mxsetsec
+Check Driver...
+Copying configurations files ... OK!
+Copying driver files ... OK!
+Load driver...
+OK!
+
+Loading TTY Driver...
+ Adding system startup for /etc/init.d/npreals ...
+   /etc/rc0.d/K90npreals -> ../init.d/npreals
+   /etc/rc1.d/K90npreals -> ../init.d/npreals
+   /etc/rc6.d/K90npreals -> ../init.d/npreals
+   /etc/rc2.d/S90npreals -> ../init.d/npreals
+   /etc/rc3.d/S90npreals -> ../init.d/npreals
+   /etc/rc4.d/S90npreals -> ../init.d/npreals
+   /etc/rc5.d/S90npreals -> ../init.d/npreals
+Complete.
+
+
+
+===============================================================================
+Installation process is completed.
+The all driver files are installed on /usr/lib/npreal2/driver.
+Now you can cd /usr/lib/npreal2/driver and run ./mxaddsvr to add tty port.
+===============================================================================
+

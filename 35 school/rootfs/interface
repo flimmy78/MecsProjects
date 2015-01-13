@@ -1,0 +1,295 @@
+[Page]
+
+Name = Main
+Background = Images/aqua_back.png
+
+[Indicator]
+Name = VLCServerStatus
+Pages = Main
+
+Left = 700
+Top = 10
+
+State = VLCServer state
+DefaultState = error
+
+Image enabled = Images/roundGreen_btn.png
+Image error = Images/roundRed_btn.png
+
+[Text]
+
+Pages = Main
+
+Align = Center
+Left = 115
+Top = 25
+Width = 200
+Height = 50
+
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+DefaultText = Контент для проектора
+
+[Button]
+
+Pages = Main
+
+Caption = Видео 1
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 25
+Top = 70
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command VLCServer videoa
+
+[Button]
+
+Pages = Main
+
+Caption = Видео 2
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 25
+Top = 165
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command VLCServer videob
+
+[Button]
+
+Pages = Main
+
+Caption = Аудио 1
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 225
+Top = 70
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command VLCServer audioa
+
+[Button]
+
+Pages = Main
+
+Caption = Аудио 2
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 225
+Top = 165
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command VLCServer audiob
+
+[Text]
+
+Pages = Main
+
+Align = Center
+Left = 120
+Top = 255
+Width = 200
+Height = 50
+
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+DefaultText = Видео-плеер
+
+[Button]
+
+Pages = Main
+
+Caption = Пауза
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 80
+Top = 300
+
+UpImage = Images/round_btn.png
+DownImage = Images/round_light_btn.png
+HeldImage = Images/round_light_btn.png
+
+OnClick = Command VLCVideo pause
+
+[Button]
+
+Pages = Main
+
+Caption = <<
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 180
+Top = 300
+
+UpImage = Images/round_btn.png
+DownImage = Images/round_light_btn.png
+HeldImage = Images/round_light_btn.png
+
+OnClick = Command VLCVideo prev
+
+[Button]
+
+Pages = Main
+
+Caption = >>
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 280
+Top = 300
+
+UpImage = Images/round_btn.png
+DownImage = Images/round_light_btn.png
+HeldImage = Images/round_light_btn.png
+
+OnClick = Command VLCVideo next
+
+[Text]
+
+Pages = Main
+
+Align = Center
+Left = 120
+Top = 405
+Width = 200
+Height = 50
+
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+DefaultText = Аудио-плеер
+
+[Button]
+
+Pages = Main
+
+Caption = Пауза
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 80
+Top = 450
+
+UpImage = Images/round_btn.png
+DownImage = Images/round_light_btn.png
+HeldImage = Images/round_light_btn.png
+
+OnClick = Command VLCAudio pause
+
+[Button]
+
+Pages = Main
+
+Caption = <<
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 180
+Top = 450
+
+UpImage = Images/round_btn.png
+DownImage = Images/round_light_btn.png
+HeldImage = Images/round_light_btn.png
+
+OnClick = Command VLCAudio prev
+
+[Button]
+
+Pages = Main
+
+Caption = >>
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 280
+Top = 450
+
+UpImage = Images/round_btn.png
+DownImage = Images/round_light_btn.png
+HeldImage = Images/round_light_btn.png
+
+OnClick = Command VLCAudio next
+
+[Text]
+
+Pages = Main
+
+Align = Center
+Left = 445
+Top = 25
+Width = 200
+Height = 50
+
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+DefaultText = Проектор
+
+[ToggleButton] 
+
+Pages = Main
+
+Caption = Mute
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 450
+Top = 70
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnDown = Command Mitsubishi muteon
+OnUp = Command Mitsubishi muteoff
+
+[Button]
+
+Pages = Main
+
+Caption = Вкл./выкл.
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+
+Left = 450
+Top = 165
+
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+OnClick = Command Mitsubishi poweron
+OnHold = Command Mitsubishi poweroff

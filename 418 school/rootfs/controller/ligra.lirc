@@ -1,0 +1,65 @@
+protocol Ligra: socket
+file: "/var/run/lirc/lircd"
+query-period: 10000
+timeout: 300
+
+command down
+{
+   send Ligra ("SEND_START ligra down" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligra ("SEND_STOP ligra down" nl)
+       }
+   }
+}
+
+command downdown
+{
+   send Ligra ("SEND_START ligra downdown" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligra ("SEND_STOP ligra downdown" nl)
+       }
+   }
+}
+
+command stop
+{
+   send Ligra ("SEND_START ligra stop" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligra ("SEND_STOP ligra stop" nl)
+       }
+   }
+}
+
+command up
+{
+   send Ligra ("SEND_START ligra up" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligra ("SEND_STOP ligra up" nl)
+       }
+   }
+}
+
+command upup
+{
+   send Ligra ("SEND_START ligra upup" nl)
+   receive
+   {
+       timeout
+       {
+           send Ligra ("SEND_STOP ligra upup" nl)
+       }
+   }
+}
+

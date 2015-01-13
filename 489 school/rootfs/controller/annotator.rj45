@@ -1,0 +1,65 @@
+protocol Annotator: tcp-ip
+target-ip: "192.168.1.55:23"
+query-period: 1000
+timeout: 900
+case-sensitive: false
+
+
+command infive
+{
+   send Annotator ("5!")
+}
+
+command infour
+{
+   send Annotator ("4!")
+}
+
+command inone
+{
+   send Annotator ("1!")
+}
+
+command inseven
+{
+   send Annotator ("7!")
+}
+
+command insix
+{
+   send Annotator ("6!")
+}
+
+command inthree
+{
+   send Annotator ("3!")
+}
+
+command intwo
+{
+   send Annotator ("2!")
+}
+
+query
+{
+   	send Annotator ("!")
+    receive
+    {    
+	    ("1" cr nl)
+		{
+            set state one
+		}
+		("2" cr nl)
+		{
+            set state two
+		}
+		("6" cr nl)
+		{
+            set state six
+		}
+        timeout
+		{
+			set state unknown
+		}
+    }
+}

@@ -1,0 +1,30 @@
+[Page]
+Name = Main
+Background = Images/background.jpg
+
+[Button]
+Caption = Power On
+Pages = Main
+Left = 25
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Orion poweron
+
+[Button]
+Caption = Power Off
+Pages = Main
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Orion poweroff
+

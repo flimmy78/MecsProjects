@@ -1,0 +1,82 @@
+
+Log started at Wed Jun 27 19:39:21 2012
+
+Info: ParseHeader
+Error: ParseSendStatement
+Error: ParseCommand1
+Error: ParseBody
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Wed Jun 27 19:44:30 2012
+
+Info: ParseHeader
+Error: ParseSendStatement
+Error: ParseCommand1
+Error: ParseBody
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Wed Jun 27 19:57:33 2012
+
+Info: ParseHeader
+Error: ParseBody
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Wed Jun 27 19:57:52 2012
+
+Info: ParseHeader
+Error: ParseSendStatement
+Error: ParseCommand1
+Error: ParseBody
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Wed Jun 27 20:12:21 2012
+
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Wed Jun 27 20:12:53 2012
+
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Thu Jun 28 16:33:35 2012
+
+Info: ParseHeader
+Error: ParseBody
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Thu Jun 28 16:57:52 2012
+
+Info: ParseHeader
+Error: ParseBody
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Thu Jun 28 16:59:40 2012
+
+Info: ParseHeader
+Error: ParseBody
+Error: Syntax error in file controller/mitsubishiex240u.rs232
+Info: Control server has been started
+Info: Controller is running
+
+Log started at Thu Jun 28 17:01:56 2012
+
+Info: ParseHeader
+Error: ParseBody
+Error: Syntax error in file controller/e.rs232
+Info: Control server has been started
+Info: Controller is running

@@ -1,0 +1,27 @@
+protocol Orion: tcp-ip
+target-ip: "192.168.10.248:9761"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command poweroff
+{
+   send Orion (2:8 65:8 1:8 0:8 3:8)
+}
+
+command poweron
+{
+   send Orion (2:8 64:8 1:8 0:8 3:8)
+}
+
+query
+{
+	send Orion (2:8 65:8 1:8 0:8 3:8)	
+	receive
+	{
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

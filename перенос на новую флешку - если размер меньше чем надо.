@@ -1,0 +1,9 @@
+1. отформатировать под reiserfs. 
+2. скопировать файлы с оригинала
+3. mound -o bind /dev /media.../dev
+4. chroot /media/.../
+5. grub-install /dev/sdX
+6. exit
+7. sudo blkid
+8. Заменить все uuid в /etc/fstab и  /boot/grub/grub.cfg
+9. profit

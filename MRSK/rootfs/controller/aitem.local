@@ -1,0 +1,116 @@
+protocol AItem: tcp-ip
+target-ip: "127.0.0.1:33333"
+query-period: 1000
+timeout: 900
+case-sensitive: false
+
+
+command outseven
+{
+   send AItem ("Out7" cr nl)
+}
+
+command outfive
+{
+   send AItem ("Out5" cr nl)
+}
+
+command outfour
+{
+   send AItem ("Out4" cr nl)
+}
+
+command outone
+{
+   send AItem ("Out1" cr nl)
+}
+
+command outsix
+{
+   send AItem ("Out6" cr nl)
+}
+
+command outthree
+{
+   send AItem ("Out3" cr nl)
+}
+
+command outtwo
+{
+   send AItem ("Out2" cr nl)
+}
+
+command outzero
+{
+   send AItem ("Out0" cr nl)
+}
+
+command prevfive
+{
+   send AItem ("Prev5" cr nl)
+}
+
+command prevfour
+{
+   send AItem ("Prev4" cr nl)
+}
+
+command prevone
+{
+   send AItem ("Prev1" cr nl)
+}
+
+command prevseven
+{
+   send AItem ("Prev7" cr nl)
+}
+
+command prevsix
+{
+   send AItem ("Prev6" cr nl)
+}
+
+command prevthree
+{
+   send AItem ("Prev3" cr nl)
+}
+
+command prevtwo
+{
+   send AItem ("Prev2" cr nl)
+}
+
+command prevzero
+{
+   send AItem ("Prev0" cr nl)
+}
+
+query
+{
+    send AItem ("QOU" cr nl)
+
+    receive
+    {
+        ("0")
+		{
+            set state black
+		}
+        ("1")
+		{
+            set state hdmione
+		}
+        ("2")
+		{
+            set state hdmitwo
+		}
+        ("3")
+		{
+            set state camera
+		}
+        timeout
+		{
+			set state unknown
+		}
+    }
+}
+

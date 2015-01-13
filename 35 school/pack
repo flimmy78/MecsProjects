@@ -1,0 +1,4 @@
+#!/bin/bash
+rm ./initramfs.cpio.gz
+cd ./rootfs
+find . | cpio -o -H newc | gzip > ./../initramfs.cpio.gz

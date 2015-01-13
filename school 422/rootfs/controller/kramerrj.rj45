@@ -1,0 +1,200 @@
+protocol Kramerrj: tcp-ip
+target-ip: "192.168.1.52:4352"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command av
+{
+   send Kramerrj ("Y 0 23 " cr nl)
+}
+
+command blank
+{
+   send Kramerrj ("Y 0 30 " cr nl)
+}
+
+command buttonfezremote
+{
+   send Kramerrj ("Y 0 3 " cr nl)
+}
+
+command buttonfssremote
+{
+   send Kramerrj ("Y 0 4 " cr nl)
+}
+
+command buttonozeziremote
+{
+   send Kramerrj ("Y 0 6 " cr nl)
+}
+
+command buttonozezpremote
+{
+   send Kramerrj ("Y 0 7 " cr nl)
+}
+
+command buttonstzremote
+{
+   send Kramerrj ("Y 0 5 " cr nl)
+}
+
+command compone
+{
+   send Kramerrj ("Y 0 25 " cr nl)
+}
+
+command comptwo
+{
+   send Kramerrj ("Y 0 28 " cr nl)
+}
+
+command down
+{
+   send Kramerrj ("Y 0 21 " cr nl)
+}
+
+command exit
+{
+   send Kramerrj ("Y 0 22 " cr nl)
+}
+
+command freeze
+{
+   send Kramerrj ("Y 0 2 " cr nl)
+}
+
+command hdmione
+{
+   send Kramerrj ("Y 0 26 " cr nl)
+}
+
+command hdmitwo
+{
+   send Kramerrj ("Y 0 27 " cr nl)
+}
+
+command info
+{
+   send Kramerrj ("Y 0 14 " cr nl)
+}
+
+command left
+{
+   send Kramerrj ("Y 0 17 " cr nl)
+}
+
+command menu
+{
+   send Kramerrj ("Y 0 20 " cr nl)
+}
+
+command mute
+{
+   send Kramerrj ("Y 0 31 " cr nl)
+}
+
+command muteoff
+{
+   send Kramerrj ("Y 6 3 0 " cr nl)
+}
+
+command muteon
+{
+   send Kramerrj ("Y 6 3 1 " cr nl)
+}
+
+command native
+{
+   send Kramerrj ("Y 0 16 " cr nl)
+}
+
+command ok
+{
+   send Kramerrj ("Y 0 18 " cr nl)
+}
+
+command power
+{
+   send Kramerrj ("Y 0 1 " cr nl)
+}
+
+command poweroff
+{
+   send Kramerrj ("Y 6 0 0 " cr nl)
+}
+
+command poweron
+{
+   send Kramerrj ("Y 6 0 1 " cr nl)
+}
+
+command right
+{
+   send Kramerrj ("Y 0 19 " cr nl)
+}
+
+command size
+{
+   send Kramerrj ("Y 0 0 " cr nl)
+}
+
+command svga
+{
+   send Kramerrj ("Y 0 9 " cr nl)
+}
+
+command sxga
+{
+   send Kramerrj ("Y 0 11 " cr nl)
+}
+
+command up
+{
+   send Kramerrj ("Y 0 15 " cr nl)
+}
+
+command uxga
+{
+   send Kramerrj ("Y 0 13 " cr nl)
+}
+
+command vga
+{
+   send Kramerrj ("Y 0 8 " cr nl)
+}
+
+command vgatwo
+{
+   send Kramerrj ("Y 0 29 " cr nl)
+}
+
+command wxga
+{
+   send Kramerrj ("Y 0 12 " cr nl)
+}
+
+command xga
+{
+   send Kramerrj ("Y 0 10 " cr nl)
+}
+
+command yc
+{
+   send Kramerrj ("Y 0 24 " cr nl)
+}
+
+
+query
+{
+    send Kramerrj (cr)	
+
+    receive
+    {    
+        timeout
+		{
+			set state unknown
+		}
+    }
+}

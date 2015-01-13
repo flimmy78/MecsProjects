@@ -1,0 +1,30 @@
+protocol Extron: com
+port: 1
+speed: 9600
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command infour
+{
+   send Extron ("4!")
+}
+
+command inone
+{
+   send Extron ("1!")
+}
+
+command inthree
+{
+   send Extron ("3!")
+}
+
+command intwo
+{
+   send Extron ("2!")
+}
+

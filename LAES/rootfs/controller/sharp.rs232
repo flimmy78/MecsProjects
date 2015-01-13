@@ -1,0 +1,59 @@
+protocol Sharp: com
+port: 0
+speed: 38400
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command inputdvipc
+{
+   send Sharp ("INPS   1" cr)
+}
+
+command inputhdmipc
+{
+   send Sharp ("INPS  10" cr)
+}
+
+command inputrgbpc
+{
+   send Sharp ("INPS   6" cr)
+}
+
+command poweroff
+{
+   send Sharp ("POWR   0" cr)
+}
+
+command poweron
+{
+   send Sharp ("POWR   1" cr)
+}
+
+query
+{
+	send Sharp ("POWR   ?" cr)
+	
+	receive
+	{
+		("0" cr)
+		{
+			set state disabled
+		}
+		("1" cr)
+		{
+			set state enabled
+		}
+		("2" cr)
+		{
+			set state enabled
+		}
+		timeout
+		{
+		set state unknown
+		}
+	}
+}

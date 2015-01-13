@@ -1,0 +1,25 @@
+#!/bin/sh
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+
+mount -t tmpfs -o size=64k,mode=0755 tmpfs /dev
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+#/sbin/modprobe lirc_dev
+#/sbin/modprobe lirc_serial
+
+/sbin/modprobe serial_core
+/sbin/modprobe 8250
+/sbin/modprobe 8250_pci
+
+echo 127.0.0.1 localhost > /etc/hosts
+/sbin/ifconfig lo 127.0.0.1 up
+/sbin/route add -net 127.0.0.0 netmask 255.0.0.0 lo
+/sbin/ifconfig eth0 $IP up
+/sbin/route add -net default netmask $MASK gw $GATEWAY
+
+echo "Initialization completed"

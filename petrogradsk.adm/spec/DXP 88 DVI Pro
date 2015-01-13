@@ -1,0 +1,20 @@
+DXP 88 DVI Pro
+
+
+ Serial control port 	(1) RS-232, 9-pin female D connector
+(1) RS-232, front panel 2.5 mm mini stereo jack
+   Baud rate and protocol 	9600 to 115200 baud, 9600 baud (default), 8 data bits, 1 stop bit, no parity
+   Serial control pin configurations 	
+      9-pin D connector 	2 = Tx, 3 = Rx, 5 = GND
+      Mini stereo jack 	Tip = Tx, ring = Rx, sleeve = GND
+   Ethernet control port 	(1) RJ-45 female connector
+   Ethernet data rate 	10/100Base-T, half/full duplex with autodetect
+   Ethernet protocol 	ARP, ICMP (ping), IP, TCP, DHCP, HTTP, Telnet
+   Default settings 	Link speed and duplex level = autodetected
+IP address = 192.168.254.254
+Subnet mask = 255.255.0.0
+Gateway = 0.0.0.0
+DHCP = off
+   Program control 	Extron control/configuration program for Windows®
+Extron Simple Instruction Set (SIS™)
+Microsoft® Internet Explorer® ver. 6 or higher, Telnet

@@ -1,0 +1,70 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.9.0(SerialDevice) on Mon Dec 19 17:39:50 2011
+#
+# contributed by 
+#
+# brand:                       ..\config2.cf
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  lifesize200express
+  bits            8
+  flags SPACE_ENC
+  eps            30
+  aeps          100
+
+  header       2663  2513
+  one          1242  2803
+  zero         1242  1069
+  ptrail       1242
+  pre_data_bits   8
+  pre_data       0x98
+  gap          57447
+  toggle_bit_mask 0x0
+
+      begin codes
+          call                     0x92
+          hungup                   0x98
+          up                       0x16
+          right                    0x29
+          down                     0x1A
+          left                     0x25
+          ok                       0x20          
+          yellow                   0x6E
+          red                      0x4C
+          green                    0x6B
+          blue                     0x54
+          home                     0x7A
+          zoomin                   0x34
+          zoomout                  0x3B
+          volup                    0xEC
+          voldown                  0xF2
+          micmute                  0xE9
+          cam                      0x43
+          one                      0xC4
+          two                      0xCB
+          three                    0xCD
+          four                     0xD3
+          five                     0xD5
+          six                      0xDA
+          seven                    0xDC
+          eigth                    0xE3
+          nine                     0xE5
+          star                     0x2F
+          zero                     0xC1
+          sharp                    0x32
+          funcone                  0x7C
+          functwo                  0x83
+          cmd                      0x85
+      end codes
+
+end remote
+
+

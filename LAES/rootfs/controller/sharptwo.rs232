@@ -1,0 +1,59 @@
+protocol Sharptwo: com
+port: 1
+speed: 38400
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command inputdvipc
+{
+   send Sharptwo ("INPS   1" cr)
+}
+
+command inputhdmipc
+{
+   send Sharptwo ("INPS  10" cr)
+}
+
+command inputrgbpc
+{
+   send Sharptwo ("INPS   6" cr)
+}
+
+command poweroff
+{
+   send Sharptwo ("POWR   0" cr)
+}
+
+command poweron
+{
+   send Sharptwo ("POWR   1" cr)
+}
+
+query
+{
+	send Sharptwo ("POWR   ?" cr)
+	
+	receive
+	{
+		("0" cr)
+		{
+			set state disabled
+		}
+		("1" cr)
+		{
+			set state enabled
+		}
+		("2" cr)
+		{
+			set state enabled
+		}
+		timeout
+		{
+		set state unknown
+		}
+	}
+}

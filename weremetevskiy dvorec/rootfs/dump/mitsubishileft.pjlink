@@ -1,0 +1,71 @@
+protocol Mitsubishileft: tcp-ip
+
+target-ip: "192.168.0.3:63007"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command aspect
+{
+   send Mitsubishileft ("00re2" cr)
+}
+
+command autoposition
+{
+   send Mitsubishileft ("00r09" cr)
+}
+
+command freeze
+{
+   send Mitsubishileft ("00ra4" cr)
+}
+
+command geometry
+{
+   send Mitsubishileft ("00r43" cr)
+}
+
+command muteoff
+{
+   send Mitsubishileft ("00MUTE0" cr)
+}
+
+command muteon
+{
+   send Mitsubishileft ("00MUTE1" cr)
+}
+
+command poweroff
+{
+   send Mitsubishileft ("00" 34:8 cr)
+}
+
+command poweron
+{
+   send Mitsubishileft ("00!" cr)
+}
+
+query
+{
+    send Mitsubishileft ("00vST" cr)	
+
+    receive
+    {
+    ("%1POWR=1" cr)
+	{
+        set state enabled
+	}
+    ("%1POWR=0" cr)
+	{
+        set state disabled
+	}
+	("%1POWR=ERR" N:8 cr) 
+	{
+	    set state error
+	}
+        timeout
+	{
+	    set state unknown
+	}
+    }
+}

@@ -1,0 +1,20 @@
+# Aliases for symbols, used by symbol_request().
+alias symbol:serial8250_resume_port 8250
+alias symbol:uart_get_divisor serial_core
+alias symbol:uart_write_wakeup serial_core
+alias symbol:pciserial_suspend_ports 8250_pci
+alias symbol:pciserial_remove_ports 8250_pci
+alias symbol:pciserial_resume_ports 8250_pci
+alias symbol:uart_get_baud_rate serial_core
+alias symbol:uart_unregister_driver serial_core
+alias symbol:uart_remove_one_port serial_core
+alias symbol:uart_register_driver serial_core
+alias symbol:serial8250_suspend_port 8250
+alias symbol:pciserial_init_ports 8250_pci
+alias symbol:serial8250_register_port 8250
+alias symbol:serial8250_unregister_port 8250
+alias symbol:uart_resume_port serial_core
+alias symbol:uart_update_timeout serial_core
+alias symbol:uart_match_port serial_core
+alias symbol:uart_add_one_port serial_core
+alias symbol:uart_suspend_port serial_core

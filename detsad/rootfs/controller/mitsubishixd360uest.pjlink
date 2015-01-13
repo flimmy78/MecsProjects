@@ -1,0 +1,54 @@
+protocol Mitsubishi: tcp-ip
+
+
+target-ip: "169.254.0.220:4352"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command poweron
+{
+    send Mitsubishi ("%1POWR 1" cr)
+}
+
+command poweroff
+{
+    send Mitsubishi ("%1POWR 0" cr)
+}
+
+command muteon
+{
+    send Mitsubishi ("%1AVMT 31" cr)
+}
+
+command muteoff
+{
+    send Mitsubishi ("%1AVMT 30" cr)
+}
+
+
+query
+{
+    send Mitsubishi ("%1POWR ?" cr)	
+
+    receive
+    {
+        ("%1POWR=1" cr)
+	{
+            set state enabled
+	}
+        ("%1POWR=0" cr)
+	{
+            set state disabled
+	}
+	("%1POWR=ERR" N:8 cr) 
+	{
+	    set state error
+	}
+        timeout
+	{
+	    set state unknown
+	}
+    }
+}

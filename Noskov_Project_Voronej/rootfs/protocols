@@ -1,0 +1,5 @@
+controller/epson.pjlink
+controller/ligra.lirc
+controller/jupiter.rj45
+controller/mitsubishi.pjlink
+controller/mecs.rj45

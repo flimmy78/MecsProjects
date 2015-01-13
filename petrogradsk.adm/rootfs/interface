@@ -1,0 +1,1049 @@
+[Page]
+Name = Main
+Background = Images/aqua_back.png
+
+[Page]
+Name = Kramer
+Background = Images/aqua_back.png
+
+[Page]
+Name = Extron
+Background = Images/aqua_back.png
+
+[Page]
+Name = Christie
+Background = Images/aqua_back.png
+
+
+[Text]
+Align = center
+Pages = Main
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 100
+DefaultText = Left and Right
+
+[Text]
+Align = center
+Pages = Main
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Левый
+
+[Text]
+Align = center
+Pages = Main
+Left = 500
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Правый
+
+[Text]
+Align = center
+Pages = Kramer
+Left = 700
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 100
+DefaultText = Kramer
+
+[Text]
+Align = center
+Pages = Extron
+Left = 475
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 100
+DefaultText = Extron
+
+[Text]
+Align = center
+Pages = Christie
+Left = 250
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 100
+DefaultText = Christie
+
+[Button]
+Caption = Kramer
+Pages = Main
+Left = 700
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Kramer
+
+[Button]
+Caption = Extron
+Pages = Main
+Left = 475
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Extron
+
+[Button]
+Caption = Christie
+Pages = Main
+Left = 250
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Christie
+
+[Button]
+Caption = Left an Right
+Pages = Christie
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Main
+
+[Button]
+Caption = Extron
+Pages = Christie
+Left = 475
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Extron
+
+[Button]
+Caption = Kramer
+Pages = Christie
+Left = 700
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Kramer
+
+[Button]
+Caption = Left an Right
+Pages = Kramer
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Main
+
+[Button]
+Caption = Christie
+Pages = Kramer
+Left = 250
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Christie
+
+[Button]
+Caption = Extron
+Pages = Kramer
+Left = 475
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Extron
+
+[Button]
+Caption = Left an Right
+Pages = Extron
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Main
+
+[Button]
+Caption = Christie
+Pages = Extron
+Left = 250
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Christie
+
+[Button]
+Caption = Kramer
+Pages = Extron
+Left = 700
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Page  Kramer
+
+[Button]
+Caption = Power On
+Pages = Main
+Left = 25
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishil poweron
+
+[Button]
+Caption = Power Off
+Pages = Main
+Left = 25
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishil poweroff
+
+[Button]
+Caption = Power On
+Pages = Main
+Left = 500
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishir poweron
+
+[Button]
+Caption = Power Off
+Pages = Main
+Left = 500
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishir poweroff
+
+[Button]
+Caption = Power On
+Pages = Christie
+Left = 25
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Christie poweron
+
+[Button]
+Caption = Power Off
+Pages = Christie
+Left = 25
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Christie poweroff
+
+[ToggleButton]
+Caption = MuteL
+Pages = Main
+Left = 25
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Mitsubishil muteon
+OnUp = Command Mitsubishil muteoff
+
+[ToggleButton]
+Caption = MuteR
+Pages = Main
+Left = 500
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Mitsubishir muteon
+OnUp = Command Mitsubishir muteoff
+
+
+[ToggleButton]
+Caption = Mute
+Pages = Christie
+Left = 475
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Christie muteoff
+OnUp = Command Christie muteon
+
+[ToggleButton]
+Caption = Freeze
+Pages = Christie
+Left = 475
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Christie freezeoff
+OnUp = Command Christie freezeon
+
+[Text]
+Align = center
+Pages = Christie
+Left = 25
+Top = 475
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 100
+DefaultText = Aspect
+
+[Button]
+Caption = av
+Pages = Kramer
+Left = 725
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer av
+
+[Button]
+Caption = blank
+Pages = Kramer
+Left = 125
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer blank
+
+[Button]
+Caption = 1080i
+Pages = Kramer
+Left = 125
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer buttonozeziremote
+
+[Button]
+Caption = 1080p
+Pages = Kramer
+Left = 25
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer buttonozezpremote
+
+[Button]
+Caption = 480
+Pages = Kramer
+Left = 425
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer buttonfezremote
+
+[Button]
+Caption = 576
+Pages = Kramer
+Left = 325
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer buttonfssremote
+
+[Button]
+Caption = 720
+Pages = Kramer
+Left = 225
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer buttonstzremote
+
+[Button]
+Caption = Comp 1
+Pages = Kramer
+Left = 25
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer compone
+
+[Button]
+Caption = Comp 2
+Pages = Kramer
+Left = 125
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer comptwo
+
+[Button]
+Caption = Down
+Pages = Kramer
+Left = 925
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer down
+
+[Button]
+Caption = freeze
+Pages = Kramer
+Left = 325
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer freeze
+
+[Button]
+Caption = Exit
+Pages = Kramer
+Left = 1025
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer exit
+
+[Button]
+Caption = info
+Pages = Kramer
+Left = 1025
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer info
+
+[Button]
+Caption = Hdmi 2
+Pages = Kramer
+Left = 425
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer hdmitwo
+
+[Button]
+Caption = Hdmi 1
+Pages = Kramer
+Left = 325
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer hdmione
+
+[Button]
+Caption = Ok
+Pages = Kramer
+Left = 925
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer ok
+
+[Button]
+Caption = native
+Pages = Kramer
+Left = 625
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer native
+
+[Button]
+Caption = menu
+Pages = Kramer
+Left = 825
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer menu
+
+[Button]
+Caption = left
+Pages = Kramer
+Left = 825
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer left
+
+[Button]
+Caption = svga
+Pages = Kramer
+Left = 25
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer svga
+
+[Button]
+Caption = size
+Pages = Kramer
+Left = 525
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer size
+
+[Button]
+Caption = right
+Pages = Kramer
+Left = 1025
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer right
+
+[Button]
+Caption = Power
+Pages = Kramer
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer power
+
+[Button]
+Caption = wxga
+Pages = Kramer
+Left = 425
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer wxga
+
+[Button]
+Caption = vga 2
+Pages = Kramer
+Left = 325
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer vgatwo
+
+[Button]
+Caption = vga
+Pages = Kramer
+Left = 225
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer vga
+
+[Button]
+Caption = uxga
+Pages = Kramer
+Left = 225
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer uxga
+
+[Button]
+Caption = up
+Pages = Kramer
+Left = 925
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer up
+
+[Button]
+Caption = sxga
+Pages = Kramer
+Left = 125
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer sxga
+
+[Button]
+Caption = mute
+Pages = Kramer
+Left = 225
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer mute
+
+[Button]
+Caption = yc
+Pages = Kramer
+Left = 625
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer yc
+
+[Button]
+Caption = xga
+Pages = Kramer
+Left = 525
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Kramer xga
+
+[Button]
+Caption = Для внешнего ПК
+Pages = Extron
+Left = 725
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron ineight
+
+[Button]
+Caption = Сервер 1
+Pages = Extron
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron inone
+
+[Button]
+Caption = Сервер 2
+Pages = Extron
+Left = 125
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron intwo
+
+[Button]
+Caption = Сервер 3
+Pages = Extron
+Left = 225
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron inthree
+
+[Button]
+Caption = ПК Оператор
+Pages = Extron
+Left = 325
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron infour
+
+[Button]
+Caption = Крамер Внешний
+Pages = Extron
+Left = 425
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron infive
+
+[Button]
+Caption = Сони Левая
+Pages = Extron
+Left = 525
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron insix
+
+[Button]
+Caption = Сони Правая
+Pages = Extron
+Left = 625
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron inseven
+
+[Button]
+Caption = Левый проектор
+Pages = Extron
+Left = 25
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outone
+
+[Button]
+Caption = Центр
+Pages = Extron
+Left = 125
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outtwo
+
+[Button]
+Caption = Правый проектор
+Pages = Extron
+Left = 225
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outthree
+
+[Button]
+Caption = Recorder
+Pages = Extron
+Left = 325
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outfour
+
+[Button]
+Caption = Монитор Аcer
+Pages = Extron
+Left = 425
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outfive
+
+[Button]
+Caption = Kramer внешн
+Pages = Extron
+Left = 525
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outsix
+
+[Button]
+Caption = HP лев
+Pages = Extron
+Left = 625
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outseven
+
+[Button]
+Caption = HP прав
+Pages = Extron
+Left = 725
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn_sml.png
+DownImage = Images/menu_light_btn_sml.png
+HeldImage = Images/menu_light_btn_sml.png
+OnClick  = Command Extron outeight
+
+[Button]
+Caption = All
+Pages = Extron
+Left = 25
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Extron tieall
+
+[Button]
+Caption = video
+Pages = Extron
+Left = 625
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Extron tievideo

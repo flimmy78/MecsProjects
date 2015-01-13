@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8"><title>Настройка LIRC в Debian — Linux Wiki</title>
+<meta name="generator" content="MediaWiki 1.22.2">
+<link rel="shortcut icon" href="http://linuxoid.in/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://linuxoid.in/opensearch_desc.php" title="Linux Wiki (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="http://linuxoid.in/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Linux Wiki&nbsp;— Atom-лента" href="http://linuxoid.in/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+<link rel="stylesheet" href="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/load_002.css">
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><style>
+.cite-accessibility-label{position:absolute !important; top:-99999px;clip:rect(1px 1px 1px 1px); clip:rect(1px,1px,1px,1px);padding:0 !important;border:0 !important;height:1px !important;width:1px !important;overflow:hidden}
+/* cache key: 2_linuxoidwiki-lxw_:resourceloader:filter:minify-css:7:6989008023386f50501783f5c5ff5345 */
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: 2_linuxoidwiki-lxw_:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: 2_linuxoidwiki-lxw_:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;-webkit-box-shadow:0 2px 5px 0 #ccc;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(/resources/mediawiki.action/images/green-checkmark.png?2014-01-28T00:06:40Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: 2_linuxoidwiki-lxw_:resourceloader:filter:minify-css:7:09a8d47317d5fbe7a4b6245d19f55428 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: 2_linuxoidwiki-lxw_:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/load.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: 2_linuxoidwiki-lxw_:resourceloader:filter:minify-css:7:c05fe20c471485a56c5ba258ce54a593 */</style>
+
+<script src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/load.php"></script><script src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/load_005.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Настройка_LIRC_в_Debian","wgTitle":"Настройка LIRC в Debian","wgCurRevisionId":2111,"wgRevisionId":2111,"wgArticleId":282,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Мультимедиа"],"wgBreakFrames":false,"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgMonthNamesShort":["","янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"],"wgRelevantPageName":"Настройка_LIRC_в_Debian","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0
+,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"language":"ru","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"ru"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: 2_linuxoidwiki-lxw_:resourceloader:filter:minify-js:7:1223eaeab565b6f79a81323b13f06d55 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/load_002.php"></script>
+<script src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/load_004.php" async=""></script><script type="text/javascript" src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/index_002.php"></script><script type="text/javascript" src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/index.php"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Настройка_LIRC_в_Debian skin-monobook action-view">
+<div id="globalWrapper">
+<div id="column-content"><div id="content" class="mw-body-primary" role="main">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading" lang="ru"><span dir="auto">Настройка LIRC в Debian</span></h1>
+	<div id="bodyContent" class="mw-body">
+		<div id="siteSub">Материал из Linux Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav" class="mw-jump">Перейти к: <a href="#column-one">навигация</a>, <a href="#searchInput">поиск</a></div>
+
+		<!-- start content -->
+<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="ru"><p>Ниже представлен мой собственный опыт в настройке <a href="http://ru.wikipedia.org/wiki/LIRC" class="extiw" title="ru wikipedia:LIRC">LIRC</a> для управления аудиоплеером на выделенной для него железке.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Содержание</h2><span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">убрать</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.D0.A1.D0.BE.D1.84.D1.82"><span class="tocnumber">1</span> <span class="toctext">Софт</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.D0.96.D0.B5.D0.BB.D0.B5.D0.B7.D0.BE"><span class="tocnumber">2</span> <span class="toctext">Железо</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0"><span class="tocnumber">3</span> <span class="toctext">Настройка</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2_.D1.8D.D0.BA.D1.81.D0.BF.D0.BB.D1.83.D0.B0.D1.82.D0.B0.D1.86.D0.B8.D1.8E"><span class="tocnumber">4</span> <span class="toctext">Запуск в эксплуатацию</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8"><span class="tocnumber">5</span> <span class="toctext">Ссылки</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".D0.A1.D0.BE.D1.84.D1.82">Софт</span></h2>
+<p>В качестве ОСи в плеере используется Debian Squeeze. Вначале все было
+ опробовано на тестовом компьютере, после чего перенесено на целевую 
+систему.
+</p><p><b>Костыль номер 0</b>: В дефолтном ядре не включена поддержка LIRC, поэтому модуль придется собирать вручную. Попытка собирать по <a rel="nofollow" class="external text" href="http://unixforum.org/index.php?showtopic=99268">этому мануалу</a> успеха не имела. На всякий случай скопирую сюда:
+</p>
+<pre># apt-get install lirc liblircclient0 lirc-modules-source setserial module-assistant linux-headers-$(uname -r)
+# dpkg-reconfigure lirc-modules-source
+
+&gt; serial
+&gt; ANIMAX
+&gt; NO
+&gt; NO
+&gt; 0x3f8
+&gt; IRQ 4
+
+# m-a update,prepare
+# m-a clean lirc
+# m-a a-i lirc
+# depmod -a
+</pre>
+<p><b>Костыль номер 1</b>: Вот на моменте сборки lirc-модуля (m-a a-i lirc) процесс завершался с ошибкой. В итоге было найдено <a rel="nofollow" class="external text" href="http://karuppuswamy.com/wordpress/2012/04/23/how-to-get-lirc-infrared-remote-control-working-in-debian-6-0-squeeze/">другое руководство</a>, тут модули для lirc собирались из архива с официального сайта.
+</p>
+<pre># apt-get install lirc setserial linux-headers-$(uname -r) build-essential dialog automake libtool help2man 
+# wget -O lirc.tar.gz 'http://lirc.cvs.sourceforge.net/viewvc/lirc/lirc/?view=tar'
+# tar xf lirc.tar.gz
+# cd lirc
+# ./autogen.sh
+# ./setup.sh
+
+&gt; отвечаем на вопросы в 1-м и 2-м пунктах. Мы будем использовать serial-датчик с собственным тактированием.
+&gt; сохраняем настройки и запускаем configure, выбрав 3-й пункт
+
+# make
+# make install
+</pre>
+<p>Модуль для ядра собран, lirc поставлен, осталось настроить.
+</p>
+<h2><span class="mw-headline" id=".D0.96.D0.B5.D0.BB.D0.B5.D0.B7.D0.BE">Железо</span></h2>
+<p>В качестве схемы ИК-приемника был использован простейший вариант из <a rel="nofollow" class="external text" href="http://compas.com.ua/oco/mobile/articles.php?lng=ru&amp;pg=205">этого руководства</a>, но с поправками.
+</p><p>В качестве датчика использовался TSOP 4836 (целенаправленно не 
+искал, просто такое дали в радиомагазине по запросу "эээ... Нужен 
+ИК-приемник с ключом внутри... Ну вот как в телевизоры ставят, с тремя 
+выводами... Ну вы поняли&nbsp;:)"). Как выяснилось позже, искал я 
+немного не такой датчик, но хорошо, что взял именно этот. А еще лучше 
+было бы, если б взял с частотой 38 КГц (соответственно, TSOP 4838) - 
+вроде большинство пультов используют именно ее. Продали мне его за 10 
+грн =\.
+</p><p>Кроме того, так как датчик будет внутри плеера - а значит, есть 
+полный доступ к любому питанию в компьютере - значит, нет смысла 
+городить огород с формированием питания из шины данных COM-порта. 
+Поэтому из показанной выше схемы стабилизатор, диод и емкость можно 
+убрать, резистор на 4,7 КОм (или любой близкий по номиналу. Вообще 
+внутри ИК-датчика уже есть резистор, но его сопротивления в 33 КОм не 
+хватало для подтяжки линии COM-порта к высокому уровню и схема не 
+работала) включается между выводами данных и питания датчика (не ленимся
+ заглянуть в даташит, чтобы узнать, где какой вывод. На моем это были 
+"Выход-Общий-Питание", а не так, как там на картинке). Сигнальный выход и
+ общий провод подключаем, как на схеме - к 1 и 5 контактам COM-порта 
+соответственно, а вот +5В можно взять, например, с USB-разъема на 
+материнской плате.
+</p><p>При желании и возможности можно проверить работоспособность 
+датчика осциллографом. Дефолтно держится высокий уровень; выставив 
+низкую частоту развертки и ждущий режим можно пронаблюдать изменение 
+вида кодовых посылок при нажатии разных кнопок на пульте.
+</p>
+<h2><span class="mw-headline" id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0">Настройка</span></h2>
+<p>Далее снова возвращаемся к <a rel="nofollow" class="external text" href="http://unixforum.org/index.php?showtopic=99268">этому мануалу</a>.
+</p><p>При подгрузке lirc_serial порт не должен быть ничем занят, поэтому устанавливаем режим через setserial
+</p>
+<pre># setserial /dev/ttyS0 uart none
+</pre>
+<p>И прописываем это в его конфиг, чтобы настройка автоматом делалась при загрузке
+</p>
+<pre># echo /dev/ttyS0 uart none &gt; /var/lib/setserial/autoserial.conf
+# cp /var/lib/setserial/autoserial.conf /etc/serial.conf
+</pre>
+<p>Загружаем модуль для работы lirc
+</p>
+<pre># modprobe lirc_serial
+</pre>
+<p>Проверяем работу ИК-датчика. У меня команда упорно ломилась на несуществующий девайс, поэтому пришлось указать руками:
+</p>
+<pre># mode2 -d /dev/lirc0
+</pre>
+<p>По экрану при нажатии на кнопки пульта должны побежать строчки с циферками. Если не работает - ищем, что мы сделали не так.
+</p><p>Далее создаем или правим конфиги:
+</p><p>В <b>/etc/lirc/hardware.conf</b>:
+</p>
+<pre> 
+LIRCD_ARGS="--output=/var/run/lirc/lircd --pidfile=/var/run/lirc/lircd.pid"
+START_IREXEC=true
+LOAD_MODULES=true
+DEVICE="/dev/lirc0"
+MODULES="lirc_serial"
+LIRCD_CONF="/etc/lirc/lircd.conf"
+</pre>
+<p><b>Костыль номер 2</b>: Почему-то lircd упорно не хотел создавать 
+сокет и PID-файл, если был запущен из стартового скрипта, но прекрасно 
+все создавал, если был запущен руками (lircd -n -d /dev/lirc0). И там, и
+ там он был запущен от рута и с одинаковыми параметрами. Логику я так и 
+не понял, поэтому сотворил первую строку.
+</p><p>Далее изучаем наш пультик. Запускаем
+</p>
+<pre>irrecord -d /dev/lirc0 ~/lircd.conf
+</pre>
+<p>и следуем инструкциям: когда спросит имя - вводим имя кнопки (для 
+того, чтобы узнать зарезервированные есть смысл запустить irrecord 
+--list-namespace), потом нажимаем соответствующую кнопку на пульте.
+</p><p>Сгенерированный файл перемещаем в <b>/etc/lirc/lircd.conf</b>.
+</p><p>Можно запустить lircd (<b>service lirc restart</b>), ругнется на неработающий irexec, но мы его еще не настроили. Запускаем <b>irw</b>, нажимаем кнопки и наблюдаем появление соответствующих строчек в консоли.
+</p><p><b>Костыль номер 3</b>: Осталось настроить привязку клавиш к 
+выполнению различных действий. Для этого нужен irexec. Но у меня он 
+почему-то упорно ломился на /dev/lircd в качестве сокета. Так как 
+переопределить в конфиге такое поведение нельзя, пришлось до старта 
+демона делать симлинк, прописав в /etc/init.d/lirc в start-секции 
+строчку
+</p>
+<pre>                if [ "$START_IREXEC" = "true" ]; then
++                        ln -sf /var/run/lirc/lircd /dev/lircd
+</pre>
+<p>Наполняем <b>/etc/lirc/lircrc</b> блоками вида:
+</p>
+<pre>begin
+prog = irexec
+button = KEY_VOLUMEDOWN
+repeat = 1
+config = su -l rain -c 'mocp -v -2'
+end
+
+begin
+prog = irexec
+button = KEY_SHUFFLE
+config = su -l rain -c 'mocp -t shuffle'
+end
+</pre>
+<p>где значения в button - то, что мы раньше прописывали с помощью irrecord.
+</p><p>Перезапускаем сервис lirc еще раз. Пользуемся.
+</p>
+<h2><span class="mw-headline" id=".D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2_.D1.8D.D0.BA.D1.81.D0.BF.D0.BB.D1.83.D0.B0.D1.82.D0.B0.D1.86.D0.B8.D1.8E">Запуск в эксплуатацию</span></h2>
+<p>На целевой машине настройка немного отличалась от тестовой.
+</p><p>Во-первых, там самосборное ядро, поэтому почти ничего из раздела 
+"Софт" делать не надо. Просто включаем CONFIG_LIRC_SERIAL (находится в 
+Device Drivers -&gt; Staging drivers -&gt; Media staging drivers -&gt; 
+Linux Infrared Remote Control и зовется "Homebrew Serial Port Receiver".
+ Не забываем в "Мультимедиа" включить "Remote Controller support" и в 
+появившемся меню - "LIRC"). Ставим только пакет lirc и радуемся.
+</p><p>Во-вторых, так как я собирал безмодульное ядро (мне так удобнее -
+ залил бинарник и все), то драйвер последовательного порта 8250 и 
+lirc_serial начинали драться за один и тот же адрес (помним про 
+setserial в первом варианте, да. Вот тут оно не поможет, поэтому 
+настройку setserial можно пропустить). Надо было передать нужные 
+параметры драйверу 8250; как это сделать - я сходу не нашел, но в итоге 
+дошел до того, что можно просто отключить драйвер последовательного 
+порта в ядре - все равно ведь у нас там постоянно ИК-порт висеть будет. 
+Выкинул драйвер и все стало хорошо.
+</p><p>В-третьих, при настройке в конфиге <b> /etc/lirc/hardware.conf</b> убираем теперь уже лишние:
+</p>
+<pre>LOAD_MODULES=true
+MODULES="lirc_serial"
+</pre>
+<p>ставя false в первом случае и ничего - во втором.
+</p><p>В остальном настройка не отличается.
+</p>
+<h2><span class="mw-headline" id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8">Ссылки</span></h2>
+<ul>
+<li> <a rel="nofollow" class="external free" href="http://compas.com.ua/oco/mobile/articles.php?lng=ru&amp;pg=205">http://compas.com.ua/oco/mobile/articles.php?lng=ru&amp;pg=205</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://unixforum.org/index.php?showtopic=99268">http://unixforum.org/index.php?showtopic=99268</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://karuppuswamy.com/wordpress/2012/04/23/how-to-get-lirc-infrared-remote-control-working-in-debian-6-0-squeeze/">http://karuppuswamy.com/wordpress/2012/04/23/how-to-get-lirc-infrared-remote-control-working-in-debian-6-0-squeeze/</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://www.open-life.org/blog/howto/569.html">http://www.open-life.org/blog/howto/569.html</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://www.forum.free-x.de/wbb/index.php?page=Thread&amp;threadID=802">http://www.forum.free-x.de/wbb/index.php?page=Thread&amp;threadID=802</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.032 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 55/1000000
+Preprocessor generated node count: 104/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key 2_linuxoidwiki-lxw_:pcache:idhash:282-0!*!*!!ru!*!* and timestamp 20140317132646
+ -->
+</div><div class="printfooter">
+Источник — «<a href="http://linuxoid.in/index.php?title=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian&amp;oldid=2111">http://linuxoid.in/index.php?title=Настройка_LIRC_в_Debian&amp;oldid=2111</a>»</div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категория</a>: <ul><li><a href="http://linuxoid.in/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BC%D0%B5%D0%B4%D0%B8%D0%B0" title="Категория:Мультимедиа">Мультимедиа</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<h2>Навигация</h2>
+	<div id="p-cactions" class="portlet" role="navigation">
+		<h3>Просмотры</h3>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="http://linuxoid.in/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian" title="Просмотр основной страницы [alt-shift-c]" accesskey="c">Статья</a></li>
+				<li id="ca-talk" class="new"><a href="http://linuxoid.in/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian&amp;action=edit&amp;redlink=1" title="Обсуждение основной страницы [alt-shift-t]" accesskey="t">Обсуждение</a></li>
+				<li id="ca-viewsource"><a href="http://linuxoid.in/index.php?title=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian&amp;action=edit" title="Эта страница защищена от изменений, но вы можете посмотреть и скопировать её исходный текст [alt-shift-e]" accesskey="e">Просмотр</a></li>
+				<li id="ca-history"><a href="http://linuxoid.in/index.php?title=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian&amp;action=history" rel="archives" title="Журнал изменений страницы [alt-shift-h]" accesskey="h">История</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal" role="navigation">
+		<h3>Персональные инструменты</h3>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://linuxoid.in/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0+LIRC+%D0%B2+Debian" title="Здесь можно зарегистрироваться в системе, но это необязательно. [alt-shift-o]" accesskey="o">Представиться системе</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo" role="banner">
+<a href="http://linuxoid.in/Linuxoid_Wiki_Project" style="background-image: url(/logo.png);" title="Перейти на заглавную страницу"></a>
+	</div>
+	<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Навигация</h3>
+		<div class="pBody">
+			<ul>
+				<li id="n-currentevents"><a href="http://linuxoid.in/Linux_Wiki:%D0%A2%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" title="Информация о текущих событиях">Текущие события</a></li>
+				<li id="n-recentchanges"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [alt-shift-r]" accesskey="r">Свежие правки</a></li>
+				<li id="n-randompage"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [alt-shift-x]" accesskey="x">Случайная статья</a></li>
+				<li id="n-help"><a href="http://linuxoid.in/%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0" title="Место, где можно получить справку">Справка</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-.D0.A3.D1.87.D0.B0.D1.81.D1.82.D0.BD.D0.B8.D0.BA.D0.B0.D0.BC" role="navigation">
+		<h3>Участникам</h3>
+		<div class="pBody">
+			<ul>
+				<li id="n-.D0.9E.D0.B1.D1.8A.D1.8F.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F"><a href="http://linuxoid.in/%D0%9E%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F">Объявления</a></li>
+				<li id="n-.D0.91.D0.BB.D0.BE.D0.BA.D0.BD.D0.BE.D1.82"><a href="http://linuxoid.in/%D0%91%D0%BB%D0%BE%D0%BA%D0%BD%D0%BE%D1%82">Блокнот</a></li>
+				<li id="n-.D0.9F.D0.B5.D1.81.D0.BE.D1.87.D0.BD.D0.B8.D1.86.D0.B0"><a href="http://linuxoid.in/%D0%9F%D0%B5%D1%81%D0%BE%D1%87%D0%BD%D0%B8%D1%86%D0%B0">Песочница</a></li>
+				<li id="n-.D0.9A-.D0.B4.D0.BE.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B5"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/ToDo">К доработке</a></li>
+				<li id="n-.D0.A2.D1.80.D0.B5.D0.B1.D1.83.D1.8E.D1.82.D1.81.D1.8F-.D1.81.D1.82.D0.B0.D1.82.D1.8C.D0.B8"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A2%D1%80%D0%B5%D0%B1%D1%83%D0%B5%D0%BC%D1%8B%D0%B5_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B">Требуются статьи</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet" role="search">
+		<h3><label for="searchInput">Поиск</label></h3>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform">
+				<input name="title" value="Служебная:Поиск" type="hidden">
+				<input autocomplete="off" name="search" placeholder="Поиск" title="Искать в Linux Wiki [alt-shift-f]" accesskey="f" id="searchInput" type="search">
+				<input name="go" value="Перейти" title="Перейти к странице, имеющей в точности такое название" id="searchGoButton" class="searchButton" type="submit">&nbsp;
+				<input name="fulltext" value="Найти" title="Найти страницы, содержащие указанный текст" id="mw-searchButton" class="searchButton" type="submit">
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb" role="navigation">
+		<h3>Инструменты</h3>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian" title="Список всех страниц, ссылающихся на данную [alt-shift-j]" accesskey="j">Ссылки сюда</a></li>
+				<li id="t-recentchangeslinked"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian" title="Последние изменения в страницах, на которые ссылается эта страница [alt-shift-k]" accesskey="k">Связанные правки</a></li>
+				<li id="t-specialpages"><a href="http://linuxoid.in/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [alt-shift-q]" accesskey="q">Спецстраницы</a></li>
+				<li id="t-print"><a href="http://linuxoid.in/index.php?title=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian&amp;printable=yes" rel="alternate" title="Версия этой страницы для печати [alt-shift-p]" accesskey="p">Версия для печати</a></li>
+				<li id="t-permalink"><a href="http://linuxoid.in/index.php?title=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian&amp;oldid=2111" title="Постоянная ссылка на эту версию страницы">Постоянная ссылка</a></li>
+				<li id="t-info"><a href="http://linuxoid.in/index.php?title=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_LIRC_%D0%B2_Debian&amp;action=info">Сведения о странице</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer" role="contentinfo">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/gnu-fdl.png" alt="GNU Free Documentation License 1.2" height="31" width="88"></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> Последнее изменение этой страницы: 11:27, 20 января 2013.</li>
+		<li id="viewcount">К этой странице обращались 967 раза.</li>
+		<li id="copyright">Содержимое доступно по лицензии <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a> (если не указано иное).</li>
+		<li id="privacy"><a href="http://linuxoid.in/Linux_Wiki:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Linux Wiki:Политика конфиденциальности">Политика конфиденциальности</a></li>
+		<li id="about"><a href="http://linuxoid.in/Linux_Wiki:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" title="Linux Wiki:Описание">Описание Linux Wiki</a></li>
+		<li id="disclaimer"><a href="http://linuxoid.in/Linux_Wiki:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Linux Wiki:Отказ от ответственности">Отказ от ответственности</a></li>
+	</ul>
+</div>
+</div>
+<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.cite"],null,true);
+}</script>
+<script src="%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20LIRC%20%D0%B2%20Debian%20%E2%80%94%20Linux%20Wiki_files/load_003.php"></script>
+<!-- Served in 0.325 secs. --><div class="suggestions" style="display: none; font-size: 11.4667px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

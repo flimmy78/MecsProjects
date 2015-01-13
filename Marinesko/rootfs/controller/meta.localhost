@@ -1,0 +1,57 @@
+protocol Meta: tcp-ip
+target-ip: "192.168.1.119:3002"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command enablethreed
+{
+	send Meta ("enable")
+}
+
+command disablethreed
+{
+	send Meta ("disable")
+}
+
+command halt
+{
+   send Meta ("halt")
+}
+
+command poweron
+{
+   send Meta ("poweron")
+}
+
+command muteon
+{
+    send Meta ("muteon")
+}
+
+
+command muteoff
+{
+    send Meta ("muteoff")
+}
+
+command poweroff
+{
+    send Meta ("poweroff")
+}
+
+query
+{	
+	send Meta ("stat")
+	receive
+	{
+		("good")
+		{
+			set state enabled
+		}
+		timeout
+		{
+			set state disabled
+		}
+	}
+}

@@ -1,0 +1,19 @@
+
+[Page]
+Name = Projectors
+Background = Images/aqua_back.png
+
+[Slider]
+Caption = Включить
+Pages = Projectors
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+SliderUpImage = Images/round_error_tiny_btn.png
+SliderDownImage = Images/round_error_tiny_btn.png
+MinValue = 0
+MaxValue = 100
+BaseImage = Images/full.png
+OnValueChange  = Command Mitsubishi poweron _

@@ -1,0 +1,113 @@
+protocol Christie1: tcp-ip
+target-ip: "192.168.1.101:10000"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command focusminus
+{
+   send Christie1 ("C4A" cr)
+}
+
+command focusplus
+{
+   send Christie1 ("C4B" cr)
+}
+
+command inputfour
+{
+   send Christie1 ("C08" cr)
+}
+
+command inputone
+{
+   send Christie1 ("C05" cr)
+}
+
+command inputthree
+{
+   send Christie1 ("C07" cr)
+}
+
+command inputtwo
+{
+   send Christie1 ("C06" cr)
+}
+
+command muteoff
+{
+   send Christie1 ("C0E" cr)
+}
+
+command muteon
+{
+   send Christie1 ("C0D" cr)
+}
+
+command poweoff
+{
+   send Christie1 ("C01" cr)
+}
+
+command poweroff
+{
+   send Christie1 ("%1POWR 0" cr)
+}
+
+command poweron
+{
+   send Christie1 ("C00" cr)
+}
+
+command screenfull
+{
+   send Christie1 ("C10" cr)
+}
+
+command screennormal
+{
+   send Christie1 ("C0F" cr)
+}
+
+command shiftdown
+{
+   send Christie1 ("C5E" cr)
+}
+
+command shiftleft
+{
+   send Christie1 ("C5F" cr)
+}
+
+command shiftright
+{
+   send Christie1 ("C60" cr)
+}
+
+command shiftup
+{
+   send Christie1 ("C5D" cr)
+}
+
+command zoomminus
+{
+   send Christie1 ("C46" cr)
+}
+
+command zoomplus
+{
+   send Christie1 ("C47" cr)
+}
+
+query
+{	
+	send Christie1 (nl cr)
+    receive
+    {
+       timeout
+		{
+			set state unknown
+		}
+    }
+}

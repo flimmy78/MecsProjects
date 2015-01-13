@@ -1,0 +1,48 @@
+protocol Christieone: tcp-ip
+target-ip: "192.168.1.54:4352"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command muteoff
+{
+   send Christieone ("%1AVMT 30" cr)
+}
+
+command muteon
+{
+   send Christieone ("%1AVMT 31" cr)
+}
+
+command poweroff
+{
+   send Christieone ("%1POWR 0" cr)
+}
+
+command poweron
+{
+   send Christieone ("%1POWR 1" cr)
+}
+
+
+query
+{
+    send Christieone ("%1POWR ?" cr)	
+
+    receive
+    {
+        ("%1POWR=1" cr)
+	{
+            set state enabled
+	}
+        ("%1POWR=0" cr)
+	{
+            set state disabled
+	}
+        timeout
+	{
+	    set state unknown
+	}
+    }
+}

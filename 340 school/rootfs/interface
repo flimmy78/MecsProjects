@@ -1,0 +1,72 @@
+[Page]
+Name = Projectors
+Background = Images/aqua_back.png
+
+[Text]
+Align = center
+Pages = Projectors
+Left = 25
+Top = 25
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор
+
+[Button]
+Caption = Включить
+Pages = Projectors
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishi poweron
+
+[Button]
+Caption = Выключить
+Pages = Projectors
+Left = 25
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+OnClick  = Command Mitsubishi poweroff
+
+[ToggleButton]
+Caption = Mute
+Pages = Projectors
+Left = 25
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/menu_btn.png
+DownImage = Images/menu_light_btn.png
+HeldImage = Images/menu_light_btn.png
+
+
+OnDown = Command Mitsubishi muteon
+OnUp = Command Mitsubishi muteoff
+
+[Indicator]
+Name = MitStatus
+Pages = Projectors
+
+Left = 250
+Top = 25
+
+State = Mitsubishi state
+DefaultState = unknown
+
+Image unknown = Images/round_light_btn.png
+Image enabled = Images/roundGreen_btn.png
+Image disabled = Images/roundRed_btn.png
+

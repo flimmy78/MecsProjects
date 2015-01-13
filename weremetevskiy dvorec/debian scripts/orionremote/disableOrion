@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ -e /dev/ttyUSB0 ]
+then
+    echo -en '\x02\x41\x01\x00\x03' > /dev/ttyUSB0
+fi
+
+if [ -e /dev/ttyUSB1 ]
+then
+    echo -en '\x02\x41\x01\x00\x03' > /dev/ttyUSB1
+fi
+
+if [ -e /dev/ttyUSB2 ]
+then
+    echo -en '\x02\x41\x01\x00\x03' > /dev/ttyUSB2
+fi

@@ -1,0 +1,214 @@
+[Page]
+Name = Main
+Background = Images/background.jpg
+
+
+[Indicator]
+Name = Christieleftstat
+Pages = Main
+Left = 25
+Top = 475
+
+State = Christiel state
+DefaultState = unknown
+
+Image unknown = Images/wait.png
+Image enabled = Images/projectorenabled.png
+Image disabled = Images/projectordisabled.png
+
+[Indicator]
+Name = Cristierstat
+Pages = Main
+Left = 250
+Top = 475
+
+State = Christier state
+DefaultState = unknown
+
+Image unknown = Images/wait.png
+Image enabled = Images/projectorenabled.png
+Image disabled = Images/projectordisabled.png
+
+[Button]
+Caption = Включить
+Pages = Main
+Left = 25
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christiel poweron
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Main
+Left = 25
+Top = 600
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+
+
+OnDown = Command Christiel muteon
+OnUp = Command Christiel muteoff
+
+[Text]
+Align = center
+Pages = Main
+Left = 25
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор 1
+
+[Button]
+Caption = Выключить
+Pages = Main
+Left = 25
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christiel poweroff
+
+
+
+[Button]
+Caption = Включить
+Pages = Main
+Left = 250
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christier poweron
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Main
+Left = 250
+Top = 600
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+
+
+OnDown = Command Christier muteon
+OnUp = Command Christier muteoff
+
+[Text]
+Align = center
+Pages = Main
+Left = 250
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор 2
+
+[Button]
+Caption = Выключить
+Pages = Main
+Left = 250
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christier poweroff
+
+
+
+
+
+
+
+
+[Button]
+Caption = Включить
+Pages = Main
+Left = 475
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christiecentral poweron
+
+[ToggleButton]
+Caption = Заглушить
+Pages = Main
+Left = 475
+Top = 600
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+
+
+OnDown = Command Christiecentral muteon
+OnUp = Command Christiecentral muteoff
+
+[Text]
+Align = center
+Pages = Main
+Left = 475
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 200
+Height = 50
+DefaultText = Проектор центральный
+
+[Button]
+Caption = Выключить
+Pages = Main
+Left = 475
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonUp.png
+DownImage = Images/buttonDown.png
+HeldImage = Images/buttonHeld.png
+OnClick  = Command Christiecentral poweroff
+
+[Indicator]
+Name = Christiecenterstat
+Pages = Main
+Left = 475
+Top = 475
+
+State = Christiecentral state
+DefaultState = unknown
+
+Image unknown = Images/wait.png
+Image enabled = Images/projectorenabled.png
+Image disabled = Images/projectordisabled.png

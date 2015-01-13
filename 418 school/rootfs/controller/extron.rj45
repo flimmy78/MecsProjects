@@ -1,0 +1,70 @@
+protocol Extron: tcp-ip
+target-ip: "192.168.1.123:23"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command fourtoall
+{
+   send Extron ("4*!")
+}
+
+command onetoall
+{
+   send Extron ("1*!")
+}
+
+command onetoone
+{
+   send Extron ("1*1!")
+}
+
+command onetotwo
+{
+   send Extron ("1*2!")
+}
+
+command threetoall
+{
+   send Extron ("3*!")
+}
+
+command twotoall
+{
+   send Extron ("2*!")
+}
+
+command twotoone
+{
+   send Extron ("2*1!")
+}
+
+command twototwo
+{
+   send Extron ("2*2!")
+}
+
+query
+{
+	send Extron ("%1POWR ?" cr)	
+	receive
+	{
+		("%1POWR=1" cr)
+		{
+			set state enabled
+		}
+		("%1POWR=0" cr)
+		{
+			set state disabled
+		}
+		("%1POWR=ERR" N:8 cr)
+		{
+			set state error
+		}
+		timeout
+		{
+			set state unknown
+		}
+	}
+}
