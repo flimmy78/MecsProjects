@@ -1,0 +1,1 @@
+echo -en '\xAA\x11\x01\x01\x01\x14' >> /dev/ttyUSB0 
