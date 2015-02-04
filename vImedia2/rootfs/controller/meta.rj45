@@ -1,0 +1,47 @@
+protocol Meta: tcp-ip
+target-ip: "192.168.1.119:80"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command alloff
+{
+   send Sonytwo ("%1POWR 0" cr)
+   send Sonyone ("%1POWR 0" cr)
+   send Mitsubishi ("%1POWR 0" cr)
+   send Kramer ("# RELAY 1,0" cr)
+}
+
+command allon
+{
+   send Sonyone ("%1POWR 1" cr)
+   send Sonytwo ("%1POWR 1" cr)
+   send Mitsubishi ("%1POWR 1" cr)
+   send Kramer ("# RELAY 1,1" cr)
+}
+
+command threedoff
+{
+	send Mitsubishi ("%1AVMT 31" cr)
+	send Sonyone ("%1AVMT 30" cr)
+	send Sonytwo ("%1AVMT 30" cr)
+}
+
+command threedon
+{
+	send Mitsubishi ("%1AVMT 30" cr)
+	send Sonyone ("%1AVMT 31" cr)
+	send Sonytwo ("%1AVMT 31" cr)
+}
+
+query
+{	
+	receive
+	{
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

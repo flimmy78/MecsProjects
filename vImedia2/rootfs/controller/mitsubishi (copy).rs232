@@ -1,0 +1,118 @@
+protocol Mitsubishi: com
+
+port: 3
+speed: 9600
+character-size: 8
+parity: none
+
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command menu
+{
+	send Mitsubishi ("00r54" cr)	
+}
+
+command down
+{
+	send Mitsubishi ("00r2b" cr)	
+}
+
+command right
+{
+	send Mitsubishi ("00r59" cr)	
+}
+
+command up
+{
+	send Mitsubishi ("00r53" cr)	
+}
+
+command left
+{
+	send Mitsubishi ("00r4f" cr)	
+}
+
+
+command muteon
+{
+    send Mitsubishi ("00MUTE1" cr)
+}
+
+command muteoff
+{
+    send Mitsubishi ("00MUTE0" cr)
+}
+
+command poweron
+{
+    send Mitsubishi ("00!" cr)
+}
+
+command poweroff
+{
+    send Mitsubishi ("00" 34:8 cr)
+}
+
+command inputpc
+{
+    send Mitsubishi ("00_r1" cr)
+}
+
+command videoa
+{
+    send Mitsubishi ("00_v1" cr)
+}
+
+command videob
+{
+    send Mitsubishi ("00_v2" cr)
+}
+
+command enablethreed
+{
+	send Mitsubishi ("00r54" cr)
+	send Mitsubishi ("00r2b" cr)
+}
+
+query
+{
+    send Mitsubishi ("00vP" cr)
+
+    receive
+    {
+	("00r54" cr)
+{
+	        set state menu
+	}
+	("00r2b" cr)
+{
+	        set state menu
+	}
+	("00r59" cr)
+{
+	        set state menu
+	}
+	("00r53" cr)
+{
+	        set state menu
+	}
+	("00r4f" cr)
+	{
+	        set state menu
+	}
+    ("00vP1" cr)
+	{
+        set state enabled
+	}
+    ("00vP0" cr)
+	{
+       set state disabled
+	}
+	timeout
+	{
+	    set state unknown
+	}
+    }
+}

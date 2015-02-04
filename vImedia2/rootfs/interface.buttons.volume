@@ -1,0 +1,259 @@
+[Button]
+Caption = Mute
+Pages = Main
+Left = 600
+Top = 550
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volinf
+
+[Button]
+Caption = -8 db
+Pages = Main
+Left = 650
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio voleight
+
+[Button]
+Caption = -18 db
+Pages = Main
+Left = 650
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio voleighteen
+
+[Button]
+Caption = -11 db
+Pages = Main
+Left = 550
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio voleleven
+
+[Button]
+Caption = -5 d
+Pages = Main
+Left = 550
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volfive
+
+[Button]
+Caption = -4 db
+Pages = Main
+Left = 650
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volfour
+
+[Button]
+Caption = -14 db
+Pages = Main
+Left = 650
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volfourteen
+
+[Button]
+Caption = -9 db
+Pages = Main
+Left = 550
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volnine
+
+[Button]
+Caption = -1 db
+Pages = Main
+Left = 550
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volone
+
+[Button]
+Caption = -7 db
+Pages = Main
+Left = 550
+Top = 250
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volseven
+
+[Button]
+Caption = -6 db
+Pages = Main
+Left = 650
+Top = 200
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volsix
+
+[Button]
+Caption = -16 db
+Pages = Main
+Left = 550
+Top = 450
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volsixteen
+
+[Button]
+Caption = -10 db
+Pages = Main
+Left = 650
+Top = 300
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volten
+
+[Button]
+Caption = -13 db
+Pages = Main
+Left = 550
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volthirteen
+
+[Button]
+Caption = -3 db
+Pages = Main
+Left = 550
+Top = 150
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volthree
+
+[Button]
+Caption = -12 db
+Pages = Main
+Left = 650
+Top = 350
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio voltwelve
+
+[Button]
+Caption = -20 db
+Pages = Main
+Left = 550
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio voltwenty
+
+[Button]
+Caption = -22 db
+Pages = Main
+Left = 650
+Top = 500
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio voltwentytwo
+
+[Button]
+Caption = -2 db
+Pages = Main
+Left = 650
+Top = 100
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio voltwo
+
+[Button]
+Caption = Max
+Pages = Main
+Left = 600
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Viaudio volzero
