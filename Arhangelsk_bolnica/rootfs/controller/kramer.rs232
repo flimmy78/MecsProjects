@@ -1,0 +1,212 @@
+protocol Kramer: com
+
+port: 1
+speed: 9600
+character-size: 8
+parity: none
+
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command poweron
+{
+    send Kramer ("Y 6 0 1 " cr nl)
+}
+
+command buttonozeziremote
+{
+   send Kramer ("Y 0 6 " cr nl)
+}
+
+command buttonozezpremote
+{
+   send Kramer ("Y 0 7 " cr nl)
+}
+
+command buttonfezremote
+{
+   send Kramer ("Y 0 3 " cr nl)
+}
+
+command buttonfssremote
+{
+   send Kramer ("Y 0 4 " cr nl)
+}
+
+command buttonstzremote
+{
+   send Kramer ("Y 0 5 " cr nl)
+}
+
+command poweroff
+{
+	send Kramer ("Y 6 0 0 " cr nl)
+}
+
+command muteon
+{
+	send Kramer ("Y 6 3 1 " cr nl)
+}
+
+command muteoff
+{
+	send Kramer ("Y 6 3 0 " cr nl)
+}
+
+command av
+{
+   send Kramer ("Y 0 23 " cr nl)
+}
+
+command blank
+{
+   send Kramer ("Y 0 30 " cr nl)
+}
+
+
+command compone
+{
+   send Kramer ("Y 0 25 " cr nl)
+}
+
+command comptwo
+{
+   send Kramer ("Y 0 28 " cr nl)
+}
+
+command down
+{
+   send Kramer ("Y 0 21 " cr nl)
+}
+
+command exit
+{
+   send Kramer ("Y 0 22 " cr nl)
+}
+
+command freeze
+{
+   send Kramer ("Y 0 2 " cr nl)
+}
+
+command hdmione
+{
+   send Kramer ("Y 0 26 " cr nl)
+}
+
+command hdmitwo
+{
+   send Kramer ("Y 0 27 " cr nl)
+}
+
+command info
+{
+   send Kramer ("Y 0 14 " cr nl)
+}
+
+command left
+{
+   send Kramer ("Y 0 17 " cr nl)
+}
+
+command menu
+{
+   send Kramer ("Y 0 20 " cr nl)
+}
+
+command mute
+{
+   send Kramer ("Y 0 31 " cr nl)
+}
+
+command native
+{
+   send Kramer ("Y 0 16 " cr nl)
+}
+
+command ok
+{
+   send Kramer ("Y 0 18 " cr nl)
+}
+
+command power
+{
+   send Kramer ("Y 0 1 " cr nl)
+}
+
+command right
+{
+   send Kramer ("Y 0 19 " cr nl)
+}
+
+command size
+{
+   send Kramer ("Y 0 0 " cr nl)
+}
+
+command svga
+{
+   send Kramer ("Y 0 9 " cr nl)
+}
+
+command sxga
+{
+   send Kramer ("Y 0 11 " cr nl)
+}
+
+command up
+{
+   send Kramer ("Y 0 15 " cr nl)
+}
+
+command uxga
+{
+   send Kramer ("Y 0 13 " cr nl)
+}
+
+command vga
+{
+   send Kramer ("Y 0 8 " cr nl)
+}
+
+command vgatwo
+{
+   send Kramer ("Y 0 29 " cr nl)
+}
+
+command wxga
+{
+   send Kramer ("Y 0 12 " cr nl)
+}
+
+command xga
+{
+   send Kramer ("Y 0 10 " cr nl)
+}
+
+command yc
+{
+   send Kramer ("Y 0 24 " cr nl)
+}
+
+
+query
+{
+	send Kramer ("Y 7 0 " cr nl)
+	receive
+	{
+	("Z 7 0 1 " cr nl)
+	{
+		set state enabled
+	}
+	("Z 7 0 0 " cr nl)
+	{
+		set state disabled
+	}	
+	timeout
+	{
+		set state timeout
+	}
+	}
+}

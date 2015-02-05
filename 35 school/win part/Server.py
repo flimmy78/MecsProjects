@@ -6,7 +6,7 @@ import subprocess
 popens = [None, None, None, None]
 
 HOST = ''  # Symbolic name meaning all available interfaces
-PORT = 54345 # Arbitrary non-privileged port
+PORT = 4352 # Arbitrary non-privileged port
 s = socket(AF_INET, SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen(5)
