@@ -1,0 +1,3 @@
+#!/bin/bash
+
+killall protocolvm & sleep 2 &&startmecs  && sleep 2 && cat /log.txt && telnet localhost 4939
