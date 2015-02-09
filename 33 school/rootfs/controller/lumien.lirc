@@ -1,0 +1,41 @@
+protocol Lumien: socket
+file: "/var/run/lirc/lircd"
+query-period: 10000
+timeout: 300
+
+command down
+{
+   send Lumien ("SEND_START lumien down" nl)
+   receive
+   {
+       timeout
+       {
+           send Lumien ("SEND_STOP lumien down" nl)
+       }
+   }
+}
+
+command stop
+{
+   send Lumien ("SEND_START lumien stop" nl)
+   receive
+   {
+       timeout
+       {
+           send Lumien ("SEND_STOP lumien stop" nl)
+       }
+   }
+}
+
+command up
+{
+   send Lumien ("SEND_START lumien up" nl)
+   receive
+   {
+       timeout
+       {
+           send Lumien ("SEND_STOP lumien up" nl)
+       }
+   }
+}
+

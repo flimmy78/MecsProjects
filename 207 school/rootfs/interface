@@ -13,7 +13,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Acer poweron
+OnClick  = Command Mitsubishi poweron
 
 [Button]
 Caption = Выключить
@@ -26,33 +26,8 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Acer poweroff
+OnClick  = Command Mitsubishi poweroff
 
-[Button]
-Caption = 
-Pages = Main
-Left = 300
-Top = 75
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUpUp.png
-DownImage = Images/buttonDownUp.png
-HeldImage = Images/buttonDownUp.png
-OnClick  = Command Lumien up
-
-[Button]
-Caption = Стоп
-Pages = Main
-Left = 300
-Top = 200
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonDown.png
-OnClick  = Command Lumien stop
 
 [Text]
 Align = center
@@ -66,30 +41,6 @@ Width = 200
 Height = 50
 DefaultText = Проектор
 
-[Text]
-Align = center
-Pages = Main
-Left = 300
-Top = 25
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-Width = 200
-Height = 50
-DefaultText = Экран
-
-[Button]
-Caption = 
-Pages = Main
-Left = 300
-Top = 350
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUpDown.png
-DownImage = Images/buttonDownDown.png
-HeldImage = Images/buttonDownDown.png
-OnClick  = Command Lumien down
 
 [ToggleButton]
 Caption = Заглушить
@@ -102,12 +53,8 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-
-
 OnDown = Command Mitsubishi muteon
 OnUp = Command Mitsubishi muteoff
-
-
 
 [Indicator]
 Name = Christiecenterstat
@@ -121,3 +68,5 @@ DefaultState = unknown
 Image unknown = Images/wait.png
 Image enabled = Images/projectorenabled.png
 Image disabled = Images/projectordisabled.png
+
+

@@ -1,0 +1,99 @@
+protocol Mitsubishi: tcp-ip
+
+
+target-ip: "192.168.1.120:63007"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command poweron
+{
+	send Mitsubishi ("00!" cr)
+}
+
+command poweroff
+{
+	send Mitsubishi ("00" 34:8 cr)
+}
+
+command muteon
+{
+	send Mitsubishi ("00MUTE1" cr)
+}
+
+command muteoff
+{
+	send Mitsubishi ("00MUTE0" cr)
+}
+
+command inputcompone
+{
+	send Mitsubishi ("00_r1" cr)
+}
+
+command inputcomptwo
+{
+	send Mitsubishi ("00_r2" cr)
+}
+
+command inputhdmi
+{
+	send Mitsubishi ("00_d1" cr)
+}
+
+command inputdvi
+{
+	send Mitsubishi ("00_d2" cr)
+}
+
+command inputvideo
+{
+	send Mitsubishi ("00_v1" cr)
+}
+
+command inputsvideo
+{
+	send Mitsubishi ("00_v2" cr)
+}
+
+query
+{
+	send Mitsubishi ("00vST" cr)
+	receive
+	{
+	(0:8)
+	{
+		set state standbymode
+	}
+
+	(1:8)
+	{
+		set state warmupmode
+	}
+	(2:8)
+	{
+		set state poweron
+	}
+	(3:8)
+	{
+		set state cooling
+	}
+	(4:8)
+	{
+		set state error
+	}
+	(5:8)
+	{
+		set state online
+	}
+	(6:8)
+	{
+		set state password
+	}
+		timeout
+	{
+		set state timeout
+	}
+	}
+}
