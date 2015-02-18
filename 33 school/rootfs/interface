@@ -107,6 +107,8 @@ HeldImage = Images/buttonHeld.png
 OnDown = Command Mitsubishi muteon
 OnUp = Command Mitsubishi muteoff
 
+
+
 [Indicator]
 Name = Christiecenterstat
 Pages = Main
@@ -119,5 +121,3 @@ DefaultState = unknown
 Image unknown = Images/wait.png
 Image enabled = Images/projectorenabled.png
 Image disabled = Images/projectordisabled.png
-
-

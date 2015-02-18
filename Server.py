@@ -7,7 +7,7 @@ import sys
 popens = [None, None, None, None]
 
 HOST = ''  # Symbolic name meaning all available interfaces
-PORT = 4223 # Arbitrary non-privileged port
+PORT = 1999 # Arbitrary non-privileged port
 s = socket(AF_INET, SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen(5)

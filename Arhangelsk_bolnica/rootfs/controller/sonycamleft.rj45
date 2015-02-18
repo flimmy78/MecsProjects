@@ -1,0 +1,47 @@
+protocol Sonycamleft: tcp-ip
+target-ip: "192.168.1.121:1999"
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+
+command poweroff
+{
+   send Sonycamleft (129:8 01:8 04:8 0:8 03:8 255:8)
+}
+
+command poweron
+{
+   send Sonycamleft (129:8 01:8 04:8 0:8 2:8 255:8)
+}
+
+command first
+{
+   send Sonycamleft (136:8 48:8 01:8 255:8)
+   send Sonycamleft (136:8 01:8 0:8 01:8 255:8)
+}
+
+command memoryrecall ARG
+{
+   send Sonycamleft (129:8 01:8 04:8 63:8 2:8 ARG 255:8)
+}
+
+query
+{
+	send Sonycamleft (129:8 09:8 04:8 0:8 255:8)	
+	receive
+	{
+		(144:8 80:8 02:8 255:8)
+		{
+			set state enabled
+		}
+		(144:8 80:8 03:8 255:8)
+		{
+			set state disabled
+		}
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

@@ -2,10 +2,6 @@
 Name = Main
 Background = Images/background.jpg
 
-[Page]
-Name = Second
-Background = Images/background.jpg
-
 [Button]
 Caption = Включить
 Pages = Main
@@ -71,7 +67,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command AItem outzero
+OnClick  = Command Kramer outzero
 
 [Button]
 Caption = HDMI 1
@@ -84,7 +80,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command AItem outone
+OnClick  = Command Kramer outone
 
 [Button]
 Caption = HDMI 2
@@ -97,7 +93,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command AItem outtwo
+OnClick  = Command Kramer outtwo
 
 [Button]
 Caption = Camera
@@ -110,7 +106,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command AItem outthree
+OnClick  = Command Kramer outthree
 
 [Text]
 Align = center
@@ -125,181 +121,48 @@ Height = 50
 DefaultText = Микшер
 
 [Button]
-Caption = Save
-Pages = Second
-Left = 25
-Top = 125
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Gv7100 imagesave
-
-[ToggleButton]
-Caption = Freeze
-Pages = Second
-Left = 25
-Top = 25
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-
-
-OnDown = Command Gv7100 freeze
-OnUp = Command Gv7100 defreeze
-
-[Button]
-Caption = Focus Auto
-Pages = Second
-Left = 225
-Top = 25
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Gv7100 focusauto
-
-[Button]
-Caption = Cam
-Pages = Second
-Left = 25
-Top = 350
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Gv7100 cameraoutput
-
-[Button]
-Caption = PC 1
-Pages = Second
-Left = 225
-Top = 350
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Gv7100 rgbone
-
-[Button]
-Caption = PC 2
-Pages = Second
-Left = 425
-Top = 350
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Gv7100 rgbtwo
-
-[Button]
-Caption = S-VIDEO
-Pages = Second
-Left = 125
-Top = 450
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Gv7100 svideooutput
-
-[Button]
-Caption = VIDEO
-Pages = Second
-Left = 325
-Top = 450
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Gv7100 videooutput
-
-[Button]
-Caption = Экран вверх
+Caption = 
 Pages = Main
-Left = 775
-Top = 75
+Left = 750
+Top = 50
 Font = Images/arial.ttf
 FontSize = 20
 Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
+UpImage = Images/buttonUpUp.png
+DownImage = Images/buttonUpDown.png
+HeldImage = Images/buttonUpDown.png
 OnClick  = Command Viaudio releoneon
 
 [Button]
-Caption = Экран вниз
+Caption = 
 Pages = Main
-Left = 975
-Top = 75
+Left = 750
+Top = 250
 Font = Images/arial.ttf
 FontSize = 20
 Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
+UpImage = Images/buttonUpDown.png
+DownImage = Images/buttonDownDown.png
+HeldImage = Images/buttonDownDown.png
 OnClick  = Command Viaudio reletwoon
-
-[Button]
-Caption = Управление камерой
-Pages = Main
-Left = 875
-Top = 475
-Font = Images/arial.ttf
-FontSize = 17
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Page Second
 
 [Text]
 Align = center
 Pages = Main
-Left = 875
+Left = 750
 Top = 0
 Font = Images/arial.ttf
 FontSize = 20
 Color = white
 Width = 200
 Height = 50
-DefaultText = viAudio
+DefaultText = Экран
 
 [Button]
-Caption = Назад
-Pages = Second
-Left = 800
-Top = 425
-Font = Images/arial.ttf
-FontSize = 20
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Page Main
-
-[Button]
-Caption = Экран Стоп
+Caption = Стоп
 Pages = Main
-Left = 875
-Top = 175
+Left = 750
+Top = 150
 Font = Images/arial.ttf
 FontSize = 20
 Color = white
@@ -308,22 +171,211 @@ DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
 OnClick  = Command Viaudio relestop
 
-[ToggleButton]
-Caption = Lamp
-Pages = Second
-Left = 425
-Top = 25
+[Text]
+Align = center
+Pages = Main
+Left = 1030
+Top = 0
 Font = Images/arial.ttf
 FontSize = 20
 Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
+Width = 100
+Height = 50
+DefaultText = Камера 1
 
+[Button]
+Caption = Вкл
+Pages = Main
+Left = 1200
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamright poweron
 
-OnDown = Command Gv7100 backlighton
-OnUp = Command Gv7100 armlighton
+[Button]
+Caption = 1
+Pages = Main
+Left = 1200
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamright memoryrecall 0
 
+[Button]
+Caption = 2
+Pages = Main
+Left = 1200
+Top = 175
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamright memoryrecall 1
+
+[Button]
+Caption = 3
+Pages = Main
+Left = 1200
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamright memoryrecall 2
+
+[Button]
+Caption = 4
+Pages = Main
+Left = 1200
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamright memoryrecall 3
+
+[Button]
+Caption = 5
+Pages = Main
+Left = 1200
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamright memoryrecall 4
+
+[Button]
+Caption = Выкл
+Pages = Main
+Left = 1200
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamright poweroff
+
+[Button]
+Caption = Вкл
+Pages = Main
+Left = 1025
+Top = 50
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamleft poweron
+
+[Button]
+Caption = 1
+Pages = Main
+Left = 1025
+Top = 125
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamleft memoryrecall 0
+
+[Button]
+Caption = 2
+Pages = Main
+Left = 1025
+Top = 175
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamleft memoryrecall 1
+
+[Button]
+Caption = 3
+Pages = Main
+Left = 1025
+Top = 225
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamleft memoryrecall 2
+
+[Button]
+Caption = 4
+Pages = Main
+Left = 1025
+Top = 275
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamleft memoryrecall 3
+
+[Button]
+Caption = 5
+Pages = Main
+Left = 1025
+Top = 325
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamleft memoryrecall 4
+
+[Button]
+Caption = Выкл
+Pages = Main
+Left = 1025
+Top = 400
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+UpImage = Images/buttonSmallUp.png
+DownImage = Images/buttonSmallDown.png
+HeldImage = Images/buttonSmallHeld.png
+OnClick  = Command Sonycamleft poweroff
+
+[Text]
+Align = center
+Pages = Main
+Left = 1205
+Top = 0
+Font = Images/arial.ttf
+FontSize = 20
+Color = white
+Width = 100
+Height = 50
+DefaultText = Камера 2
 
 [Indicator]
 Name = MitStatus
@@ -344,7 +396,7 @@ Pages = Main
 Left = 300
 Top = 475
 
-State = AItem state
+State = Kramer state
 DefaultState = unknown
 
 Image unknown = Images/wait.png
@@ -356,14 +408,14 @@ Image camera = Images/camera.png
 
 [Slider]
 Pages = Main
-Left = 600
+Left = 575
 Top = 50
-SliderUpImage = Images/round_error_tiny_btn.png
-SliderDownImage = Images/round_error_tiny_btn.png
+SliderUpImage = Images/buttonSmallUp.png
+SliderDownImage = Images/buttonSmallDown.png
 Direction = vertical
 MinValue = 0
 MaxValue = 27
-Value = 27
+Value = 0
 BaseImage = Images/sliderV.png
 device = Viaudio
 values = volinf,volseventy,volfiftyfour,volfourtysix,volfourty,volthirtyfive,volthirtyone,voltwentyeight,voltwentysix,voltwentyfour,voltwentytwo,voltwenty,voleighteen,volsixteen,volfourteen,volthirteen,voltwelve,voleleven,volten,volnine,voleight,volseven,volsix,volfive,volfour,volthree,voltwo,volone,volzero

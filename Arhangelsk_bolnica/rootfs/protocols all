@@ -1,4 +1,4 @@
-controller/aitem.local
-controller/gv7100.rs232
+controller/kramer.rs232
 controller/mitsubishi.pjlink
+controller/sonycamleft.rj45
 controller/viaudio.rs232

@@ -26,12 +26,25 @@ command poweron
 }
 
 query
-{send Mitsubishi ("%1POWR ?" cr)	
-receive
 {
-timeout
-{
-set state unknown
-}
-}
+	send Mitsubishi ("%1POWR ?" cr)	
+	receive
+	{
+		("%1POWR=1" cr)
+		{
+			set state enabled
+		}
+		("%1POWR=0" cr)
+		{
+			set state disabled
+		}
+		("%1POWR=ERR" N:8 cr)
+		{
+			set state error
+		}
+		timeout
+		{
+			set state unknown
+		}
+	}
 }
