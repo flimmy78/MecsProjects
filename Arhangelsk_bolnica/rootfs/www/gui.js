@@ -253,6 +253,9 @@ GUI.MakeButton = function(element, settings)
 		element.appendChild(image);
 
 		var onClick = GUI.Action(settings.OnClick);
+		var onDelayClick = GUI.Action(settings.OnDelayClick);
+		var DelayForClick = settings.DelayForClick;
+		var DelayDetected = typeof (onDelayClick) != "undefined";		
 		var onHold = GUI.Action(settings.OnHold);
 
 		var pendingHold = -1;
@@ -291,6 +294,8 @@ GUI.MakeButton = function(element, settings)
 			else if ($(element).hasClassName("down") && onClick)
 			{
 				onClick(element);
+				if (DelayDetected)
+					setTimeout(function(){onDelayClick(element);}, DelayForClick);
 			}
 
 			["pressed", "down"].each($(element).removeClassName.bind(element));

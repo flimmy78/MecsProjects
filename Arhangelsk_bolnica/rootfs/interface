@@ -57,7 +57,7 @@ HeldImage = Images/buttonHeld.png
 OnClick  = Command Mitsubishi poweroff
 
 [Button]
-Caption = Black
+Caption = VGA
 Pages = Main
 Left = 300
 Top = 50
@@ -67,7 +67,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Kramer outzero
+OnClick  = Command Kramer vgatwo
 
 [Button]
 Caption = HDMI 1
@@ -80,7 +80,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Kramer outone
+OnClick  = Command Kramer hdmione
 
 [Button]
 Caption = HDMI 2
@@ -93,7 +93,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Kramer outtwo
+OnClick  = Command Kramer hdmitwo
 
 [Button]
 Caption = Camera
@@ -106,7 +106,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Kramer outthree
+OnClick  = Command Kramer vga
 
 [Text]
 Align = center
@@ -131,7 +131,9 @@ Color = white
 UpImage = Images/buttonUpUp.png
 DownImage = Images/buttonUpDown.png
 HeldImage = Images/buttonUpDown.png
-OnClick  = Command Viaudio releoneon
+OnClick  = Command Viaudio reletwooff
+OnDelayClick = Command Viaudio releoneon
+DelayForClick = 1000
 
 [Button]
 Caption = 
@@ -144,7 +146,9 @@ Color = white
 UpImage = Images/buttonUpDown.png
 DownImage = Images/buttonDownDown.png
 HeldImage = Images/buttonDownDown.png
-OnClick  = Command Viaudio reletwoon
+OnClick  = Command Viaudio releoneoff
+OnDelayClick = Command Viaudio reletwoon
+DelayForClick = 1000
 
 [Text]
 Align = center
@@ -169,7 +173,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Viaudio relestop
+OnClick  = Command Viaudio stop
 
 [Text]
 Align = center
