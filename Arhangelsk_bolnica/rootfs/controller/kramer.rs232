@@ -1,31 +1,17 @@
 protocol Kramer: com
+
 port: 1
 speed: 9600
 character-size: 8
 parity: none
+
 query-period: 10000
 timeout: 1000
 case-sensitive: false
 
-
-command av
+command poweron
 {
-   send Kramer ("Y 0 23 " cr nl)
-}
-
-command blank
-{
-   send Kramer ("Y 0 30 " cr nl)
-}
-
-command buttonfezremote
-{
-   send Kramer ("Y 0 3 " cr nl)
-}
-
-command buttonfssremote
-{
-   send Kramer ("Y 0 4 " cr nl)
+    send Kramer ("Y 6 0 1 " cr nl)
 }
 
 command buttonozeziremote
@@ -38,10 +24,46 @@ command buttonozezpremote
    send Kramer ("Y 0 7 " cr nl)
 }
 
+command buttonfezremote
+{
+   send Kramer ("Y 0 3 " cr nl)
+}
+
+command buttonfssremote
+{
+   send Kramer ("Y 0 4 " cr nl)
+}
+
 command buttonstzremote
 {
    send Kramer ("Y 0 5 " cr nl)
 }
+
+command poweroff
+{
+	send Kramer ("Y 6 0 0 " cr nl)
+}
+
+command muteon
+{
+	send Kramer ("Y 6 3 1 " cr nl)
+}
+
+command muteoff
+{
+	send Kramer ("Y 6 3 0 " cr nl)
+}
+
+command av
+{
+   send Kramer ("Y 0 23 " cr nl)
+}
+
+command blank
+{
+   send Kramer ("Y 0 30 " cr nl)
+}
+
 
 command compone
 {
@@ -98,16 +120,6 @@ command mute
    send Kramer ("Y 0 31 " cr nl)
 }
 
-command muteoff
-{
-   send Kramer ("Y 6 3 0 " cr nl)
-}
-
-command muteon
-{
-   send Kramer ("Y 6 3 1 " cr nl)
-}
-
 command native
 {
    send Kramer ("Y 0 16 " cr nl)
@@ -121,16 +133,6 @@ command ok
 command power
 {
    send Kramer ("Y 0 1 " cr nl)
-}
-
-command poweroff
-{
-   send Kramer ("Y 6 0 0 " cr nl)
-}
-
-command poweron
-{
-   send Kramer ("Y 6 0 1 " cr nl)
 }
 
 command right
@@ -188,13 +190,23 @@ command yc
    send Kramer ("Y 0 24 " cr nl)
 }
 
+
 query
 {
-receive
-{
-timeout
-{
-set state unknown
-}
-}
+	send Kramer ("Y 7 0 " cr nl)
+	receive
+	{
+	("Z 7 0 1 " cr nl)
+	{
+		set state enabled
+	}
+	("Z 7 0 0 " cr nl)
+	{
+		set state disabled
+	}	
+	timeout
+	{
+		set state timeout
+	}
+	}
 }

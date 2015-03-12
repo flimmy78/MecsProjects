@@ -38,6 +38,15 @@ query
 		{
 			set state disabled
 		}
+
+		("%1POWR=2" cr)
+		{
+			set state cooling
+		}
+		("%1POWR=3" cr)
+		{
+			set state warmup
+		}
 		("%1POWR=ERR" N:8 cr)
 		{
 			set state error
