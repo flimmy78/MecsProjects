@@ -5,6 +5,11 @@ timeout: 1000
 case-sensitive: false
 
 
+command first
+{
+   send Sonycamleft (136:8 48:8 01:8 255:8)
+}
+
 command poweroff
 {
    send Sonycamleft (129:8 01:8 04:8 0:8 03:8 255:8)
@@ -15,29 +20,22 @@ command poweron
    send Sonycamleft (129:8 01:8 04:8 0:8 2:8 255:8)
 }
 
-command first
-{
-   send Sonycamleft (136:8 48:8 01:8 255:8)
-   send Sonycamleft (136:8 01:8 0:8 01:8 255:8)
-}
-
-command memoryrecall ARG
-{
-   send Sonycamleft (129:8 01:8 04:8 63:8 2:8 ARG 255:8)
-}
-
 query
 {
-	send Sonycamleft (129:8 09:8 04:8 0:8 255:8)	
+	send Sonycamleft ("%1POWR ?" cr)	
 	receive
 	{
-		(144:8 80:8 02:8 255:8)
+		("%1POWR=1" cr)
 		{
 			set state enabled
 		}
-		(144:8 80:8 03:8 255:8)
+		("%1POWR=0" cr)
 		{
 			set state disabled
+		}
+		("%1POWR=ERR" N:8 cr)
+		{
+			set state error
 		}
 		timeout
 		{

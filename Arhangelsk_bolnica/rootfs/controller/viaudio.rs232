@@ -8,22 +8,8 @@ timeout: 1000
 case-sensitive: false
 
 
-command up
-{
-   send Viaudio (86:8 65:8 08:8 0:8 08:8 0:8)
-
-   send Viaudio (86:8 65:8 16:8 01:8 16:8 01:8)
-}
-
 command down
 {
-   send Viaudio (86:8 65:8 16:8 0:8 16:8 0:8)
-   send Viaudio (86:8 65:8 08:8 01:8 08:8 01:8)
-}
-
-command stop
-{
-   send Viaudio (86:8 65:8 08:8 0:8 08:8 0:8)
    send Viaudio (86:8 65:8 16:8 0:8 16:8 0:8)
 }
 
@@ -50,6 +36,16 @@ command reletwooff
 command reletwoon
 {
    send Viaudio (86:8 65:8 16:8 01:8 16:8 01:8)
+}
+
+command stop
+{
+   send Viaudio (86:8 65:8 08:8 0:8 08:8 0:8)
+}
+
+command up
+{
+   send Viaudio (86:8 65:8 08:8 0:8 08:8 0:8)
 }
 
 command usbin
@@ -204,11 +200,11 @@ command volzero
 
 query
 {
-	receive
-	{
-		timeout
-		{
-			set state unknown
-		}
-	}
+receive
+{
+timeout
+{
+set state unknown
+}
+}
 }
