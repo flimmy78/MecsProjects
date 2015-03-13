@@ -54,7 +54,7 @@ command muteoff
 	send Kramer ("Y 6 3 0 " cr nl)
 }
 
-command av
+command cvinput
 {
    send Kramer ("Y 0 23 " cr nl)
 }
@@ -193,16 +193,24 @@ command yc
 
 query
 {
-	send Kramer ("Y 7 0 " cr nl)
+	send Kramer ("Y 4 0 " cr)
 	receive
 	{
-	("Z 7 0 1 " cr nl)
+	("Z 4 0 1")
 	{
-		set state enabled
+		set state cvselected
 	}
-	("Z 7 0 0 " cr nl)
+	("Z 4 0 6")
 	{
-		set state disabled
+		set state hdmioneselected
+	}
+	("Z 4 0 7")
+	{
+		set state hdmitwoselected
+	}
+	("Z 4 0 5")
+	{
+		set state vgaselected
 	}	
 	timeout
 	{

@@ -26,6 +26,12 @@ command memoryrecall ARG
    send Sonycamleft (129:8 01:8 04:8 63:8 2:8 ARG 255:8)
 }
 
+command memoryset ARG
+{
+   send Sonycamleft (129:8 01:8 04:8 63:8 2:8 ARG 255:8)
+}
+
+
 query
 {
 	send Sonycamleft (129:8 09:8 04:8 0:8 255:8)	
