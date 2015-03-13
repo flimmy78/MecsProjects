@@ -28,9 +28,39 @@ command memoryrecall ARG
 
 command memoryset ARG
 {
-   send Sonycamleft (129:8 01:8 04:8 63:8 2:8 ARG 255:8)
+   send Sonycamleft (129:8 01:8 04:8 63:8 1:8 ARG 255:8)
 }
 
+
+command up SPD
+{
+   send Sonycamleft (129:8 01:8 06:8 01:8  SPD SPD 03:8 01:8 255:8)
+}
+
+command down SPD
+{
+   send Sonycamleft (129:8 01:8 06:8 01:8  SPD SPD 03:8 02:8 255:8)
+}
+
+command left SPD
+{
+   send Sonycamleft (129:8 01:8 06:8 01:8  SPD SPD 01:8 03:8 255:8)
+}
+
+command right SPD
+{
+   send Sonycamleft (129:8 01:8 06:8 01:8  SPD SPD 02:8 03:8 255:8)
+}
+
+command tele
+{
+   send Sonycamleft (129:8 01:8 04:8 07:8 02:8 255:8)
+}
+
+command wide
+{
+   send Sonycamleft (129:8 01:8 04:8 07:8 03:8 255:8)
+}
 
 query
 {
