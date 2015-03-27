@@ -1,9 +1,8 @@
 [Page]
-Name = Campage
-Background = Images/background.jpg
-
-[Page]
 Name = Main
+Background = Images/background.jpg
+[Page]
+Name = Campage
 Background = Images/background.jpg
 
 [Button]
@@ -136,6 +135,8 @@ UpImage = Images/buttonUpUp.png
 DownImage = Images/buttonUpDown.png
 HeldImage = Images/buttonUpDown.png
 OnClick  = Command Viaudio reletwooff
+OnDelayClick = Command Viaudio releoneon
+DelayForClick = 1000
 
 [Button]
 Caption = 
@@ -149,6 +150,9 @@ UpImage = Images/buttonUpDown.png
 DownImage = Images/buttonDownDown.png
 HeldImage = Images/buttonDownDown.png
 OnClick  = Command Viaudio releoneoff
+OnDelayClick = Command Viaudio reletwoon
+DelayForClick = 1000
+
 
 [Text]
 Align = center
@@ -304,213 +308,6 @@ DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
 OnClick  = Page Main
 
-[Button]
-Caption = 
-Pages = Campage
-Left = 375
-Top = 25
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUUU.png
-DownImage = Images/buttonDUU.png
-HeldImage = Images/buttonDUU.png
-OnClick  = Command Sonycamleft up 15
-
-[Button]
-Caption = 
-Pages = Campage
-Left = 375
-Top = 150
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUpUp.png
-DownImage = Images/buttonDownUp.png
-HeldImage = Images/buttonDownUp.png
-OnClick  = Command Sonycamleft up 4
-
-[Button]
-Caption = 
-Pages = Campage
-Left = 375
-Top = 400
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUpDown.png
-DownImage = Images/buttonDownDown.png
-HeldImage = Images/buttonDownDown.png
-OnClick  = Command Sonycamleft down 4
-
-[Button]
-Caption = 
-Pages = Campage
-Left = 225
-Top = 275
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUpLeft.png
-DownImage = Images/buttonDownLeft.png
-HeldImage = Images/buttonDownLeft.png
-OnClick  = Command Sonycamleft left 4
-
-[Button]
-Caption = 
-Pages = Campage
-Left = 0
-Top = 275
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonULL.png
-DownImage = Images/buttonDLL.png
-HeldImage = Images/buttonDLL.png
-OnClick  = Command Sonycamleft left 15
-
-[Button]
-Caption = 
-Pages = Campage
-Left = 375
-Top = 525
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUDD.png
-DownImage = Images/buttonDDD.png
-HeldImage = Images/buttonDDD.png
-OnClick  = Command Sonycamleft down 15
-
-[Button]
-Caption = 
-Pages = Campage
-Left = 525
-Top = 275
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUpRight.png
-DownImage = Images/buttonDownRight.png
-HeldImage = Images/buttonDownRight.png
-OnClick  = Command Sonycamleft right 4
-
-[Button]
-Caption = 
-Pages = Campage
-Left = 750
-Top = 275
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonURR.png
-DownImage = Images/buttonDRR.png
-HeldImage = Images/buttonDRR.png
-OnClick  = Command Sonycamleft right 15
-
-[Button]
-Caption = Приблизить
-Pages = Campage
-Left = 625
-Top = 100
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Sonycamleft tele
-
-[Button]
-Caption = Удалить
-Pages = Campage
-Left = 125
-Top = 100
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Sonycamleft wide
-
-[Button]
-Caption = 1
-Pages = Campage
-Left = 25
-Top = 725
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Sonycamleft memoryset 0
-
-[Button]
-Caption = 2
-Pages = Campage
-Left = 375
-Top = 725
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Sonycamleft memoryset 1
-
-[Button]
-Caption = 3
-Pages = Campage
-Left = 750
-Top = 725
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Sonycamleft memoryset 2
-
-[Button]
-Caption = 4
-Pages = Campage
-Left = 200
-Top = 850
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Sonycamleft memoryset 3
-
-[Button]
-Caption = 5
-Pages = Campage
-Left = 575
-Top = 850
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-UpImage = Images/buttonUp.png
-DownImage = Images/buttonDown.png
-HeldImage = Images/buttonHeld.png
-OnClick  = Command Sonycamleft memoryset 4
-
-[Text]
-Align = center
-Pages = Campage
-Left = 50
-Top = 650
-Font = Images/arial.ttf
-FontSize = 30
-Color = white
-Width = 200
-Height = 50
-DefaultText = Записать в презет:
-
 [Indicator]
 Name = MitStatus
 Pages = Main
@@ -534,10 +331,10 @@ State = Kramer state
 DefaultState = unknown
 
 Image unknown = Images/wait.png
-Image cvselected = Images/black.png
-Image hdmioneselected = Images/hdmi1.png
-Image hdmitwoselected = Images/hdmi2.png
-Image vgaselected = Images/camera.png
+Image black = Images/black.png
+Image hdmione = Images/hdmi1.png
+Image hdmitwo = Images/hdmi2.png
+Image camera = Images/camera.png
 
 
 [Slider]

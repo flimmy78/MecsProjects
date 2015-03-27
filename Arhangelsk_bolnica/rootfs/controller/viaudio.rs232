@@ -7,6 +7,11 @@ query-period: 10000
 timeout: 1000
 case-sensitive: false
 
+command first
+{
+   send Viaudio (86:8 65:8 2:8 48:8 02:8 48:8)
+   send Viaudio (86:8 65:8 01:8 112:8 01:8 112:8)
+}
 
 command up
 {
