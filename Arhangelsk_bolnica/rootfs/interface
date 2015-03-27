@@ -1,10 +1,11 @@
 [Page]
-Name = Campage
+Name = Main
 Background = Images/background.jpg
 
 [Page]
-Name = Main
+Name = Campage
 Background = Images/background.jpg
+
 
 [Button]
 Caption = Включить
@@ -61,7 +62,7 @@ HeldImage = Images/buttonHeld.png
 OnClick  = Command Mitsubishi poweroff
 
 [Button]
-Caption = VGA
+Caption = Ноутбук
 Pages = Main
 Left = 300
 Top = 50
@@ -74,7 +75,7 @@ HeldImage = Images/buttonHeld.png
 OnClick  = Command Kramer vgatwo
 
 [Button]
-Caption = HDMI 1
+Caption = HDMI
 Pages = Main
 Left = 300
 Top = 175
@@ -87,7 +88,7 @@ HeldImage = Images/buttonHeld.png
 OnClick  = Command Kramer hdmione
 
 [Button]
-Caption = cv
+Caption = YC
 Pages = Main
 Left = 300
 Top = 300
@@ -97,7 +98,7 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-OnClick  = Command Kramer cvinput
+OnClick  = Command Kramer yc
 
 [Button]
 Caption = Camera
@@ -133,9 +134,11 @@ Font = Images/arial.ttf
 FontSize = 30
 Color = white
 UpImage = Images/buttonUpUp.png
-DownImage = Images/buttonUpDown.png
-HeldImage = Images/buttonUpDown.png
-OnClick  = Command Viaudio reletwooff
+DownImage = Images/buttonDownUp.png
+HeldImage = Images/buttonDownUp.png
+OnClick  = Command Viaudio releoneoff
+OnDelayClick = Command Viaudio reletwoon
+DelayForClick = 1000
 
 [Button]
 Caption = 
@@ -148,7 +151,9 @@ Color = white
 UpImage = Images/buttonUpDown.png
 DownImage = Images/buttonDownDown.png
 HeldImage = Images/buttonDownDown.png
-OnClick  = Command Viaudio releoneoff
+OnClick  = Command Viaudio reletwooff
+OnDelayClick = Command Viaudio releoneon
+DelayForClick = 1000
 
 [Text]
 Align = center
@@ -315,7 +320,9 @@ Color = white
 UpImage = Images/buttonUUU.png
 DownImage = Images/buttonDUU.png
 HeldImage = Images/buttonDUU.png
-OnClick  = Command Sonycamleft up 15
+OnClick  = Command Sonycamleft up 9
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = 
@@ -329,6 +336,8 @@ UpImage = Images/buttonUpUp.png
 DownImage = Images/buttonDownUp.png
 HeldImage = Images/buttonDownUp.png
 OnClick  = Command Sonycamleft up 4
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = 
@@ -342,6 +351,8 @@ UpImage = Images/buttonUpDown.png
 DownImage = Images/buttonDownDown.png
 HeldImage = Images/buttonDownDown.png
 OnClick  = Command Sonycamleft down 4
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = 
@@ -354,7 +365,9 @@ Color = white
 UpImage = Images/buttonUpLeft.png
 DownImage = Images/buttonDownLeft.png
 HeldImage = Images/buttonDownLeft.png
-OnClick  = Command Sonycamleft left 4
+OnClick  = Command Sonycamleft left 6
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = 
@@ -367,7 +380,9 @@ Color = white
 UpImage = Images/buttonULL.png
 DownImage = Images/buttonDLL.png
 HeldImage = Images/buttonDLL.png
-OnClick  = Command Sonycamleft left 15
+OnClick  = Command Sonycamleft left 23
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = 
@@ -380,7 +395,9 @@ Color = white
 UpImage = Images/buttonUDD.png
 DownImage = Images/buttonDDD.png
 HeldImage = Images/buttonDDD.png
-OnClick  = Command Sonycamleft down 15
+OnClick  = Command Sonycamleft down 9
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = 
@@ -393,7 +410,9 @@ Color = white
 UpImage = Images/buttonUpRight.png
 DownImage = Images/buttonDownRight.png
 HeldImage = Images/buttonDownRight.png
-OnClick  = Command Sonycamleft right 4
+OnClick  = Command Sonycamleft right 6
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = 
@@ -406,7 +425,10 @@ Color = white
 UpImage = Images/buttonURR.png
 DownImage = Images/buttonDRR.png
 HeldImage = Images/buttonDRR.png
-OnClick  = Command Sonycamleft right 15
+OnClick  = Command Sonycamleft right 23
+OnHold  = Command Sonycamleft right 23
+OnDelayClick = Command Sonycamleft stop
+DelayForClick = 500
 
 [Button]
 Caption = Приблизить
@@ -414,12 +436,14 @@ Pages = Campage
 Left = 625
 Top = 100
 Font = Images/arial.ttf
-FontSize = 30
+FontSize = 25
 Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
 OnClick  = Command Sonycamleft tele
+OnDelayClick = Command Sonycamleft stopzoom
+DelayForClick = 500
 
 [Button]
 Caption = Удалить
@@ -433,6 +457,8 @@ UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
 OnClick  = Command Sonycamleft wide
+OnDelayClick = Command Sonycamleft stopzoom
+DelayForClick = 500
 
 [Button]
 Caption = 1
@@ -535,9 +561,9 @@ DefaultState = unknown
 
 Image unknown = Images/wait.png
 Image cvselected = Images/black.png
-Image hdmioneselected = Images/hdmi1.png
-Image hdmitwoselected = Images/hdmi2.png
-Image vgaselected = Images/camera.png
+Image hdmioneselected = Images/hdmi.png
+Image hdmitwoselected = Images/camera.png
+Image vgaselected = Images/notebook.png
 
 
 [Slider]
