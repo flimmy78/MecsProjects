@@ -1,0 +1,51 @@
+protocol Kramer: com
+port: 2
+speed: 115200
+character-size: 8
+parity: none
+query-period: 2500
+timeout: 1000
+case-sensitive: false
+
+
+command releoffone
+{
+   send Kramer ("# RELAY 1,0" cr)
+}
+
+command releonone
+{
+   send Kramer ("# RELAY 1,1" cr)
+}
+
+command raa
+{
+   send Kramer ("#RELAY 1,0" cr)
+}
+
+command rab
+{
+   send Kramer ("#RELAY 1,1" cr)
+}
+
+command rba
+{
+   send Kramer ("RELAY 1,0" cr)
+}
+
+command rbb
+{
+   send Kramer ("RELAY 1,1" cr)
+}
+
+query
+{	
+    send Kramer ("# RELAY 1,0" cr)
+	receive
+	{
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

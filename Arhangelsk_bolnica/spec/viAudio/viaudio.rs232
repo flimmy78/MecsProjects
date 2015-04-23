@@ -1,0 +1,219 @@
+protocol Viaudio: com
+port: 0
+speed: 9600
+character-size: 8
+parity: none
+query-period: 10000
+timeout: 1000
+case-sensitive: false
+
+command first
+{
+   send Viaudio (86:8 65:8 2:8 48:8 02:8 48:8)
+   send Viaudio (86:8 65:8 01:8 112:8 01:8 112:8)
+}
+
+command up
+{
+   send Viaudio (86:8 65:8 08:8 0:8 08:8 0:8)
+
+   send Viaudio (86:8 65:8 16:8 01:8 16:8 01:8)
+}
+
+command down
+{
+   send Viaudio (86:8 65:8 16:8 0:8 16:8 0:8)
+   send Viaudio (86:8 65:8 08:8 01:8 08:8 01:8)
+}
+
+command stop
+{
+   send Viaudio (86:8 65:8 08:8 0:8 08:8 0:8)
+   send Viaudio (86:8 65:8 16:8 0:8 16:8 0:8)
+}
+
+command lin
+{
+   send Viaudio (86:8 65:8 2:8 48:8 02:8 48:8)
+}
+
+command releoneoff
+{
+   send Viaudio (86:8 65:8 08:8 0:8 08:8 0:8)
+}
+
+command releoneon
+{
+   send Viaudio (86:8 65:8 08:8 01:8 08:8 01:8)
+}
+
+command reletwooff
+{
+   send Viaudio (86:8 65:8 16:8 0:8 16:8 0:8)
+}
+
+command reletwoon
+{
+   send Viaudio (86:8 65:8 16:8 01:8 16:8 01:8)
+}
+
+command usbin
+{
+   send Viaudio (86:8 65:8 02:8 49:8 02:8 49:8)
+}
+
+command voleight
+{
+   send Viaudio (86:8 65:8 01:8 176:8 01:8 176:8)
+}
+
+command voleighteen
+{
+   send Viaudio (86:8 65:8 01:8 156:8 01:8 156:8)
+}
+
+command voleleven
+{
+   send Viaudio (86:8 65:8 01:8 170:8 01:8 170:8)
+}
+
+command volfiftyfour
+{
+   send Viaudio (86:8 65:8 01:8 84:8 01:8 84:8)
+}
+
+command volfive
+{
+   send Viaudio (86:8 65:8 01:8 182:8 01:8 182:8)
+}
+
+command volfour
+{
+   send Viaudio (86:8 65:8 01:8 184:8 01:8 184:8)
+}
+
+command volfourteen
+{
+   send Viaudio (86:8 65:8 01:8 164:8 01:8 164:8)
+}
+
+command volfourty
+{
+   send Viaudio (86:8 65:8 01:8 112:8 01:8 112:8)
+}
+
+command volfourtysix
+{
+   send Viaudio (86:8 65:8 01:8 100:8 01:8 100:8)
+}
+
+command volinf
+{
+   send Viaudio (86:8 65:8 01:8 01:8 01:8 01:8 )
+}
+
+command volnine
+{
+   send Viaudio (86:8 65:8 01:8 174:8 01:8 174:8)
+}
+
+command volone
+{
+   send Viaudio (86:8 65:8 01:8 190:8 01:8 190:8)
+}
+
+command volseven
+{
+   send Viaudio (86:8 65:8 01:8 178:8 01:8 178:8)
+}
+
+command volseventy
+{
+   send Viaudio (86:8 65:8 01:8 52:8 01:8 52:8)
+}
+
+command volsix
+{
+   send Viaudio (86:8 65:8 01:8 180:8 01:8 180:8)
+}
+
+command volsixteen
+{
+   send Viaudio (86:8 65:8 01:8 160:8 01:8 160:8)
+}
+
+command volten
+{
+   send Viaudio (86:8 65:8 01:8 172:8 01:8 172:8)
+}
+
+command volthirteen
+{
+   send Viaudio (86:8 65:8 01:8 166:8 01:8 166:8)
+}
+
+command volthirtyfive
+{
+   send Viaudio (86:8 65:8 01:8 122:8 01:8 122:8)
+}
+
+command volthirtyone
+{
+   send Viaudio (86:8 65:8 01:8 130:8 01:8 130:8)
+}
+
+command volthree
+{
+   send Viaudio (86:8 65:8 01:8 186:8 01:8 186:8)
+}
+
+command voltwelve
+{
+   send Viaudio (86:8 65:8 01:8 168:8 01:8 168:8)
+}
+
+command voltwenty
+{
+   send Viaudio (86:8 65:8 01:8 152:8 01:8 152:8)
+}
+
+command voltwentyeight
+{
+   send Viaudio (86:8 65:8 01:8 136:8 01:8 136:8)
+}
+
+command voltwentyfour
+{
+   send Viaudio (86:8 65:8 01:8 144:8 01:8 144:8)
+}
+
+command voltwentysix
+{
+   send Viaudio (86:8 65:8 01:8 140:8 01:8 140:8)
+}
+
+command voltwentytwo
+{
+   send Viaudio (86:8 65:8 01:8 148:8 01:8 148:8)
+}
+
+command voltwo
+{
+   send Viaudio (86:8 65:8 01:8 188:8 01:8 188:8)
+}
+
+command volzero
+{
+   send Viaudio (86:8 65:8 01:8 192:8 01:8 192:8)
+}
+
+query
+{
+	receive
+	{
+		timeout
+		{
+			set state unknown
+		}
+	}
+}

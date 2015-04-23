@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlayProjectCommand>
+  <ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>
+  <DeviceGroup>0</DeviceGroup>
+  <PlayPosition>0</PlayPosition>
+</PlayProjectCommand>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<PauseProjectCommand>
+  <ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>
+  <DeviceGroup>0</DeviceGroup>
+</PauseProjectCommand>
+
+<?xml version="1.0" encoding="utf-8"?>
+<StopProjectCommand>
+  <ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>
+  <DeviceGroup>0</DeviceGroup>
+</StopProjectCommand>
+
+<?xml version="1.0" encoding="utf-8"?>
+<GotoNextBookmarkCommand>
+  <ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>
+  <DeviceGroup>0</DeviceGroup>
+</GotoNextBookmarkCommand>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<GotoPreviousBookmarkCommand>
+  <ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>
+  <DeviceGroup>0</DeviceGroup>
+</GotoPreviousBookmarkCommand>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<GotoBookmarkCommand>
+  <ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>
+  <DeviceGroup>0</DeviceGroup>
+  <Index>0</Index>
+</GotoBookmarkCommand>
