@@ -1,0 +1,57 @@
+protocol Biamp: com
+port: 0
+speed: 38400
+character-size: 8
+parity: none
+query-period: 2500
+timeout: 1000
+case-sensitive: false
+
+
+command BiampSetVolumeInput DEVICE INSTANCE INPUT VOLUME
+{
+   send Biamp ("SET " DEVICE " FDRLVL " INSTANCE " " INPUT " " VOLUME cr)
+}
+
+command BiampGetVolumeInput DEVICE INSTANCE INPUT
+{
+   send Biamp ("GETL " DEVICE " FDRLVL " INSTANCE " " INPUT cr)
+}
+
+command BiampIncVolumeInput DEVICE INSTANCE INPUT
+{
+   send Biamp ("INC " DEVICE " FDRLVL " INSTANCE " " INPUT " 1" cr)
+}
+
+command BiampDecVolumeInput DEVICE INSTANCE INPUT
+{
+   send Biamp ("DEC " DEVICE " FDRLVL " INSTANCE " " INPUT " 1" cr)
+}
+
+command BiampSetMuteInput DEVICE INSTANCE INPUT MODE
+{
+   send Biamp ("SET " DEVICE " FDRMUTE " INSTANCE " " INPUT " " MODE cr)
+}
+
+command BiampSetMuteInputMixer DEVICE INSTANCE INPUT MODE
+{
+   send Biamp ("SET " DEVICE " SMMUTEIN " INSTANCE " " INPUT " " MODE cr)
+}
+
+command BiampGetMuteInput DEVICE INSTANCE INPUT
+{
+   send Biamp ("GET " DEVICE " FDRMUTE " INSTANCE " " INPUT cr)
+}
+
+
+query
+{	
+    send Biamp ("# RELAY 1,0" cr)
+	receive
+	{
+		timeout
+		{
+			set state unknown
+		}
+	}
+}
