@@ -29,8 +29,6 @@ Color = white
 UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
-
-
 OnDown = Command Mitsubishi muteon
 OnUp = Command Mitsubishi muteoff
 
@@ -58,3 +56,16 @@ UpImage = Images/buttonUp.png
 DownImage = Images/buttonDown.png
 HeldImage = Images/buttonHeld.png
 OnClick  = Command Mitsubishi poweroff
+
+[Indicator]
+Name = MitStatus
+Pages = Main
+Left = 25
+Top = 550
+
+State = Mitsubishi state
+DefaultState = unknown
+
+Image unknown = Images/wait.png
+Image enabled = Images/projectorenabled.png
+Image disabled = Images/projectordisabled.png

@@ -13,7 +13,7 @@ command volumek
    	receive
     {
 
- 		 		("Vol0" cr nl)
+ 		("Vol0" cr nl)
 		{
 			set state av
 		}

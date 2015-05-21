@@ -1,6 +1,6 @@
 protocol Mitsubishi: tcp-ip
 target-ip: "192.168.1.120:4352"
-query-period: 10000
+query-period: 5000
 timeout: 1000
 case-sensitive: false
 
@@ -25,9 +25,31 @@ command poweron
    send Mitsubishi ("%1POWR 1" cr)
 }
 
+command mutequery
+{
+	send Mitsubishi ("%1AVMT ?" cr)	
+	receive
+	{	
+		("%1AVMT=31" cr)
+		{
+			set statea enabled
+		}
+		("%1AVMT=30" cr)
+		{
+			set statea disable
+		}
+		timeout
+		{
+			set statea unknown
+		}
+	}
+}
+
+
 query
 {
 	send Mitsubishi ("%1POWR ?" cr)	
+
 	receive
 	{
 		("%1POWR=1" cr)
