@@ -1,57 +1,136 @@
 protocol Biamp: com
+
 port: 0
 speed: 38400
 character-size: 8
 parity: none
-query-period: 2500
+
+query-period: 10000
 timeout: 1000
 case-sensitive: false
 
-
-command BiampSetVolumeInput DEVICE INSTANCE INPUT VOLUME
+command setvolumeinputmic VOLUMESIGN VOLUMEFIRST VOLUMESECOND
 {
-   send Biamp ("SET " DEVICE " FDRLVL " INSTANCE " " INPUT " " VOLUME cr)
+   send Biamp ("SET 1 FDRLVL 7 1 " VOLUMESIGN VOLUMEFIRST VOLUMESECOND cr)
 }
 
-command BiampGetVolumeInput DEVICE INSTANCE INPUT
+command setvolumeinputconf VOLUMESIGN VOLUMEFIRST VOLUMESECOND
 {
-   send Biamp ("GETL " DEVICE " FDRLVL " INSTANCE " " INPUT cr)
+   send Biamp ("SET 1 FDRLVL 7 2 " VOLUMESIGN VOLUMEFIRST VOLUMESECOND cr)
 }
 
-command BiampIncVolumeInput DEVICE INSTANCE INPUT
+command setvolumeinputbrio VOLUMESIGN VOLUMEFIRST VOLUMESECOND
 {
-   send Biamp ("INC " DEVICE " FDRLVL " INSTANCE " " INPUT " 1" cr)
+   send Biamp ("SET 1 FDRLVL 6 1 " VOLUMESIGN VOLUMEFIRST VOLUMESECOND cr)
+   send Biamp ("SET 1 FDRLVL 6 2 " VOLUMESIGN VOLUMEFIRST VOLUMESECOND cr)
 }
 
-command BiampDecVolumeInput DEVICE INSTANCE INPUT
+command setvolumeoutput VOLUMESIGN VOLUMEFIRST VOLUMESECOND
 {
-   send Biamp ("DEC " DEVICE " FDRLVL " INSTANCE " " INPUT " 1" cr)
+   send Biamp ("SET 1 FDRLVL 5 1 " VOLUMESIGN VOLUMEFIRST VOLUMESECOND cr)
+   send Biamp ("SET 1 FDRLVL 5 2 " VOLUMESIGN VOLUMEFIRST VOLUMESECOND cr)
 }
 
-command BiampSetMuteInput DEVICE INSTANCE INPUT MODE
+command getvolumeinputmic
 {
-   send Biamp ("SET " DEVICE " FDRMUTE " INSTANCE " " INPUT " " MODE cr)
+   send Biamp ("GETL 1 FDRLVL 7 1" cr)
 }
 
-command BiampSetMuteInputMixer DEVICE INSTANCE INPUT MODE
+command incvolumeinput INSTANCE INPUT
 {
-   send Biamp ("SET " DEVICE " SMMUTEIN " INSTANCE " " INPUT " " MODE cr)
+   send Biamp ("INC 1 FDRLVL " INSTANCE " " INPUT " 5" cr)
 }
 
-command BiampGetMuteInput DEVICE INSTANCE INPUT
+command decvolumeinput INSTANCE INPUT
 {
-   send Biamp ("GET " DEVICE " FDRMUTE " INSTANCE " " INPUT cr)
+   send Biamp ("DEC 1 FDRLVL " INSTANCE " " INPUT " 5" cr)
 }
 
 
-query
-{	
-    send Biamp ("# RELAY 1,0" cr)
+command incvolumeinputbrio
+{
+   send Biamp ("INC 1 FDRLVL 6 1 5" cr)
+   send Biamp ("INC 1 FDRLVL 6 2 5" cr)
+}
+
+command decvolumeoutput
+{
+   send Biamp ("DEC 1 FDRLVL 5 1 5" cr)
+   send Biamp ("DEC 1 FDRLVL 5 2 5" cr)
+}
+
+command incvolumeoutput
+{
+   send Biamp ("INC 1 FDRLVL 5 1 5" cr)
+   send Biamp ("INC 1 FDRLVL 5 2 5" cr)
+}
+
+command decvolumeinputbrio
+{
+   send Biamp ("DEC 1 FDRLVL 6 1 5" cr)
+   send Biamp ("DEC 1 FDRLVL 6 2 5" cr)
+}
+
+
+command setmuteinputmic MODE
+{
+   send Biamp ("SET 1 FDRMUTE 7 1 " MODE cr)
+}
+
+command setmuteinputconf MODE
+{
+   send Biamp ("SET 1 FDRMUTE 7 2 " MODE cr)
+}
+
+command setmuteinputbrio MODE
+{
+   send Biamp ("SET 1 FDRMUTE 6 1 " MODE cr)
+   send Biamp ("SET 1 FDRMUTE 6 2 " MODE cr)
+}
+
+command setmuteoutput MODE
+{
+   send Biamp ("SET 1 FDRMUTE 5 1 " MODE cr)
+   send Biamp ("SET 1 FDRMUTE 5 2 " MODE cr)
+}
+
+command setmuteinputmixer INSTANCE INPUT MODE
+{
+   send Biamp ("SET 1 SMMUTeiN " INSTANCE " " INPUT " " MODE cr)
+}
+
+command getmuteinputmic
+{
+   send Biamp ("GET 1 FDRMUTE  7 1" cr)
+
 	receive
 	{
-		timeout
-		{
-			set state unknown
-		}
+	("0" cr)
+	{
+		set statea muteoff
+	}
+	("1" cr)
+	{
+		set statea muteon
+	}
+	timeout
+	{
+		set statea timeout
+	}
+	}
+}
+
+
+
+	
+query
+{
+
+	receive
+	{
+	timeout
+	{
+		set state timeout
+	}
 	}
 }
