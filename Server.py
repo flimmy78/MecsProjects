@@ -19,7 +19,7 @@ while 1:
         data = conn.recv(1024)
         if not data: break
         conn.send(data) # Echo
-	print('Data size:', len(data))
+#	print('Data size:', len(data))
         print('Data pack:', data) # Debug
 #        str = data.decode()
         #--volume <integer> sets the level of audio output (between 0 and 1024)       

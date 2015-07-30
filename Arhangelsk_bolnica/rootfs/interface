@@ -380,7 +380,7 @@ Color = white
 UpImage = Images/buttonULL.png
 DownImage = Images/buttonDLL.png
 HeldImage = Images/buttonDLL.png
-OnClick  = Command Sonycamleft left 23
+OnClick  = Command Sonycamleft left 20
 OnDelayClick = Command Sonycamleft stop
 DelayForClick = 500
 
@@ -425,8 +425,8 @@ Color = white
 UpImage = Images/buttonURR.png
 DownImage = Images/buttonDRR.png
 HeldImage = Images/buttonDRR.png
-OnClick  = Command Sonycamleft right 23
-OnHold  = Command Sonycamleft right 23
+OnClick  = Command Sonycamleft right 20
+OnHold  = Command Sonycamleft right 20
 OnDelayClick = Command Sonycamleft stop
 DelayForClick = 500
 
