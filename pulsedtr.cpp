@@ -65,7 +65,7 @@ void m_break(int fd)
 
 int main()
 {
-	int port = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);                
+	int port = open("/dev/ttyS1", O_RDWR | O_NOCTTY | O_NDELAY);                
 
 	if (port < 0)
 		return 1;
