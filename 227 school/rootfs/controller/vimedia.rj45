@@ -1,5 +1,5 @@
 protocol Vimedia: udp-ip
-target-ip: "192.168.1.111:4223"
+target-ip: "192.168.1.120:4223"
 query-period: 10000
 timeout: 1000
 case-sensitive: false
@@ -44,9 +44,9 @@ command gotobookmarkthree GUID
 	send Vimedia (GUID 0:8 0:8 0:8 0:8 0:32 0:32 308:32 308:32 "<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<Index>2</Index>" nl cr "</Command>" nl cr)
 }
 
-command gotobookmark GUID NUMBER
+command gotobookmark GUID HUNDREDS DECADE NUMBER
 {
-	send Vimedia (GUID 0:8 0:8 0:8 0:8 0:32 0:32 308:32 308:32 "<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<Index>" NUMBER "</Index>" nl cr "</Command>" nl cr)
+	send Vimedia (GUID 0:8 0:8 0:8 0:8 0:32 0:32 308:32 308:32 "<?xml version=" 34:8 "1.0" 34:8 " encoding=" 34:8 "windows-1251" 34:8 "?>" nl cr "<Command  xmlns:xsi=" 34:8 "http://www.w3.org/2001/XMLSchema-instance" 34:8 " xmlns:xsd=" 34:8 "http://www.w3.org/2001/XMLSchema" 34:8 " xsi:type=" 34:8 "GotoBookmarkCommand" 34:8 ">" nl cr "<ClientId>d5de2aa6-6674-49c8-9552-dca84a807d82</ClientId>" nl cr "<DeviceGroup>0</DeviceGroup>" nl cr "<Index>" HUNDREDS DECADE NUMBER "</Index>" nl cr "</Command>" nl cr)
 }
 
 command gotobookmarkfour GUID
